@@ -1,6 +1,6 @@
 # *RLAIF* Template
 
-<img src="../assets/RLAIF.png" alt="Image of the pipeline">
+<img src="../assets/rlaif pipeline.png" alt="Image of the pipeline">
 
 ### Introduction:
 
