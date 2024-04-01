@@ -6,6 +6,8 @@
 - [RLHF Pipeline Template](rlhf/README.md)
 - [RLAIF Pipeline Template](rlaif/README.md)
 - [Automatic Modalities Pipeline](automatic_modalities_pipeline/README.md)
+- [Microtasks Pipeline Template](microtasks_pipeline/README.md)
+
 
 
 ## Contributions, Bugs and Issues - How to Contribute
