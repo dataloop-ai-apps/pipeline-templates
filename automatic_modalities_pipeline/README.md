@@ -4,7 +4,7 @@ The Automatic Modalities Pipeline is to develop a highly efficient, scalable, an
 
 For every added item, a modality will be created automatically. To learn more, see the [Modality](https://dataloop.ai/docs/modality) article.
 
-## Installation & Configuration
+## Installation
 
 The installation of the Automatic Modalities Pipeline typically involves several key steps, such as preparation, execution, etc. to ensure that the system is correctly set up and optimized for processing and analyzing multi-modal data.
 
