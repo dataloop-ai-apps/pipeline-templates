@@ -6,7 +6,7 @@ For every added item, a modality will be created automatically. To learn more, s
 
 ## Installation & Configuration
 
-The installation of the Automatic Modalities Pipeline typically involve several key steps, such as preparation, execution, etc. to ensure that the system is correctly set up and optimized for processing and analyzing multi-modal data.
+The installation of the Automatic Modalities Pipeline typically involves several key steps, such as preparation, execution, etc. to ensure that the system is correctly set up and optimized for processing and analyzing multi-modal data.
 
 
 ### Preparation
@@ -39,8 +39,8 @@ Create a new pipeline using the template “auto-modality pipeline”.
 
 Add an event trigger to the pipeline.
 
-1. Click on the first node, which is marked by the play button. 
-2. On the trigger section, click on the “+” button.
+1. Click on the first node, marked by the play button. 
+2. On the trigger section, click the “+” button.
 3. Select the Type -> **Event**, Action -> **Created**, and paste the following DQL.
 
 ```json
@@ -59,7 +59,7 @@ Add an event trigger to the pipeline.
 }
 ```
 
-<img src="../assets/amp_add_event_trigger.png" alt="Image of the add an event trigger">
+<img src="./assets/amp_add_event_trigger.png" alt="Image of the add an event trigger">
 
 
 #### Step 5: Start the Pipeline
@@ -80,7 +80,7 @@ Create a new folder on the same reference dataset called: `“/master”`.
 
 ### Execution
 
-Now, every image you upload to the `“/master”` folder will automatically contain its modality a few seconds after.
+Now, every image you upload to the `“/master”` folder will automatically contain its modality a few seconds later.
 
 
 ## Nodes in this Pipeline
@@ -127,7 +127,7 @@ An SDK script that creates the modality.
 
 ## Pipeline Adjustments
 
-Update the input directory (master) or limit the trigger to work on a specific dataset. Update the trigger DQL on the Pre Modality node.
+Update the input directory (master) or limit the trigger to work on a specific dataset. Update the trigger DQL on the Pre-Modality node.
 
 
 ```json
@@ -170,4 +170,4 @@ def pre_modality(self, item, progress=None):
 ## Contributions, Bugs and Issues - How to Contribute
 
 We welcome anyone to help us improve this app.  
-[Here's](CONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request.
+[Here's](CONTRIBUTING.md) the detailed instructions to help you open a bug or ask for a feature request.
