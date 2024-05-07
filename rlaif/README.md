@@ -9,7 +9,7 @@ Model (LLM) models. The outputs from these models are routed through a consensus
 to the next stage of the AI-driven process, while rejected outcomes are directed to a labeling task for further 
 refinement.
 
-### installation:
+### Installation:
 
 In order to use the template, you need to follow these steps:
 

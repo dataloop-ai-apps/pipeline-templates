@@ -1,0 +1,311 @@
+{
+  "name": "pdf_preprocessing_template",
+  "version": "0.0.1",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "Template",
+    "Provider": "Dataloop",
+    "Template Type": "Data Engineering"
+  },
+  "displayName": "PDF Preprocessing Template",
+  "description": "Automate the process of preprocess pdf files by extracting to text and clean using unstructured-io library.",
+  "scope": "project",
+  "components": {
+    "pipelineTemplates": [
+      {
+        "nodes": [
+          {
+            "id": "f9e061ae-9e74-40d5-84de-b2c82d850cd6",
+            "inputs": [
+              {
+                "portId": "1b75970b-3165-40f0-a0ad-c2df254ffb0c",
+                "nodeId": "1b75970b-3165-40f0-a0ad-c2df254ffb0c",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "1a90ca4d-7941-48c3-811d-414225053f13",
+                "nodeId": "1a90ca4d-7941-48c3-811d-414225053f13",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "clone_item",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "projectId": null,
+            "metadata": {
+              "position": {
+                "x": 9823.231246948242,
+                "y": 9897.399993896484,
+                "z": 0
+              },
+              "repeatable": true
+            }
+          },
+          {
+            "id": "3dec79cf-a72e-4459-a57d-1b7379c0a71a",
+            "inputs": [
+              {
+                "portId": "a0353de4-b842-49d9-93dc-68ab5d96beb4",
+                "nodeId": "a0353de4-b842-49d9-93dc-68ab5d96beb4",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "2a6a3e95-7a3b-4e7c-b5cc-7c74f673db59",
+                "nodeId": "2a6a3e95-7a3b-4e7c-b5cc-7c74f673db59",
+                "type": "Item[]",
+                "name": "items",
+                "displayName": "items",
+                "io": "output"
+              }
+            ],
+            "name": "PDF to Text",
+            "type": "custom",
+            "namespace": {
+              "functionName": "pdf_item_to_text",
+              "serviceName": "pdf-to-text-v2",
+              "moduleName": "pdf_to_text_v2",
+              "packageName": "pdf_to_texts"
+            },
+            "projectId": null,
+            "metadata": {
+              "position": {
+                "x": 10118.231246948242,
+                "y": 9897.399993896484,
+                "z": 0
+              },
+              "serviceConfig": {
+                "initParams": {
+                },
+                "name": "pdf-to-text-v2",
+                "moduleName": "pdf_to_text_v2",
+                "secrets": [
+                ],
+                "runtime": {
+                  "podType": "regular-m",
+                  "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.10.opencv",
+                  "concurrency": 10,
+                  "autoscaler": {
+                    "minReplicas": 0,
+                    "maxReplicas": 2,
+                    "queueLength": 10
+                  }
+                },
+                "operation": "none"
+              },
+              "componentGroupName": "Text-Preprocessing",
+              "customNodeConfig": {
+                "name": "PDF-to-Text",
+                "chunking_strategy": "fixed-size",
+                "max_chunk_size": 300,
+                "chunk_overlap": 20,
+                "validation": {
+                  "valid": true,
+                  "errors": [
+                  ]
+                }
+              },
+              "codeApplicationName": "pdf-to-text-v2",
+              "repeatable": true,
+              "pipelineNodeName": "pdf_to_text"
+            },
+            "appName": "PDF to Preprocessed Text",
+            "dpkName": "pdf_to_texts"
+          },
+          {
+            "id": "2f2bad55-ea25-4999-a88e-eb0201c778a5",
+            "inputs": [
+              {
+                "portId": "dcc161b5-0fb4-44dd-be09-d8a62abe28db",
+                "nodeId": "dcc161b5-0fb4-44dd-be09-d8a62abe28db",
+                "type": "Item[]",
+                "name": "items",
+                "displayName": "items",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "08cd3857-4bfe-4fe3-a11b-078dc4bb8414",
+                "nodeId": "08cd3857-4bfe-4fe3-a11b-078dc4bb8414",
+                "type": "Item[]",
+                "name": "items",
+                "displayName": "items",
+                "io": "output"
+              }
+            ],
+            "name": "Text Preprocessing",
+            "type": "custom",
+            "namespace": {
+              "functionName": "preprocess_text",
+              "serviceName": "preprocess-text-v2",
+              "moduleName": "preprocess_text_v2",
+              "packageName": "pdf_to_texts"
+            },
+            "projectId": null,
+            "metadata": {
+              "position": {
+                "x": 10406.231246948242,
+                "y": 9897.399993896484,
+                "z": 0
+              },
+              "serviceConfig": {
+                "initParams": {
+                },
+                "name": "preprocess-text-v2",
+                "moduleName": "preprocess_text_v2",
+                "secrets": [
+                ],
+                "runtime": {
+                  "podType": "regular-m",
+                  "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.10.opencv",
+                  "concurrency": 10,
+                  "autoscaler": {
+                    "minReplicas": 0,
+                    "maxReplicas": 2,
+                    "queueLength": 10
+                  }
+                },
+                "operation": "none"
+              },
+              "componentGroupName": "Text-Preprocessing",
+              "customNodeConfig": {
+                "name": "Preprocess-Text",
+                "to_spell": false,
+                "validation": {
+                  "valid": true,
+                  "errors": [
+                  ]
+                }
+              },
+              "codeApplicationName": "text-project-preprocess-text-v-9dq",
+              "repeatable": true,
+              "pipelineNodeName": "preprocess"
+            },
+            "appName": "PDF to Preprocessed Text",
+            "dpkName": "pdf_to_texts"
+          },
+          {
+            "id": "c894c0f5-d191-42b0-b46c-a4c8c983d884",
+            "inputs": [
+              {
+                "portId": "d5ecd5cb-a673-4208-ad10-877c9639f732",
+                "nodeId": "d5ecd5cb-a673-4208-ad10-877c9639f732",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "d86e94e6-c17a-4d1b-88aa-548f4f33dbf3",
+                "nodeId": "d86e94e6-c17a-4d1b-88aa-548f4f33dbf3",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              },
+              {
+                "portId": "a1049ad0-d628-44b6-b350-6f1de584d8f5",
+                "nodeId": "a1049ad0-d628-44b6-b350-6f1de584d8f5",
+                "type": "Annotation[]",
+                "name": "annotations",
+                "displayName": "annotations",
+                "io": "output"
+              }
+            ],
+            "name": "Predict Model",
+            "type": "ml",
+            "namespace": {
+              "functionName": "predict",
+              "serviceName": "model-mgmt-app-predict",
+              "moduleName": "model-mgmt-app-predict",
+              "packageName": "model-mgmt-app"
+            },
+            "projectId": null,
+            "metadata": {
+              "position": {
+                "x": 10690.231246948242,
+                "y": 9897.399993896484,
+                "z": 0
+              },
+              "serviceConfig": {
+              },
+              "repeatable": true
+            }
+          }
+        ],
+        "connections": [
+          {
+            "src": {
+              "nodeId": "f9e061ae-9e74-40d5-84de-b2c82d850cd6",
+              "portId": "1a90ca4d-7941-48c3-811d-414225053f13"
+            },
+            "tgt": {
+              "nodeId": "3dec79cf-a72e-4459-a57d-1b7379c0a71a",
+              "portId": "a0353de4-b842-49d9-93dc-68ab5d96beb4"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "3dec79cf-a72e-4459-a57d-1b7379c0a71a",
+              "portId": "2a6a3e95-7a3b-4e7c-b5cc-7c74f673db59"
+            },
+            "tgt": {
+              "nodeId": "2f2bad55-ea25-4999-a88e-eb0201c778a5",
+              "portId": "dcc161b5-0fb4-44dd-be09-d8a62abe28db"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "2f2bad55-ea25-4999-a88e-eb0201c778a5",
+              "portId": "08cd3857-4bfe-4fe3-a11b-078dc4bb8414"
+            },
+            "tgt": {
+              "nodeId": "c894c0f5-d191-42b0-b46c-a4c8c983d884",
+              "portId": "d5ecd5cb-a673-4208-ad10-877c9639f732"
+            },
+            "condition": "{}"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "f9e061ae-9e74-40d5-84de-b2c82d850cd6",
+            "type": "root",
+            "id": "1e6ffa15-09a9-4a51-9c3b-3ca5a4a3e9f6"
+          }
+        ],
+        "name": "PDF Preprocessing Template",
+        "description": "Automate the process of preprocess pdf files by extracting to text and clean using unstructured-io library.",
+        "preview": null
+      }
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "pdf_to_texts",
+      "version": "0.0.27"
+    }
+  ]
+}

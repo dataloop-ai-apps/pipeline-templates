@@ -1,11 +1,11 @@
-# *RLHF* Template
+# *PDF Preprocessing* Template
 
-<img src="../assets/RLHF.png" alt="Image of the pipeline">
+<img src="../assets/preprocess_pdf_template.PNG" alt="Image of the pipeline">
 
 ### Introduction:
 
-This template streamlines the process of Reinforcement Learning from Human Feedback (RLAIF). Using multiple LLMs, this 
-framework directs their outputs to a labeling node, allowing for the integration of human feedback into the workflow.
+This template create the process of converting pdf items to text files. Each file is generated for a specific chunk of 
+data. The text files undergo preprocessing using cleaning functions provided by the `Unstractered - IO` library. 
 
 ### Installation:
 
@@ -16,10 +16,10 @@ In order to use the template, you need to follow these steps:
 
 <img src="../assets/pipeline_create.png" alt="Image of the pipeline creation page">
 
-* In the search bar, type `RLHF`, select the template and click install.
+* In the search bar, type `PDF Preprocessing Template`, select the template and click install.
 * Once the template is installed, click on *Create Pipeline*.
 
-<img src="../assets/rlhf-create.png" alt="Image of the pipeline">
+<img src="" alt="Image of the pipeline">
 
 [//]: # (### Usage:)
 
