@@ -1,6 +1,6 @@
 {
   "name": "pdf-preprocessing-template",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Template",
@@ -81,14 +81,13 @@
             "type": "custom",
             "namespace": {
               "functionName": "pdf_item_to_images",
-              "projectName": "text-project",
-              "serviceName": "text-project-pdf-to-image-v-2-uatj",
+              "serviceName": "pdf-to-image-v2",
               "moduleName": "pdf_to_image_v2",
-              "packageName": "pdf_item_to_images"
+              "packageName": "pdf_to_images"
             },
             "projectId": null,
-            "appName": "PDF to Image application",
-            "dpkName": "pdf_item_to_images",
+            "appName": "PDF to Images",
+            "dpkName": "pdf_to_images",
             "metadata": {
               "position": {
                 "x": 10125.231246948242,
@@ -126,9 +125,9 @@
                   ]
                 }
               },
-              "codeApplicationName": "pdf_item_to_images",
+              "codeApplicationName": "pdf-to-image-v2",
               "repeatable": true,
-              "pipelineNodeName": "pdf-to-image"
+              "pipelineNodeName": "pdf-to-images"
             }
           },
           {
@@ -157,8 +156,7 @@
             "type": "custom",
             "namespace": {
               "functionName": "text_detection",
-              "projectName": "text-project",
-              "serviceName": "text-project-google-vision-tex-ack",
+              "serviceName": "google-vision-text-detection",
               "moduleName": "google_vision_text_detection",
               "packageName": "google-vision-text-detection"
             },
@@ -204,7 +202,7 @@
                   ]
                 }
               },
-              "codeApplicationName": "text-project-google-vision-tex-ack",
+              "codeApplicationName": "google-vision-text-detection",
               "repeatable": true,
               "pipelineNodeName": "Text Detection"
             }
@@ -235,8 +233,7 @@
             "type": "custom",
             "namespace": {
               "functionName": "detect_text",
-              "projectName": "text-project",
-              "serviceName": "text-project-aws-detect-text-v-ip6",
+              "serviceName": "aws-detect-text-v2",
               "moduleName": "aws_detect_text_v2",
               "packageName": "aws-detect-text"
             },
@@ -281,7 +278,7 @@
                   ]
                 }
               },
-              "codeApplicationName": "text-project-aws-detect-text-v-ip6",
+              "codeApplicationName": "aws-detect-text-v2",
               "repeatable": true,
               "pipelineNodeName": "Detect Text"
             }
@@ -320,7 +317,6 @@
             "type": "ml",
             "namespace": {
               "functionName": "predict",
-              "projectName": "text-project",
               "serviceName": "model-mgmt-app-predict",
               "moduleName": "model-mgmt-app-predict",
               "packageName": "model-mgmt-app"

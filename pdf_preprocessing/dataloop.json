@@ -1,6 +1,6 @@
 {
   "name": "pdf_preprocessing_template",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Template",
@@ -196,7 +196,7 @@
                   ]
                 }
               },
-              "codeApplicationName": "text-project-preprocess-text-v-9dq",
+              "codeApplicationName": "preprocess-text-v2",
               "repeatable": true,
               "pipelineNodeName": "preprocess"
             },
@@ -305,7 +305,7 @@
   "dependencies": [
     {
       "name": "pdf_to_texts",
-      "version": "0.0.27"
+      "version": "0.0.28"
     }
   ]
 }
