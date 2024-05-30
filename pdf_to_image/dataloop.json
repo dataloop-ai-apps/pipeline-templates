@@ -83,11 +83,11 @@
               "functionName": "pdf_item_to_images",
               "serviceName": "pdf-to-image-v2",
               "moduleName": "pdf_to_image_v2",
-              "packageName": "pdf_to_images"
+              "packageName": "pdf_to_image"
             },
             "projectId": null,
             "appName": "PDF to Images",
-            "dpkName": "pdf_to_images",
+            "dpkName": "pdf_to_image",
             "metadata": {
               "position": {
                 "x": 10125.231246948242,
@@ -393,8 +393,7 @@
   },
   "dependencies": [
     {
-      "name": "pdf_to_images",
-      "version": "0.0.28"
+      "name": "pdf_to_image"
     }
   ]
 }

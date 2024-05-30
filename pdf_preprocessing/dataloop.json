@@ -83,7 +83,7 @@
               "functionName": "pdf_item_to_text",
               "serviceName": "pdf-to-text-v2",
               "moduleName": "pdf_to_text_v2",
-              "packageName": "pdf_to_texts"
+              "packageName": "pdf_to_text"
             },
             "projectId": null,
             "metadata": {
@@ -128,7 +128,7 @@
               "pipelineNodeName": "pdf_to_text"
             },
             "appName": "PDF to Preprocessed Text",
-            "dpkName": "pdf_to_texts"
+            "dpkName": "pdf_to_text"
           },
           {
             "id": "2f2bad55-ea25-4999-a88e-eb0201c778a5",
@@ -158,7 +158,7 @@
               "functionName": "preprocess_text",
               "serviceName": "preprocess-text-v2",
               "moduleName": "preprocess_text_v2",
-              "packageName": "pdf_to_texts"
+              "packageName": "pdf_to_text"
             },
             "projectId": null,
             "metadata": {
@@ -201,7 +201,7 @@
               "pipelineNodeName": "preprocess"
             },
             "appName": "PDF to Preprocessed Text",
-            "dpkName": "pdf_to_texts"
+            "dpkName": "pdf_to_text"
           },
           {
             "id": "c894c0f5-d191-42b0-b46c-a4c8c983d884",
@@ -304,8 +304,7 @@
   },
   "dependencies": [
     {
-      "name": "pdf_to_texts",
-      "version": "0.0.28"
+      "name": "pdf_to_text"
     }
   ]
 }
