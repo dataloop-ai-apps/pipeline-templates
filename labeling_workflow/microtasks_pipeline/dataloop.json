@@ -1,25 +1,25 @@
 {
-  "name": "pdf-preprocessing-template",
-  "version": "0.0.8",
+  "name": "micro-tasks-template",
+  "version": "1.0.1",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Template",
     "Provider": "Dataloop",
     "Template Type": "Data Engineering"
   },
-  "displayName": "PDF to Images Pipeline Template",
-  "description": "Automate the conversion of your pdf files to images for visualization and inference using Computer Visio models.",
-  "scope": "project",
+  "displayName": "micro-tasks",
+  "description": "Create multiple annotation tasks and QA tasks for any uploaded item",
+  "scope": "public",
   "components": {
     "pipelineTemplates": [
       {
         "nodes": [
           {
-            "id": "01110b90-5d6e-479d-8f70-330364b2f757",
+            "id": "03345357-e2a6-41a0-b3c1-c78d35d741c6",
             "inputs": [
               {
-                "portId": "afe61879-2f3c-4273-8561-62c52646c7ca",
-                "nodeId": "afe61879-2f3c-4273-8561-62c52646c7ca",
+                "portId": "a8549b89-9ade-4f6a-a67a-73234d90bdc0",
+                "nodeId": "a8549b89-9ade-4f6a-a67a-73234d90bdc0",
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
@@ -28,15 +28,141 @@
             ],
             "outputs": [
               {
-                "portId": "1503aa5d-074d-4b02-895e-1ae274d9eb12",
-                "nodeId": "1503aa5d-074d-4b02-895e-1ae274d9eb12",
+                "portId": "8ddae845-d86e-4025-8ccd-e6ee01224cab",
+                "nodeId": "8ddae845-d86e-4025-8ccd-e6ee01224cab",
                 "type": "Item",
                 "name": "item",
-                "displayName": "item",
+                "displayName": "Discard",
+                "actions": [
+                  "discard",
+                  "1st completed"
+                ],
                 "io": "output"
               }
             ],
-            "name": "dataset",
+            "name": "1st Ann Task",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 461.65625,
+                "y": 204.171875,
+                "z": 0
+              }
+            }
+          },
+          {
+            "id": "48228ca-bba0-4d2e-acd8-66f601c3466d",
+            "inputs": [
+              {
+                "portId": "ee34b9b1-8913-405e-951c-99d9bad7f60a",
+                "nodeId": "ee34b9b1-8913-405e-951c-99d9bad7f60a",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "94d80647-ec80-4ae9-b607-3de887ea660a",
+                "nodeId": "94d80647-ec80-4ae9-b607-3de887ea660a",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Discard",
+                "actions": [
+                  "discard",
+                  "2nd completed"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "2nd Ann Task",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 458.989593505859,
+                "y": 376.50520324707,
+                "z": 0
+              }
+            }
+          },
+          {
+            "id": "83ad4221-66b3-476f-95f6-54bf1600d72a",
+            "inputs": [
+              {
+                "portId": "6cb04377-1aeb-479d-babc-cb3c127f99e9",
+                "nodeId": "6cb04377-1aeb-479d-babc-cb3c127f99e9",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "b9a8e9a7-5525-42c6-9242-3ad30d1d2b6a",
+                "nodeId": "b9a8e9a7-5525-42c6-9242-3ad30d1d2b6a",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Discard",
+                "actions": [
+                  "discard",
+                  "2nd approved"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "2nd QA Task ",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 847.656188964844,
+                "y": 390.505218505859,
+                "z": 0
+              },
+              "taskType": "qa"
+            }
+          },
+          {
+            "id": "1ad6ec7c-1713-47e8-b264-f6c946427674",
+            "inputs": [
+              {
+                "portId": "0f9a51e0-a175-4677-9053-81eaaa481b69",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "d19ef6b8-25f7-40db-a170-77de70f95d61",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item"
+              }
+            ],
+            "name": "Not Selected",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -45,166 +171,131 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": null,
             "metadata": {
               "position": {
-                "x": 9830.231246948242,
-                "y": 9918.399993896484,
+                "x": 170.65625,
+                "y": 204.171875,
                 "z": 0
-              },
-              "repeatable": true
+              }
             }
           },
           {
-            "id": "638b7223-7810-4241-946a-55efda22612e",
+            "id": "5a5c4599-28c2-489a-bba1-d874220134f8",
             "inputs": [
               {
-                "portId": "5f15c388-1083-4db8-9d4c-06854a32e975",
-                "nodeId": "5f15c388-1083-4db8-9d4c-06854a32e975",
+                "portId": "048049e5-feea-48c2-a70d-360a3175d02c",
                 "type": "Item",
                 "name": "item",
-                "displayName": "item",
-                "io": "input"
+                "displayName": "item"
               }
             ],
             "outputs": [
               {
-                "portId": "9aefc240-f92f-4921-930b-bebd692a5cd4",
-                "nodeId": "9aefc240-f92f-4921-930b-bebd692a5cd4",
+                "portId": "88206552-e777-40d5-9e34-8c2b9baf9e3b",
                 "type": "Item",
                 "name": "item",
-                "displayName": "item",
-                "io": "output"
+                "displayName": "Discard",
+                "actions": [
+                  "discard",
+                  "1st approved"
+                ]
               }
             ],
-            "name": "PDF to Image",
-            "type": "custom",
+            "name": "1st QA Task",
+            "type": "task",
             "namespace": {
-              "functionName": "pdf_item_to_images",
-              "serviceName": "pdf-to-image-v2",
-              "moduleName": "pdf_to_image_v2",
-              "packageName": "pdf_to_image"
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
             },
-            "projectId": null,
-            "appName": "PDF to Images",
-            "dpkName": "pdf_to_image",
             "metadata": {
               "position": {
-                "x": 10125.231246948242,
-                "y": 9920.399993896484,
+                "x": 847.65625,
+                "y": 218.838554382324,
                 "z": 0
               },
-              "serviceConfig": {
-                "initParams": {
-                },
-                "name": "pdf-to-image-v2",
-                "moduleName": "pdf_to_image_v2",
-                "secrets": [
-                ],
-                "runtime": {
-                  "podType": "regular-m",
-                  "concurrency": 10,
-                  "autoscaler": {
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  }
-                },
-                "operation": "none"
-              },
-              "componentGroupName": "Text-Preprocessing",
-              "customNodeConfig": {
-                "name": "PDF-to-Image",
-                "validation": {
-                  "valid": false,
-                  "errors": [
-                    {
-                      "message": "Value is required",
-                      "suggestion": "Value is required"
-                    }
-                  ]
-                }
-              },
-              "codeApplicationName": "pdf-to-image-v2",
-              "repeatable": true,
-              "pipelineNodeName": "pdf-to-image"
+              "taskType": "qa"
             }
           },
           {
-            "id": "6dfe4f09-5deb-40c9-9f70-cf1196133787",
+            "id": "0e25d9dc-817d-4102-85fc-e9181df0c345",
             "inputs": [
               {
-                "portId": "04922f56-b101-45e1-90b8-89dfed3026b6",
-                "nodeId": "04922f56-b101-45e1-90b8-89dfed3026b6",
+                "portId": "ed3fc14c-3aac-485b-93d0-96c193748c4f",
                 "type": "Item",
                 "name": "item",
-                "displayName": "item",
-                "io": "input"
+                "displayName": "item"
               }
             ],
             "outputs": [
               {
-                "portId": "2a68df33-27d4-4091-b3c4-6cfea44ba0d1",
-                "nodeId": "2a68df33-27d4-4091-b3c4-6cfea44ba0d1",
+                "portId": "3e0dbd0b-8335-4b24-9636-f721c3990fae",
                 "type": "Item",
                 "name": "item",
-                "displayName": "item",
-                "io": "output"
+                "displayName": "Discard",
+                "actions": [
+                  "discard",
+                  "3rd completed"
+                ]
               }
             ],
-            "name": "Text Detection",
-            "type": "custom",
+            "name": "3rd Ann Task",
+            "type": "task",
             "namespace": {
-              "functionName": "text_detection",
-              "serviceName": "google-vision-text-detection",
-              "moduleName": "google_vision_text_detection",
-              "packageName": "google-vision-text-detection"
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
             },
-            "projectId": null,
-            "appName": "Google Vision Text Detection",
-            "dpkName": "google-vision-text-detection",
             "metadata": {
               "position": {
-                "x": 10440.231246948242,
-                "y": 9789.399993896484,
+                "x": 458.65625,
+                "y": 550.171875,
+                "z": 0
+              }
+            }
+          },
+          {
+            "id": "33e06003-b2d4-4754-b690-3c2a8ab9b8ca",
+            "inputs": [
+              {
+                "portId": "db2def2f-6ac2-4e27-b560-c7fb63f3a54c",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "0938332c-4fc7-41a6-9ae8-8a97d3c4e462",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Approve",
+                "actions": [
+                  "approved",
+                  "final approved"
+                ]
+              }
+            ],
+            "name": "3rd QA Task",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 847.65625,
+                "y": 564.171875,
                 "z": 0
               },
-              "serviceConfig": {
-                "initParams": {
-                  "integration_name": ""
-                },
-                "name": "google-vision-text-detection",
-                "moduleName": "google_vision_text_detection",
-                "secrets": [
-                ],
-                "runtime": {
-                  "podType": "regular-xs",
-                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0",
-                  "numReplicas": 1,
-                  "concurrency": 10,
-                  "singleAgent": false,
-                  "autoscaler": {
-                    "type": "rabbitmq",
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  },
-                  "preemptible": false
-                },
-                "operation": "none"
-              },
-              "componentGroupName": "Google Vision",
-              "customNodeConfig": {
-                "name": "Text Detection",
-                "validation": {
-                  "valid": true,
-                  "errors": [
-                  ]
-                }
-              },
-              "codeApplicationName": "google-vision-text-detection",
-              "repeatable": true,
-              "pipelineNodeName": "Text Detection"
+              "taskType": "qa"
             }
           },
           {

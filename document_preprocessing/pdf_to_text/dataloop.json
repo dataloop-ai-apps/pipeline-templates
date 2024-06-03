@@ -1,6 +1,6 @@
 {
-  "name": "pdf_preprocessing_template",
-  "version": "0.0.5",
+  "name": "pdf-to-clean-text-template",
+  "version": "1.0.1",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Template",
@@ -9,7 +9,7 @@
   },
   "displayName": "PDF Preprocessing Template",
   "description": "Automate the process of preprocess pdf files by extracting to text and clean using unstructured-io library.",
-  "scope": "project",
+  "scope": "public",
   "components": {
     "pipelineTemplates": [
       {
