@@ -5,7 +5,7 @@
 - [Active Learning Pipeline Template](MLOps-GenAI/active_learning/README.md)
 - [RLHF Pipeline Template](MLOps-GenAI/rlhf/README.md)
 - [RLAIF Pipeline Template](MLOps-GenAI/rlaif/README.md)
-- [Automatic Modalities Pipeline](automatic_modalities_pipeline/README.md)
+- [Automatic Modalities Pipeline](labeling_workflow/automatic_modalities_pipeline/README.md)
 - [Microtasks Pipeline Template](labeling_workflow/microtasks_pipeline/README.md)
 
 
