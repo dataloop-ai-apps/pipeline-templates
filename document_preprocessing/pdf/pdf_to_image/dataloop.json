@@ -394,6 +394,12 @@
   "dependencies": [
     {
       "name": "pdf_to_image"
+    },
+    {
+      "name": "aws-detect-text-v2"
+    },
+    {
+      "name": "google-vision-text-detection"
     }
   ]
 }
