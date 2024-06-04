@@ -7,7 +7,7 @@
     "Pipeline Type": "Template",
     "Template Type": "MLOps"
   },
-  "displayName": "RLHF Pipeline Template",
+  "displayName": "RLHF",
   "description": "RLHF Pipeline Template",
   "scope": "public",
   "components": {

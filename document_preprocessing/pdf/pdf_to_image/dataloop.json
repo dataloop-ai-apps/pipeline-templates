@@ -7,7 +7,7 @@
     "Provider": "Dataloop",
     "Template Type": "Data Engineering"
   },
-  "displayName": "PDF to Images Pipeline Template",
+  "displayName": "PDF to Images",
   "description": "Automate the conversion of your pdf files to images for visualization and inference using Computer Visio models.",
   "scope": "public",
   "components": {
@@ -116,12 +116,8 @@
               "customNodeConfig": {
                 "name": "PDF-to-Image",
                 "validation": {
-                  "valid": false,
+                  "valid": true,
                   "errors": [
-                    {
-                      "message": "Value is required",
-                      "suggestion": "Value is required"
-                    }
                   ]
                 }
               },
@@ -384,7 +380,7 @@
         ],
         "name": "PDF to Images Pipeline",
         "description": "Automate the conversion of your pdf files to images for visualization and inference using Computer Visio models.",
-        "preview": null
+        "preview": "665f307c52a17d02df92e9e8"
       }
     ]
   },

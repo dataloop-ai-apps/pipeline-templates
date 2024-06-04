@@ -5,9 +5,9 @@
     "Category": "Pipeline",
     "Pipeline Type": "Template",
     "Provider": "Dataloop",
-    "Template Type": ""
+    "Template Type": "Data"
   },
-  "displayName": "auto-modality",
+  "displayName": "Auto-Modality",
   "description": "Create modalities automatically for every new item. More information see docs",
   "scope": "public",
   "components": {

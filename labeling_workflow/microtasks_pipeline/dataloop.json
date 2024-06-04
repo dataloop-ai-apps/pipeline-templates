@@ -5,9 +5,9 @@
     "Category": "Pipeline",
     "Pipeline Type": "Template",
     "Provider": "Dataloop",
-    "Template Type": "Data Engineering"
+    "Template Type": "Labeling Workflow"
   },
-  "displayName": "micro-tasks",
+  "displayName": "Micro-Task Workflow",
   "description": "Create multiple annotation tasks and QA tasks for any uploaded item",
   "scope": "public",
   "components": {

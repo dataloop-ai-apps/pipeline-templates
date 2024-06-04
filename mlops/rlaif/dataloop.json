@@ -7,7 +7,7 @@
     "Pipeline Type": "Template",
     "Template Type": "MLOps"
   },
-  "displayName": "RLAIF Pipeline Template",
+  "displayName": "RLAIF",
   "description": "RLAIF Pipeline Template",
   "scope": "public",
   "components": {
