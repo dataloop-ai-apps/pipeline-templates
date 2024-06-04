@@ -268,13 +268,10 @@
               "customNodeConfig": {
                 "name": "AWS Rekognition Detect Text",
                 "threshold": 0.8,
+                "annotation_type": "Polygon",
                 "validation": {
-                  "valid": false,
+                  "valid": true,
                   "errors": [
-                    {
-                      "message": "Annotation Type is required",
-                      "suggestion": "Annotation Type is required"
-                    }
                   ]
                 }
               },
