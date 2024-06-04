@@ -396,7 +396,7 @@
       "name": "pdf_to_image"
     },
     {
-      "name": "aws-detect-text-v2"
+      "name": "aws-detect-text"
     },
     {
       "name": "google-vision-text-detection"
