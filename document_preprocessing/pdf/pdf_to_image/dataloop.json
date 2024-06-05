@@ -99,24 +99,6 @@
                 "y": 9920.399993896484,
                 "z": 0
               },
-              "serviceConfig": {
-                "initParams": {
-                },
-                "name": "pdf-to-image-v2",
-                "moduleName": "pdf_to_image_v2",
-                "secrets": [
-                ],
-                "runtime": {
-                  "podType": "regular-m",
-                  "concurrency": 10,
-                  "autoscaler": {
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  }
-                },
-                "operation": "none"
-              },
               "componentGroupName": "Text-Preprocessing",
               "customNodeConfig": {
                 "name": "PDF-to-Image",
@@ -170,30 +152,6 @@
                 "y": 9789.399993896484,
                 "z": 0
               },
-              "serviceConfig": {
-                "initParams": {
-                  "integration_name": ""
-                },
-                "name": "google-vision-text-detection",
-                "moduleName": "google_vision_text_detection",
-                "secrets": [
-                ],
-                "runtime": {
-                  "podType": "regular-xs",
-                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0",
-                  "numReplicas": 1,
-                  "concurrency": 10,
-                  "singleAgent": false,
-                  "autoscaler": {
-                    "type": "rabbitmq",
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  },
-                  "preemptible": false
-                },
-                "operation": "none"
-              },
               "componentGroupName": "Google Vision",
               "customNodeConfig": {
                 "name": "Text Detection",
@@ -246,24 +204,6 @@
                 "x": 10436.231246948242,
                 "y": 9915.399993896484,
                 "z": 0
-              },
-              "serviceConfig": {
-                "initParams": {
-                },
-                "name": "aws-detect-text-v2",
-                "moduleName": "aws_detect_text_v2",
-                "secrets": [
-                ],
-                "runtime": {
-                  "podType": "regular-s",
-                  "concurrency": 10,
-                  "autoscaler": {
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  }
-                },
-                "operation": "none"
               },
               "componentGroupName": "AWS-Rekognition",
               "customNodeConfig": {
