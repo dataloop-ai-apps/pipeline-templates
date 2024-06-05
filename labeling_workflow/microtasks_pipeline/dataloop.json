@@ -10,6 +10,11 @@
   "displayName": "Micro-Task Workflow",
   "description": "Create multiple annotation tasks and QA tasks for any uploaded item",
   "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "pdf-templates"
+  },
   "components": {
     "pipelineTemplates": [
       {
@@ -316,7 +321,7 @@
           }
         ],
         "connections": [
-{
+          {
             "src": {
               "nodeId": "1ad6ec7c-1713-47e8-b264-f6c946427674",
               "portId": "d19ef6b8-25f7-40db-a170-77de70f95d61"
