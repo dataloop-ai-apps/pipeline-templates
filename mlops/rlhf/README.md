@@ -4,8 +4,8 @@
 
 ### Introduction:
 
-This template streamlines the process of Reinforcement Learning from Human Feedback (RLAIF). Using multiple LLMs, this 
-framework directs their outputs to a labeling node, allowing for the integration of human feedback into the workflow.
+This template streamlines the process of Reinforcement Learning from Human Feedback (RLAIF). The pipeline uses multiple LLMs, 
+directs their outputs to a labeling node, allowing for the integration of human feedback into the workflow.
 
 ### Installation:
 
