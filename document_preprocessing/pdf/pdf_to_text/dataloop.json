@@ -303,7 +303,7 @@
         ],
         "name": "PDF Preprocessing Template",
         "description": "Automate the process of preprocess pdf files by extracting to text and clean using unstructured-io library.",
-        "preview": "665f2ec28938fff3cf22ca9b"
+        "preview": "6665936fa1931c3cbb47a0a3"
       }
     ]
   },
