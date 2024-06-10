@@ -1,6 +1,6 @@
 {
   "name": "pdf-to-image-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Template",
@@ -13,7 +13,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
-    "gitTag": "1.0.1"
+    "gitTag": "1.0.2"
   },
   "components": {
     "pipelineTemplates": [
