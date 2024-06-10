@@ -7,7 +7,7 @@
     "Provider": "Dataloop",
     "Template Type": "Data Engineering"
   },
-  "displayName": "PDF Preprocessing",
+  "displayName": "PDF Preprocessing Template",
   "description": "Automate the process of preprocess pdf files by extracting to text and clean using unstructured-io library.",
   "scope": "public",
   "codebase": {

@@ -1,30 +1,35 @@
-# *PDF to Images Pipeline* Template
+# *PDF to Image - Text Detection Pipeline Template*
 
 <img src="assets/pdf_to_image_template.png" alt="Image of the pipeline">
 
 ### Introduction:
 
-This template create the process of converting pdf items to images, image for each pdf page. The crafted image is than 
-can be served as an input to computer vision models such as `AWS Rekognition - Detect Text`, `Goggle vision - Text Detection`
-or any other predictive model with images as an input. 
+This template application creates a pipeline flows that converts pdfs to images, where each page is a single image.
+The generated images serve as input to computer vision models:  `AWS Rekognition - Detect Text`,
+`Google vision - Text Detection` and any other predictive model from Dataloop's Marketplace with images as an input.
 
 ### Installation:
 
-In order to use the template, you need to follow these steps:
+There are two options for installing and using the template:
+
+1. Pipelines:
 
 * Open the pipelines page and select Create Pipeline.
 * Select Use a Template from the dropdown list.
 
 <img src="assets/pipeline_create.png" alt="Image of the pipeline creation page">
 
-* In the search bar, type `PDF to Images Pipeline Template`, select the template and click install.
+1. Pipelines:
+
+* In the search bar, type `PDF to Image - Text Detection`, select the template and click install.
 * Once the template is installed, click on *Create Pipeline*.
 
-[//]: # (<img src="assets/startline_create_pipeline.png" alt="Image of the pipeline">)
+<img src="assets/marketplace.png" alt="Image of the pipeline">
 
 [//]: # (### Usage:)
 
 [//]: # ()
+
 [//]: # (For the complete documentation of the Active learning pipeline, please refer to)
 
 [//]: # (the [Active Learning Pipeline Documentation]&#40;https://dataloop.ai/docs/active-learning-pipeline&#41;)
