@@ -5,7 +5,7 @@
 ### Introduction:
 
 This template create the process of converting pdf items to text files. Each file is generated for a specific chunk of
-data. The text files undergo preprocessing using cleaning functions provided by the `Unstractered - IO` library.
+data. The text files undergo preprocessing using cleaning functions provided by the `UnstructedIO` library.
 
 ### Installation:
 There are two options for installing and using the template:
