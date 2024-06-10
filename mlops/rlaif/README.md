@@ -1,6 +1,6 @@
 # *RLAIF* Template
 
-<img src="../assets/rlaif pipeline.png" alt="Image of the pipeline">
+<img src="assets/rlaif pipeline.png" alt="Image of the pipeline">
 
 ### Introduction:
 
@@ -9,19 +9,19 @@ Model (LLM) models. The outputs from these models are routed through a consensus
 to the next stage of the AI-driven process, while rejected outcomes are directed to a labeling task for further 
 refinement.
 
-### installation:
+### Installation:
 
 In order to use the template, you need to follow these steps:
 
 * Open the pipelines page and select Create Pipeline.
 * Select Use a Template from the dropdown list.
 
-<img src="../assets/pipeline_create.png" alt="Image of the pipeline creation page">
+<img src="assets/pipeline_create.png" alt="Image of the pipeline creation page">
 
 * In the search bar, type `RLAIF`, select the template and click install.
 * Once the template is installed, click on *Create Pipeline*.
 
-<img src="../assets/rlaif-create.png" alt="Image of the pipeline">
+<img src="assets/rlaif-create.png" alt="Image of the pipeline">
 
 [//]: # (### Usage:)
 
