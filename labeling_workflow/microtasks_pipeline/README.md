@@ -57,4 +57,4 @@ For example, in the screenshot below, you can see that 5 items were uploaded to 
 ## Contributions, Bugs and Issues - How to Contribute
 
 We welcome anyone to help us improve this app.  
-[Here's](CONTRIBUTING.md) the detailed instructions to help you open a bug or ask for a feature request.
+[Here's](..%2F..%2FCONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request.
