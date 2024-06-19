@@ -11,8 +11,8 @@
     "components": {
         "pipelineTemplates": [
             {
-                "projectId": "098e7068-7c03-4206-8014-27f2a8d0f4bd",
-                "orgId": "353c6795-56cd-48b9-8a26-c2686fbd01c3",
+                "projectId": null,
+                "orgId": null,
                 "connections": [
                     {
                         "src": {
@@ -96,7 +96,7 @@
                             "moduleName": "wait_module",
                             "packageName": "image-tiling-split"
                         },
-                        "projectId": "098e7068-7c03-4206-8014-27f2a8d0f4bd",
+                        "projectId": null,
                         "appName": "Image Tiling Split",
                         "dpkName": "image-tiling-split",
                         "metadata": {
@@ -166,7 +166,7 @@
                             "moduleName": null,
                             "packageName": ""
                         },
-                        "projectId": "098e7068-7c03-4206-8014-27f2a8d0f4bd",
+                        "projectId": null,
                         "config": {
                             "package": {
                                 "code": "import dtlpy as dl\n\n\nclass ServiceRunner:\n    def run(self, item: dl.Item):\n        return item\n",
@@ -233,7 +233,7 @@
                             "moduleName": "videos-to-video",
                             "packageName": "video-utils-stitching"
                         },
-                        "projectId": "098e7068-7c03-4206-8014-27f2a8d0f4bd",
+                        "projectId": null,
                         "appName": "[Video Utils] - Stitching",
                         "dpkName": "video-utils-stitching",
                         "metadata": {
@@ -345,7 +345,7 @@
                             "moduleName": "video-to-videos",
                             "packageName": "video-utils-trimming"
                         },
-                        "projectId": "098e7068-7c03-4206-8014-27f2a8d0f4bd",
+                        "projectId": null,
                         "appName": "[Video Utils] - Trimming",
                         "dpkName": "video-utils-trimming",
                         "metadata": {
@@ -401,5 +401,16 @@
                 "_id": "665ed7afbc4901833993c755"
             }
         ]
-    }
+    },
+    "dependencies": [
+        {
+            "name": "video-utils-trimming"
+        },
+        {
+            "name": "video-utils-stitching"
+        },
+        {
+            "name": "image-tiling-split"
+        }
+    ]
 }
