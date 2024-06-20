@@ -1,6 +1,6 @@
 # Video Trim and Stitch Pipeline Template
 
-![pipeline.png](assets%2Fpipeline.png)
+![pipeline.png](assets/pipeline.png)
 
 ### Introduction:
 
@@ -25,4 +25,4 @@ In order to use the template, you need to follow these steps:
 ## Contributions, Bugs and Issues - How to Contribute
 
 We welcome anyone to help us improve this app.  
-[Here's](..%2F..%2FCONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request.
+[Here's](../../CONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request.
