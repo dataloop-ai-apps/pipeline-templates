@@ -7,7 +7,7 @@
     "Provider": "Dataloop",
     "Template Type": "Labeling Workflow"
   },
-  "displayName": "Labeling Preprocessed Text Workflow",
+  "displayName": "Label Preprocessed Text Workflow",
   "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
   "scope": "public",
   "codebase": {
@@ -264,5 +264,10 @@
         "_id": "668cf6cdf236457ed508c259"
       }
     ]
-  }
+  },
+  "dependencies": [
+    {
+      "name": "pdf_to_text"
+    }
+  ]
 }

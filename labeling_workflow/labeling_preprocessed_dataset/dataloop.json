@@ -7,7 +7,7 @@
     "Provider": "Dataloop",
     "Template Type": "Labeling Workflow"
   },
-  "displayName": "Labeling Preprocess Dataset Workflow",
+  "displayName": "Label Preprocess Dataset Workflow",
   "description": "Create preprocessing code and a QA task for a chosen Dataset",
   "scope": "public",
   "codebase": {
