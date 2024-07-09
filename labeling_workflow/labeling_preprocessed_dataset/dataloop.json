@@ -1,5 +1,5 @@
 {
-  "name": "pre_annotation_workflow",
+  "name": "preprocessed_dataset_labeling_workflow",
   "version": "1.0.1",
   "attributes": {
     "Category": "Pipeline",
