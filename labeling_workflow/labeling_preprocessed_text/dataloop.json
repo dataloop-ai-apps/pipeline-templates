@@ -258,7 +258,7 @@
             "type": "root"
           }
         ],
-        "name": "Labeling Preprocessed Text Workflow",
+        "name": "Label Preprocessed Text Workflow",
         "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
         "preview": "668cf6ba91459aac8268c3e5",
         "_id": "668cf6cdf236457ed508c259"

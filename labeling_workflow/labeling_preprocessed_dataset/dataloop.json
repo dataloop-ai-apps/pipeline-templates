@@ -236,7 +236,7 @@
             "type": "root"
           }
         ],
-        "name": "Labeling Preprocess Dataset Workflow",
+        "name": "Label Preprocess Dataset Workflow",
         "description": "Create preprocessing code and a QA task for a chosen Dataset",
         "preview": "668ce57b2e4faf2f656ed2f3",
         "_id": "668ce5892e4faf309f6ed406"
