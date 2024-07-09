@@ -7,8 +7,8 @@
     "Provider": "Dataloop",
     "Template Type": "Labeling Workflow"
   },
-  "displayName": "Preprocessed Text Labeling Workflow",
-  "description": "Create an Annotated Text Dataset by using annotation task for a preprocessed text using unstructured-io functions",
+  "displayName": "Labeling Preprocessed Text Workflow",
+  "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
   "scope": "public",
   "codebase": {
     "type": "git",
@@ -258,8 +258,8 @@
             "type": "root"
           }
         ],
-        "name": "Preprocessed Text Labeling Workflow",
-        "description": "Create an Annotated Text Dataset by using annotation task for a preprocessed text using unstructured-io functions",
+        "name": "Labeling Preprocessed Text Workflow",
+        "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
         "preview": "668cf6ba91459aac8268c3e5",
         "_id": "668cf6cdf236457ed508c259"
       }

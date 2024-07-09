@@ -7,8 +7,8 @@
     "Provider": "Dataloop",
     "Template Type": "Labeling Workflow"
   },
-  "displayName": "Preprocess Annotation Workflow",
-  "description": "Create pre-annotation code and a QA task for a chosen Dataset",
+  "displayName": "Labeling Preprocess Dataset Workflow",
+  "description": "Create preprocessing code and a QA task for a chosen Dataset",
   "scope": "public",
   "codebase": {
     "type": "git",
@@ -236,8 +236,8 @@
             "type": "root"
           }
         ],
-        "name": "Pre-Annotation Pipeline",
-        "description": "Create pre annotation code and a QA task for a chosen Dataset",
+        "name": "Labeling Preprocess Dataset Workflow",
+        "description": "Create preprocessing code and a QA task for a chosen Dataset",
         "preview": "668ce57b2e4faf2f656ed2f3",
         "_id": "668ce5892e4faf309f6ed406"
       }

@@ -1,5 +1,5 @@
 {
-  "name": "basic_labeling_workflow",
+  "name": "labeling_and_qa_workflow",
   "version": "1.0.1",
   "attributes": {
     "Category": "Pipeline",
@@ -7,8 +7,8 @@
     "Provider": "Dataloop",
     "Template Type": "Labeling Workflow"
   },
-  "displayName": "Basic Labeling Workflow",
-  "description": "Create annotation tasks and a QA task for a chosen Dataset",
+  "displayName": "Labeling and QA Workflow",
+  "description": "Create annotation and a QA tasks for a chosen Dataset",
   "scope": "public",
   "codebase": {
     "type": "git",
@@ -228,8 +228,8 @@
             "id": "87047c84-6a26-41ec-a938-ce16a15592ff"
           }
         ],
-        "name": "Micro-Task Pipeline",
-        "description": "Create annotation tasks and a QA task for a chosen Dataset",
+        "name": "Labeling and QA Workflow",
+        "description": "Create annotation and a QA tasks for a chosen Dataset",
         "preview": "668cd13f7ed81c404126b8a8",
         "_id": "668cd172ea0e381c81f6add6"
       }
