@@ -1,15 +1,20 @@
 {
   "name": "rlhf-pipeline-template",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "attributes": {
     "Provider": "Dataloop",
     "Category": "Pipeline",
     "Pipeline Type": "Template",
     "Template Type": "MLOps"
   },
-  "displayName": "RLHF Pipeline Template",
+  "displayName": "RLHF",
   "description": "RLHF Pipeline Template",
   "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.4"
+  },
   "components": {
     "pipelineTemplates": [
       {

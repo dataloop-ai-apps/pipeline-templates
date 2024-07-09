@@ -1,6 +1,6 @@
 {
-  "name": "pdf_preprocessing_template",
-  "version": "0.0.1",
+  "name": "pdf-to-clean-text-template",
+  "version": "1.0.4",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Template",
@@ -9,7 +9,12 @@
   },
   "displayName": "PDF Preprocessing Template",
   "description": "Automate the process of preprocess pdf files by extracting to text and clean using unstructured-io library.",
-  "scope": "project",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.4"
+  },
   "components": {
     "pipelineTemplates": [
       {
@@ -83,7 +88,7 @@
               "functionName": "pdf_item_to_text",
               "serviceName": "pdf-to-text-v2",
               "moduleName": "pdf_to_text_v2",
-              "packageName": "pdf_to_texts"
+              "packageName": "pdf_to_text"
             },
             "projectId": null,
             "metadata": {
@@ -128,7 +133,7 @@
               "pipelineNodeName": "pdf_to_text"
             },
             "appName": "PDF to Preprocessed Text",
-            "dpkName": "pdf_to_texts"
+            "dpkName": "pdf_to_text"
           },
           {
             "id": "2f2bad55-ea25-4999-a88e-eb0201c778a5",
@@ -158,7 +163,7 @@
               "functionName": "preprocess_text",
               "serviceName": "preprocess-text-v2",
               "moduleName": "preprocess_text_v2",
-              "packageName": "pdf_to_texts"
+              "packageName": "pdf_to_text"
             },
             "projectId": null,
             "metadata": {
@@ -196,12 +201,12 @@
                   ]
                 }
               },
-              "codeApplicationName": "text-project-preprocess-text-v-9dq",
+              "codeApplicationName": "preprocess-text-v2",
               "repeatable": true,
               "pipelineNodeName": "preprocess"
             },
             "appName": "PDF to Preprocessed Text",
-            "dpkName": "pdf_to_texts"
+            "dpkName": "pdf_to_text"
           },
           {
             "id": "c894c0f5-d191-42b0-b46c-a4c8c983d884",
@@ -298,14 +303,13 @@
         ],
         "name": "PDF Preprocessing Template",
         "description": "Automate the process of preprocess pdf files by extracting to text and clean using unstructured-io library.",
-        "preview": null
+        "preview": "6665936fa1931c3cbb47a0a3"
       }
     ]
   },
   "dependencies": [
     {
-      "name": "pdf_to_texts",
-      "version": "0.0.27"
+      "name": "pdf_to_text"
     }
   ]
 }

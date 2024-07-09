@@ -1,15 +1,20 @@
 {
-  "name": "pdf-preprocessing-template",
-  "version": "0.0.1",
+  "name": "pdf-to-image-template",
+  "version": "1.0.4",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Template",
     "Provider": "Dataloop",
     "Template Type": "Data Engineering"
   },
-  "displayName": "PDF to Images Pipeline Template",
+  "displayName": "PDF to Image - Text Detection",
   "description": "Automate the conversion of your pdf files to images for visualization and inference using Computer Visio models.",
-  "scope": "project",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.4"
+  },
   "components": {
     "pipelineTemplates": [
       {
@@ -81,52 +86,29 @@
             "type": "custom",
             "namespace": {
               "functionName": "pdf_item_to_images",
-              "projectName": "text-project",
-              "serviceName": "text-project-pdf-to-image-v-2-uatj",
+              "serviceName": "pdf-to-image-v2",
               "moduleName": "pdf_to_image_v2",
-              "packageName": "pdf_item_to_images"
+              "packageName": "pdf_to_image"
             },
             "projectId": null,
-            "appName": "PDF to Image application",
-            "dpkName": "pdf_item_to_images",
+            "appName": "PDF to Images",
+            "dpkName": "pdf_to_image",
             "metadata": {
               "position": {
                 "x": 10125.231246948242,
                 "y": 9920.399993896484,
                 "z": 0
               },
-              "serviceConfig": {
-                "initParams": {
-                },
-                "name": "pdf-to-image-v2",
-                "moduleName": "pdf_to_image_v2",
-                "secrets": [
-                ],
-                "runtime": {
-                  "podType": "regular-m",
-                  "concurrency": 10,
-                  "autoscaler": {
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  }
-                },
-                "operation": "none"
-              },
               "componentGroupName": "Text-Preprocessing",
               "customNodeConfig": {
                 "name": "PDF-to-Image",
                 "validation": {
-                  "valid": false,
+                  "valid": true,
                   "errors": [
-                    {
-                      "message": "Value is required",
-                      "suggestion": "Value is required"
-                    }
                   ]
                 }
               },
-              "codeApplicationName": "pdf_item_to_images",
+              "codeApplicationName": "pdf-to-image-v2",
               "repeatable": true,
               "pipelineNodeName": "pdf-to-image"
             }
@@ -157,8 +139,7 @@
             "type": "custom",
             "namespace": {
               "functionName": "text_detection",
-              "projectName": "text-project",
-              "serviceName": "text-project-google-vision-tex-ack",
+              "serviceName": "google-vision-text-detection",
               "moduleName": "google_vision_text_detection",
               "packageName": "google-vision-text-detection"
             },
@@ -171,30 +152,6 @@
                 "y": 9789.399993896484,
                 "z": 0
               },
-              "serviceConfig": {
-                "initParams": {
-                  "integration_name": ""
-                },
-                "name": "google-vision-text-detection",
-                "moduleName": "google_vision_text_detection",
-                "secrets": [
-                ],
-                "runtime": {
-                  "podType": "regular-xs",
-                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/google_vision:0.4.0",
-                  "numReplicas": 1,
-                  "concurrency": 10,
-                  "singleAgent": false,
-                  "autoscaler": {
-                    "type": "rabbitmq",
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  },
-                  "preemptible": false
-                },
-                "operation": "none"
-              },
               "componentGroupName": "Google Vision",
               "customNodeConfig": {
                 "name": "Text Detection",
@@ -204,7 +161,7 @@
                   ]
                 }
               },
-              "codeApplicationName": "text-project-google-vision-tex-ack",
+              "codeApplicationName": "google-vision-text-detection",
               "repeatable": true,
               "pipelineNodeName": "Text Detection"
             }
@@ -235,8 +192,7 @@
             "type": "custom",
             "namespace": {
               "functionName": "detect_text",
-              "projectName": "text-project",
-              "serviceName": "text-project-aws-detect-text-v-ip6",
+              "serviceName": "aws-detect-text-v2",
               "moduleName": "aws_detect_text_v2",
               "packageName": "aws-detect-text"
             },
@@ -249,39 +205,18 @@
                 "y": 9915.399993896484,
                 "z": 0
               },
-              "serviceConfig": {
-                "initParams": {
-                },
-                "name": "aws-detect-text-v2",
-                "moduleName": "aws_detect_text_v2",
-                "secrets": [
-                ],
-                "runtime": {
-                  "podType": "regular-s",
-                  "concurrency": 10,
-                  "autoscaler": {
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  }
-                },
-                "operation": "none"
-              },
               "componentGroupName": "AWS-Rekognition",
               "customNodeConfig": {
                 "name": "AWS Rekognition Detect Text",
                 "threshold": 0.8,
+                "annotation_type": "Polygon",
                 "validation": {
-                  "valid": false,
+                  "valid": true,
                   "errors": [
-                    {
-                      "message": "Annotation Type is required",
-                      "suggestion": "Annotation Type is required"
-                    }
                   ]
                 }
               },
-              "codeApplicationName": "text-project-aws-detect-text-v-ip6",
+              "codeApplicationName": "aws-detect-text-v2",
               "repeatable": true,
               "pipelineNodeName": "Detect Text"
             }
@@ -320,7 +255,6 @@
             "type": "ml",
             "namespace": {
               "functionName": "predict",
-              "projectName": "text-project",
               "serviceName": "model-mgmt-app-predict",
               "moduleName": "model-mgmt-app-predict",
               "packageName": "model-mgmt-app"
@@ -391,14 +325,19 @@
         ],
         "name": "PDF to Images Pipeline",
         "description": "Automate the conversion of your pdf files to images for visualization and inference using Computer Visio models.",
-        "preview": null
+        "preview": "666592fc393a542949c0080b"
       }
     ]
   },
   "dependencies": [
     {
-      "name": "pdf_to_images",
-      "version": "0.0.28"
+      "name": "pdf_to_image"
+    },
+    {
+      "name": "aws-detect-text"
+    },
+    {
+      "name": "google-vision-text-detection"
     }
   ]
 }
