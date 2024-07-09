@@ -1,0 +1,238 @@
+{
+  "name": "basic_labeling_workflow",
+  "version": "1.0.1",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "Template",
+    "Provider": "Dataloop",
+    "Template Type": "Labeling Workflow"
+  },
+  "displayName": "Basic Labeling Workflow",
+  "description": "Create annotation tasks and a QA task for a chosen Dataset",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.1"
+  },
+  "components": {
+    "pipelineTemplates": [
+      {
+        "nodes": [
+          {
+            "id": "ec834eef-b200-4025-b863-6f4405b9382d",
+            "inputs": [
+              {
+                "portId": "94e73ecc-3bd8-4311-b54f-9631466c35fc",
+                "nodeId": "94e73ecc-3bd8-4311-b54f-9631466c35fc",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "c487f9f8-a11b-4c26-aad2-7e0db17f536f",
+                "nodeId": "c487f9f8-a11b-4c26-aad2-7e0db17f536f",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "clone_item",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 9723.3515625,
+                "y": 9880.5,
+                "z": 0
+              }
+            }
+          },
+          {
+            "id": "a7adaa7d-4cc6-4966-9de0-bcc173f85609",
+            "inputs": [
+              {
+                "portId": "872fa62c-d28c-4a5f-b02d-0f215075132b",
+                "nodeId": "872fa62c-d28c-4a5f-b02d-0f215075132b",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "5b63d96d-7ee8-4f3b-8315-037c05979f03",
+                "nodeId": "5b63d96d-7ee8-4f3b-8315-037c05979f03",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "completed",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Labeling Task",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 10005.3515625,
+                "y": 9880.5,
+                "z": 0
+              }
+            }
+          },
+          {
+            "id": "dae31834-94ec-4f29-b67c-2eb558564264",
+            "inputs": [
+              {
+                "portId": "08769c0e-2e09-46c0-b161-006c16bfe164",
+                "nodeId": "08769c0e-2e09-46c0-b161-006c16bfe164",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "ef7aa278-f362-4596-ac4d-9365a8230339",
+                "nodeId": "ef7aa278-f362-4596-ac4d-9365a8230339",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "completed",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "QA Task",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 10385.3515625,
+                "y": 9877.5,
+                "z": 0
+              }
+            }
+          },
+          {
+            "id": "39aacda4-4e53-4f2a-bb88-d8c7bf027431",
+            "inputs": [
+              {
+                "portId": "8d961c2a-ef94-40dc-a2ba-ee0779acf0b9",
+                "nodeId": "8d961c2a-ef94-40dc-a2ba-ee0779acf0b9",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "78dc3438-38fc-433c-a5ca-c8570e1773d5",
+                "nodeId": "78dc3438-38fc-433c-a5ca-c8570e1773d5",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "clone_item",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 10743.3515625,
+                "y": 9871.5,
+                "z": 0
+              }
+            }
+          }
+        ],
+        "connections": [
+          {
+            "src": {
+              "nodeId": "ec834eef-b200-4025-b863-6f4405b9382d",
+              "portId": "c487f9f8-a11b-4c26-aad2-7e0db17f536f"
+            },
+            "tgt": {
+              "nodeId": "a7adaa7d-4cc6-4966-9de0-bcc173f85609",
+              "portId": "872fa62c-d28c-4a5f-b02d-0f215075132b"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "a7adaa7d-4cc6-4966-9de0-bcc173f85609",
+              "portId": "5b63d96d-7ee8-4f3b-8315-037c05979f03"
+            },
+            "tgt": {
+              "nodeId": "dae31834-94ec-4f29-b67c-2eb558564264",
+              "portId": "08769c0e-2e09-46c0-b161-006c16bfe164"
+            },
+            "condition": "{}",
+            "action": "completed"
+          },
+          {
+            "src": {
+              "nodeId": "dae31834-94ec-4f29-b67c-2eb558564264",
+              "portId": "ef7aa278-f362-4596-ac4d-9365a8230339"
+            },
+            "tgt": {
+              "nodeId": "39aacda4-4e53-4f2a-bb88-d8c7bf027431",
+              "portId": "8d961c2a-ef94-40dc-a2ba-ee0779acf0b9"
+            },
+            "condition": "{}",
+            "action": "completed"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "ec834eef-b200-4025-b863-6f4405b9382d",
+            "type": "root",
+            "id": "87047c84-6a26-41ec-a938-ce16a15592ff"
+          }
+        ],
+        "name": "Micro-Task Pipeline",
+        "description": "Create annotation tasks and a QA task for a chosen Dataset",
+        "preview": "668cd13f7ed81c404126b8a8",
+        "_id": "668cd172ea0e381c81f6add6"
+      }
+    ]
+  }
+}

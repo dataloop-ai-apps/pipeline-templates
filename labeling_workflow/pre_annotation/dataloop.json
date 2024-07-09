@@ -1,0 +1,246 @@
+{
+  "name": "pre_annotation_workflow",
+  "version": "1.0.1",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "Template",
+    "Provider": "Dataloop",
+    "Template Type": "Labeling Workflow"
+  },
+  "displayName": "Preprocess Annotation Workflow",
+  "description": "Create pre-annotation code and a QA task for a chosen Dataset",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.1"
+  },
+  "components": {
+    "pipelineTemplates": [
+      {
+        "nodes": [
+          {
+            "id": "c94c6eb2-faf9-4f03-9063-e7181709fa24",
+            "inputs": [
+              {
+                "portId": "db43a710-e596-4244-9b6d-393e577beb17",
+                "nodeId": "db43a710-e596-4244-9b6d-393e577beb17",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "e6e4659e-15e7-4ed6-adfb-9f5c1545d8ca",
+                "nodeId": "e6e4659e-15e7-4ed6-adfb-9f5c1545d8ca",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "dataset_handler",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 9760.582809448242,
+                "y": 9959.514251708984,
+                "z": 0
+              },
+              "repeatable": true
+            }
+          },
+          {
+            "id": "c5e3ee3f-7984-45f7-b50b-c612da050986",
+            "inputs": [
+              {
+                "portId": "b39d8193-b456-478a-8c7b-5aa9c482382c",
+                "nodeId": "b39d8193-b456-478a-8c7b-5aa9c482382c",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "dec6883d-b7d3-4c8c-b348-fda87aa43229",
+                "nodeId": "dec6883d-b7d3-4c8c-b348-fda87aa43229",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "code",
+            "type": "code",
+            "namespace": {
+              "functionName": "run",
+              "projectName": "",
+              "serviceName": "",
+              "moduleName": null,
+              "packageName": ""
+            },
+            "config": {
+              "package": {
+                "code": "import dtlpy as dl\n\nclass ServiceRunner:\n\n    def run(self, item):\n        return item\n",
+                "name": "run",
+                "type": "code",
+                "codebase": {
+                  "type": "item"
+                }
+              }
+            },
+            "metadata": {
+              "position": {
+                "x": 10038.582809448242,
+                "y": 9959.514251708984,
+                "z": 0
+              },
+              "repeatable": true
+            }
+          },
+          {
+            "id": "587efc31-28b0-44e7-80f0-1947d6e07951",
+            "inputs": [
+              {
+                "portId": "78f950d3-00e3-4aa9-ab37-db022a41ffa5",
+                "nodeId": "78f950d3-00e3-4aa9-ab37-db022a41ffa5",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "a4a2722c-ea4d-48b7-a595-d13c13e3f095",
+                "nodeId": "a4a2722c-ea4d-48b7-a595-d13c13e3f095",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "completed",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "QA Task",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 10324.582809448242,
+                "y": 9959.514251708984,
+                "z": 0
+              },
+              "repeatable": true
+            }
+          },
+          {
+            "id": "c4190c57-b95e-4e96-a494-bc24a7d89283",
+            "inputs": [
+              {
+                "portId": "f67e4f48-3a9e-4e0e-852d-c6543d5cd820",
+                "nodeId": "f67e4f48-3a9e-4e0e-852d-c6543d5cd820",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "32640cdf-84ab-4f79-8701-3c859e609cc7",
+                "nodeId": "32640cdf-84ab-4f79-8701-3c859e609cc7",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "dataset_handler",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 10695.582809448242,
+                "y": 9959.514251708984,
+                "z": 0
+              },
+              "repeatable": true
+            }
+          }
+        ],
+        "connections": [
+          {
+            "src": {
+              "nodeId": "c94c6eb2-faf9-4f03-9063-e7181709fa24",
+              "portId": "e6e4659e-15e7-4ed6-adfb-9f5c1545d8ca"
+            },
+            "tgt": {
+              "nodeId": "c5e3ee3f-7984-45f7-b50b-c612da050986",
+              "portId": "b39d8193-b456-478a-8c7b-5aa9c482382c"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "c5e3ee3f-7984-45f7-b50b-c612da050986",
+              "portId": "dec6883d-b7d3-4c8c-b348-fda87aa43229"
+            },
+            "tgt": {
+              "nodeId": "587efc31-28b0-44e7-80f0-1947d6e07951",
+              "portId": "78f950d3-00e3-4aa9-ab37-db022a41ffa5"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "587efc31-28b0-44e7-80f0-1947d6e07951",
+              "portId": "a4a2722c-ea4d-48b7-a595-d13c13e3f095"
+            },
+            "tgt": {
+              "nodeId": "c4190c57-b95e-4e96-a494-bc24a7d89283",
+              "portId": "f67e4f48-3a9e-4e0e-852d-c6543d5cd820"
+            },
+            "condition": "{}",
+            "action": "completed"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "c94c6eb2-faf9-4f03-9063-e7181709fa24",
+            "type": "root"
+          }
+        ],
+        "name": "Pre-Annotation Pipeline",
+        "description": "Create pre annotation code and a QA task for a chosen Dataset",
+        "preview": "668ce57b2e4faf2f656ed2f3",
+        "_id": "668ce5892e4faf309f6ed406"
+      }
+    ]
+  }
+}
