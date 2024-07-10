@@ -7,7 +7,7 @@
     "Provider": "Dataloop",
     "Template Type": "Labeling Workflow"
   },
-  "displayName": "Labeling and QA Workflow",
+  "displayName": "Annotation Task Workflow",
   "description": "Create annotation and a QA tasks for a chosen Dataset",
   "scope": "public",
   "codebase": {
@@ -228,7 +228,7 @@
             "id": "87047c84-6a26-41ec-a938-ce16a15592ff"
           }
         ],
-        "name": "Labeling and QA Workflow",
+        "name": "Annotation Task Workflow",
         "description": "Create annotation and a QA tasks for a chosen Dataset",
         "preview": "668cd13f7ed81c404126b8a8",
         "_id": "668cd172ea0e381c81f6add6"
