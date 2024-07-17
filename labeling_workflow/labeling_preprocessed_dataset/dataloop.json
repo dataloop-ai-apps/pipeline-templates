@@ -7,7 +7,7 @@
     "Provider": "Dataloop",
     "Template Type": "Labeling Workflow"
   },
-  "displayName": "Preprocess and Annotation Workflow",
+  "displayName": "Preprocess Annotation Workflow",
   "description": "Create preprocessing code and a QA task for a chosen Dataset",
   "scope": "public",
   "codebase": {
@@ -297,7 +297,7 @@
             "type": "root"
           }
         ],
-        "name": "Preprocess and Annotation Workflow",
+        "name": "Preprocess Annotation Workflow",
         "description": "Create preprocessing code and a QA task for a chosen Dataset",
         "preview": "669774846165ef26aa3937f0",
         "_id": "6697a7797667cede179aeb60"
