@@ -3,9 +3,8 @@
   "version": "1.0.4",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "Template",
-    "Provider": "Dataloop",
-    "Template Type": "Labeling Workflow"
+    "Pipeline Type": "Labeling Workflow",
+    "Provider": "Dataloop"
   },
   "displayName": "Micro-Task Workflow",
   "description": "Create multiple annotation tasks and QA tasks for any uploaded item",

@@ -3,9 +3,8 @@
   "version": "1.0.4",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "Template",
-    "Provider": "Dataloop",
-    "Template Type": "Data"
+    "Pipeline Type": "Data",
+    "Provider": "Dataloop"
   },
   "displayName": "Auto-Modality",
   "description": "Create modalities automatically for every new item. More information see docs",
