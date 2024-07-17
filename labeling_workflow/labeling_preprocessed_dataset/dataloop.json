@@ -56,7 +56,8 @@
                 "y": 9959.514251708984,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "componentGroupName": "data"
             }
           },
           {
@@ -106,7 +107,8 @@
                 "y": 9959.514251708984,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "componentGroupName": "automation"
             }
           },
           {
@@ -135,7 +137,7 @@
                 "io": "output"
               }
             ],
-            "name": "QA Task",
+            "name": "QA Labeling",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -150,7 +152,8 @@
                 "y": 9959.514251708984,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "componentGroupName": "workflow"
             }
           },
           {
@@ -186,11 +189,57 @@
             },
             "metadata": {
               "position": {
-                "x": 10695.582809448242,
-                "y": 9959.514251708984,
+                "x": 11047.891403198242,
+                "y": 9958.194915771484,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "componentGroupName": "data"
+            }
+          },
+          {
+            "id": "de817d99-62ed-4821-a9af-cb6a4b840330",
+            "inputs": [
+              {
+                "portId": "29752738-24b3-49c6-bc7d-d49bbbba2100",
+                "nodeId": "29752738-24b3-49c6-bc7d-d49bbbba2100",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "387e09dc-46ac-4f9c-bd72-ee705806b3b6",
+                "nodeId": "387e09dc-46ac-4f9c-bd72-ee705806b3b6",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "completed",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Labeling",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 10684.754296156509,
+                "y": 9959.894450220523,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "workflow"
             }
           }
         ],
@@ -223,6 +272,18 @@
               "portId": "a4a2722c-ea4d-48b7-a595-d13c13e3f095"
             },
             "tgt": {
+              "nodeId": "de817d99-62ed-4821-a9af-cb6a4b840330",
+              "portId": "29752738-24b3-49c6-bc7d-d49bbbba2100"
+            },
+            "condition": "{}",
+            "action": "completed"
+          },
+          {
+            "src": {
+              "nodeId": "de817d99-62ed-4821-a9af-cb6a4b840330",
+              "portId": "387e09dc-46ac-4f9c-bd72-ee705806b3b6"
+            },
+            "tgt": {
               "nodeId": "c4190c57-b95e-4e96-a494-bc24a7d89283",
               "portId": "f67e4f48-3a9e-4e0e-852d-c6543d5cd820"
             },
@@ -238,8 +299,8 @@
         ],
         "name": "Preprocess and Annotation Workflow",
         "description": "Create preprocessing code and a QA task for a chosen Dataset",
-        "preview": "668ce57b2e4faf2f656ed2f3",
-        "_id": "668ce5892e4faf309f6ed406"
+        "preview": "669774846165ef26aa3937f0",
+        "_id": "6697a7797667cede179aeb60"
       }
     ]
   }

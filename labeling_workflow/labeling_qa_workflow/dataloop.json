@@ -53,9 +53,11 @@
             "metadata": {
               "position": {
                 "x": 9723.3515625,
-                "y": 9880.5,
+                "y": 9681.490234375,
                 "z": 0
-              }
+              },
+              "repeatable": true,
+              "componentGroupName": "data"
             }
           },
           {
@@ -84,7 +86,7 @@
                 "io": "output"
               }
             ],
-            "name": "Labeling Task",
+            "name": "Labeling",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -95,10 +97,12 @@
             },
             "metadata": {
               "position": {
-                "x": 10005.3515625,
-                "y": 9880.5,
+                "x": 10015.5771484375,
+                "y": 9681.6552734375,
                 "z": 0
-              }
+              },
+              "repeatable": true,
+              "componentGroupName": "workflow"
             }
           },
           {
@@ -138,10 +142,12 @@
             },
             "metadata": {
               "position": {
-                "x": 10385.3515625,
-                "y": 9877.5,
+                "x": 10780.69140625,
+                "y": 9589.564453125,
                 "z": 0
-              }
+              },
+              "repeatable": true,
+              "componentGroupName": "workflow"
             }
           },
           {
@@ -177,10 +183,158 @@
             },
             "metadata": {
               "position": {
-                "x": 10743.3515625,
-                "y": 9871.5,
+                "x": 11151.126953125,
+                "y": 9672.1533203125,
                 "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "data"
+            }
+          },
+          {
+            "id": "7ddf6566-55ab-4143-a287-8dda5c42969b",
+            "inputs": [
+              {
+                "portId": "da19af92-2112-425d-905e-1b431c65cea8",
+                "nodeId": "da19af92-2112-425d-905e-1b431c65cea8",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
               }
+            ],
+            "outputs": [
+              {
+                "portId": "d3d95e32-6edb-4fa3-8ecc-4b44912523b2",
+                "nodeId": "7ddf6566-55ab-4143-a287-8dda5c42969b",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "actions": [
+                  "group_1",
+                  "group_2"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Data Split",
+            "type": "custom",
+            "namespace": {
+              "functionName": "data_split",
+              "projectName": "",
+              "serviceName": "",
+              "moduleName": "data_split",
+              "packageName": "data-split"
+            },
+            "appName": "Data Split",
+            "dpkName": "data-split",
+            "metadata": {
+              "position": {
+                "x": 10400.912882889852,
+                "y": 9672.188805306312,
+                "z": 0
+              },
+              "serviceConfig": {
+                "initParams": {
+                },
+                "name": "data-split",
+                "moduleName": "data_split",
+                "runtime": {
+                  "podType": "regular-xs",
+                  "autoscaler": {
+                    "type": "rabbitmq",
+                    "minReplicas": 0,
+                    "maxReplicas": 2,
+                    "queueLength": 10
+                  }
+                },
+                "operation": "none"
+              },
+              "componentGroupName": "data",
+              "customNodeConfig": {
+                "name": "Data Split",
+                "distributeEqually": true,
+                "groups": [
+                  {
+                    "id": "14873ed3-516b-4b23-9ae9-f742c9192ddb",
+                    "name": "group_1",
+                    "distribution": 50
+                  },
+                  {
+                    "id": "f41062ac-6602-47d7-9d9e-080cb85cf2d0",
+                    "name": "group_2",
+                    "distribution": 50
+                  }
+                ],
+                "itemMetadata": true,
+                "overrideItemMetadata": false,
+                "validation": {
+                  "valid": true,
+                  "errors": [
+                  ]
+                },
+                "ports": [
+                  {
+                    "action": "group_1",
+                    "name": "item",
+                    "type": "Item",
+                    "portPercentage": 50
+                  },
+                  {
+                    "action": "group_2",
+                    "name": "item",
+                    "type": "Item",
+                    "portPercentage": 50
+                  }
+                ]
+              },
+              "repeatable": true,
+              "pipelineNodeName": "dataSplit"
+            }
+          },
+          {
+            "id": "6af699ac-0b0c-42a5-9326-21515f5d3205",
+            "inputs": [
+              {
+                "portId": "565603f8-e5e7-435f-bdfc-846ff7e864cc",
+                "nodeId": "565603f8-e5e7-435f-bdfc-846ff7e864cc",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "f34f5aa8-0d36-417a-94f7-db65413fcf81",
+                "nodeId": "f34f5aa8-0d36-417a-94f7-db65413fcf81",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "completed",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Labeling",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 10781.91053333849,
+                "y": 9785.249477877474,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "workflow"
             }
           }
         ],
@@ -198,20 +352,56 @@
           },
           {
             "src": {
-              "nodeId": "a7adaa7d-4cc6-4966-9de0-bcc173f85609",
-              "portId": "5b63d96d-7ee8-4f3b-8315-037c05979f03"
+              "nodeId": "dae31834-94ec-4f29-b67c-2eb558564264",
+              "portId": "ef7aa278-f362-4596-ac4d-9365a8230339"
             },
             "tgt": {
-              "nodeId": "dae31834-94ec-4f29-b67c-2eb558564264",
-              "portId": "08769c0e-2e09-46c0-b161-006c16bfe164"
+              "nodeId": "39aacda4-4e53-4f2a-bb88-d8c7bf027431",
+              "portId": "8d961c2a-ef94-40dc-a2ba-ee0779acf0b9"
             },
             "condition": "{}",
             "action": "completed"
           },
           {
             "src": {
+              "nodeId": "a7adaa7d-4cc6-4966-9de0-bcc173f85609",
+              "portId": "5b63d96d-7ee8-4f3b-8315-037c05979f03"
+            },
+            "tgt": {
+              "nodeId": "7ddf6566-55ab-4143-a287-8dda5c42969b",
+              "portId": "da19af92-2112-425d-905e-1b431c65cea8"
+            },
+            "condition": "{}",
+            "action": "completed"
+          },
+          {
+            "src": {
+              "nodeId": "7ddf6566-55ab-4143-a287-8dda5c42969b",
+              "portId": "d3d95e32-6edb-4fa3-8ecc-4b44912523b2"
+            },
+            "tgt": {
               "nodeId": "dae31834-94ec-4f29-b67c-2eb558564264",
-              "portId": "ef7aa278-f362-4596-ac4d-9365a8230339"
+              "portId": "08769c0e-2e09-46c0-b161-006c16bfe164"
+            },
+            "condition": "{}",
+            "action": "group_1"
+          },
+          {
+            "src": {
+              "nodeId": "7ddf6566-55ab-4143-a287-8dda5c42969b",
+              "portId": "d3d95e32-6edb-4fa3-8ecc-4b44912523b2"
+            },
+            "tgt": {
+              "nodeId": "6af699ac-0b0c-42a5-9326-21515f5d3205",
+              "portId": "565603f8-e5e7-435f-bdfc-846ff7e864cc"
+            },
+            "condition": "{}",
+            "action": "group_2"
+          },
+          {
+            "src": {
+              "nodeId": "6af699ac-0b0c-42a5-9326-21515f5d3205",
+              "portId": "f34f5aa8-0d36-417a-94f7-db65413fcf81"
             },
             "tgt": {
               "nodeId": "39aacda4-4e53-4f2a-bb88-d8c7bf027431",
@@ -230,8 +420,8 @@
         ],
         "name": "Annotation Task Workflow",
         "description": "Create annotation and a QA tasks for a chosen Dataset",
-        "preview": "668cd13f7ed81c404126b8a8",
-        "_id": "668cd172ea0e381c81f6add6"
+        "preview": "669774957667ce1d799aa154",
+        "_id": "6697a5127667ced37b9ae77a"
       }
     ]
   }

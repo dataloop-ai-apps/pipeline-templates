@@ -41,7 +41,7 @@
                 "io": "output"
               }
             ],
-            "name": "text-dataset",
+            "name": "dataset",
             "type": "storage",
             "namespace": {
               "functionName": "dataset_handler",
@@ -56,7 +56,8 @@
                 "y": 9914.799987792969,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "componentGroupName": "data"
             }
           },
           {
@@ -157,7 +158,7 @@
                 "io": "output"
               }
             ],
-            "name": "Labeling Task",
+            "name": "Labeling",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -172,7 +173,8 @@
                 "y": 9914.799987792969,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "componentGroupName": "workflow"
             }
           },
           {
@@ -197,7 +199,7 @@
                 "io": "output"
               }
             ],
-            "name": "text-dataset",
+            "name": "dataset",
             "type": "storage",
             "namespace": {
               "functionName": "dataset_handler",
@@ -208,11 +210,57 @@
             },
             "metadata": {
               "position": {
-                "x": 10530.422454833984,
-                "y": 9913.343933105469,
+                "x": 10891.331634521484,
+                "y": 9914.027526855469,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "componentGroupName": "data"
+            }
+          },
+          {
+            "id": "857d0313-d56d-42d6-b895-ce6453b6b20b",
+            "inputs": [
+              {
+                "portId": "0fd21650-451a-4fc7-aa92-7a4b90d2a02d",
+                "nodeId": "0fd21650-451a-4fc7-aa92-7a4b90d2a02d",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "ea2413bd-071b-43a7-9275-13598d31c472",
+                "nodeId": "ea2413bd-071b-43a7-9275-13598d31c472",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "completed",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Labeling",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 10527.758392333984,
+                "y": 9914.727722167969,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "workflow"
             }
           }
         ],
@@ -245,6 +293,18 @@
               "portId": "22838c89-26a8-49a6-8f3e-c9404f5589d5"
             },
             "tgt": {
+              "nodeId": "857d0313-d56d-42d6-b895-ce6453b6b20b",
+              "portId": "0fd21650-451a-4fc7-aa92-7a4b90d2a02d"
+            },
+            "condition": "{}",
+            "action": "completed"
+          },
+          {
+            "src": {
+              "nodeId": "857d0313-d56d-42d6-b895-ce6453b6b20b",
+              "portId": "ea2413bd-071b-43a7-9275-13598d31c472"
+            },
+            "tgt": {
               "nodeId": "d20884be-6e12-4e6d-b6c4-84dca3b7c2a6",
               "portId": "c3eb31ce-63be-44e5-927b-11804d64b106"
             },
@@ -260,8 +320,8 @@
         ],
         "name": "Text Preprocess Annotation Workflow",
         "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
-        "preview": "668cf6ba91459aac8268c3e5",
-        "_id": "668cf6cdf236457ed508c259"
+        "preview": "669774796165ef5aa83937db",
+        "_id": "6697a8a27667ce2d369aeb78"
       }
     ]
   },
