@@ -318,7 +318,7 @@
             "type": "root"
           }
         ],
-        "name": "Text Preprocess Annotation Workflow",
+        "name": "Text Annotation Workflow",
         "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
         "preview": "669774796165ef5aa83937db",
         "_id": "6697a8a27667ce2d369aeb78"
