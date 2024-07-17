@@ -3,9 +3,9 @@
   "version": "1.0.1",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "Template",
+    "Pipeline Type": "Labeling Workflow",
     "Provider": "Dataloop",
-    "Template Type": "Labeling Workflow"
+    "Media Type": "All"
   },
   "displayName": "Preprocess Annotation Workflow",
   "description": "Create preprocessing code and a QA task for a chosen Dataset",

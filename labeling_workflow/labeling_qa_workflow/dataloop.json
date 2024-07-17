@@ -3,9 +3,9 @@
   "version": "1.0.1",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "Template",
+    "Pipeline Type": "Labeling Workflow",
     "Provider": "Dataloop",
-    "Template Type": "Labeling Workflow"
+    "Media Type": "All"
   },
   "displayName": "Annotation Task Workflow",
   "description": "Create annotation and a QA tasks for a chosen Dataset",

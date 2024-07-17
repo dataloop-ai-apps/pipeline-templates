@@ -3,9 +3,9 @@
   "version": "1.0.1",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "Template",
     "Provider": "Dataloop",
-    "Template Type": "Labeling Workflow"
+    "Pipeline Type": "Labeling Workflow",
+    "Media Type": "Text"
   },
   "displayName": "Text Annotation Workflow",
   "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
