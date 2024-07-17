@@ -137,7 +137,7 @@
                 "io": "output"
               }
             ],
-            "name": "QA Labeling",
+            "name": "QA Task",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
