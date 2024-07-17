@@ -137,7 +137,7 @@
                 "io": "output"
               }
             ],
-            "name": "QA Task",
+            "name": "Labeling",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -223,7 +223,7 @@
                 "io": "output"
               }
             ],
-            "name": "Labeling",
+            "name": "QA Task",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
