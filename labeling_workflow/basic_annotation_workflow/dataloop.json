@@ -1,11 +1,11 @@
 {
-  "name": "labeling_and_qa_workflow",
+  "name": "basic_annotation_workflow",
   "version": "1.0.1",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Labeling Workflow",
     "Provider": "Dataloop",
-    "Media Type": "All"
+    "Media Type": "All Media Types"
   },
   "displayName": "Annotation Task Workflow",
   "description": "Create annotation and a QA tasks for a chosen Dataset",

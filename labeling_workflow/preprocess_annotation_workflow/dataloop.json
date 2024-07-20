@@ -1,14 +1,14 @@
 {
-  "name": "preprocessed_text_labeling_workflow",
+  "name": "preprocess_annotation_workflow",
   "version": "1.0.1",
   "attributes": {
     "Category": "Pipeline",
-    "Provider": "Dataloop",
     "Pipeline Type": "Labeling Workflow",
-    "Media Type": "Text"
+    "Provider": "Dataloop",
+    "Media Type": "All Media Types"
   },
-  "displayName": "Text Annotation Workflow",
-  "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
+  "displayName": "Preprocess Annotation Workflow",
+  "description": "Create preprocessing code and a QA task for a chosen Dataset",
   "scope": "public",
   "codebase": {
     "type": "git",
@@ -20,11 +20,11 @@
       {
         "nodes": [
           {
-            "id": "1ba229cb-cd7d-4a8f-9224-2aa3fdff0ba2",
+            "id": "c94c6eb2-faf9-4f03-9063-e7181709fa24",
             "inputs": [
               {
-                "portId": "ba9adb80-14d7-45f5-8cd0-50e098690bf3",
-                "nodeId": "ba9adb80-14d7-45f5-8cd0-50e098690bf3",
+                "portId": "db43a710-e596-4244-9b6d-393e577beb17",
+                "nodeId": "db43a710-e596-4244-9b6d-393e577beb17",
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
@@ -33,8 +33,8 @@
             ],
             "outputs": [
               {
-                "portId": "279db30a-106c-487e-a205-7b1f5a08d876",
-                "nodeId": "279db30a-106c-487e-a205-7b1f5a08d876",
+                "portId": "e6e4659e-15e7-4ed6-adfb-9f5c1545d8ca",
+                "nodeId": "e6e4659e-15e7-4ed6-adfb-9f5c1545d8ca",
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
@@ -52,8 +52,8 @@
             },
             "metadata": {
               "position": {
-                "x": 9601.462493896484,
-                "y": 9914.799987792969,
+                "x": 9760.582809448242,
+                "y": 9959.514251708984,
                 "z": 0
               },
               "repeatable": true,
@@ -61,83 +61,11 @@
             }
           },
           {
-            "id": "019286c2-104f-4ad5-8de3-8b967eb25311",
+            "id": "c5e3ee3f-7984-45f7-b50b-c612da050986",
             "inputs": [
               {
-                "portId": "396f7815-da89-41a6-b2ad-6a7f5684422d",
-                "nodeId": "396f7815-da89-41a6-b2ad-6a7f5684422d",
-                "type": "Item[]",
-                "name": "items",
-                "displayName": "items",
-                "io": "input"
-              }
-            ],
-            "outputs": [
-              {
-                "portId": "f45bc5a8-2076-4dc2-aeb4-aa190ccd6047",
-                "nodeId": "f45bc5a8-2076-4dc2-aeb4-aa190ccd6047",
-                "type": "Item[]",
-                "name": "items",
-                "displayName": "items",
-                "io": "output"
-              }
-            ],
-            "name": "Text Preprocessing",
-            "type": "custom",
-            "namespace": {
-              "functionName": "preprocess_text",
-              "projectName": "",
-              "serviceName": "preprocess-text-v2",
-              "moduleName": "preprocess_text_v2",
-              "packageName": "pdf_to_text"
-            },
-            "appName": "PDF to Preprocessed Text",
-            "dpkName": "pdf_to_text",
-            "metadata": {
-              "position": {
-                "x": 9891.462493896484,
-                "y": 9914.799987792969,
-                "z": 0
-              },
-              "serviceConfig": {
-                "initParams": {
-                },
-                "name": "preprocess-text-v2",
-                "moduleName": "preprocess_text_v2",
-                "secrets": [
-                ],
-                "runtime": {
-                  "podType": "regular-m",
-                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/document-preprocessing:0.1.1",
-                  "concurrency": 10,
-                  "autoscaler": {
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  }
-                },
-                "operation": "none"
-              },
-              "componentGroupName": "Text-Preprocessing",
-              "customNodeConfig": {
-                "name": "Preprocess-Text",
-                "to_spell": false,
-                "validation": {
-                  "valid": true,
-                  "errors": [
-                  ]
-                }
-              },
-              "repeatable": true,
-              "pipelineNodeName": "preprocess"
-            }
-          },
-          {
-            "id": "b3572589-53ad-4a18-b3c0-ca6d3943032c",
-            "inputs": [
-              {
-                "portId": "5daffcef-f91a-4316-8196-dae995fcb372",
-                "nodeId": "5daffcef-f91a-4316-8196-dae995fcb372",
+                "portId": "b39d8193-b456-478a-8c7b-5aa9c482382c",
+                "nodeId": "b39d8193-b456-478a-8c7b-5aa9c482382c",
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
@@ -146,8 +74,59 @@
             ],
             "outputs": [
               {
-                "portId": "22838c89-26a8-49a6-8f3e-c9404f5589d5",
-                "nodeId": "22838c89-26a8-49a6-8f3e-c9404f5589d5",
+                "portId": "dec6883d-b7d3-4c8c-b348-fda87aa43229",
+                "nodeId": "dec6883d-b7d3-4c8c-b348-fda87aa43229",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "code",
+            "type": "code",
+            "namespace": {
+              "functionName": "run",
+              "projectName": "",
+              "serviceName": "",
+              "moduleName": null,
+              "packageName": ""
+            },
+            "config": {
+              "package": {
+                "code": "import dtlpy as dl\n\nclass ServiceRunner:\n\n    def run(self, item):\n        return item\n",
+                "name": "run",
+                "type": "code",
+                "codebase": {
+                  "type": "item"
+                }
+              }
+            },
+            "metadata": {
+              "position": {
+                "x": 10038.582809448242,
+                "y": 9959.514251708984,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "automation"
+            }
+          },
+          {
+            "id": "587efc31-28b0-44e7-80f0-1947d6e07951",
+            "inputs": [
+              {
+                "portId": "78f950d3-00e3-4aa9-ab37-db022a41ffa5",
+                "nodeId": "78f950d3-00e3-4aa9-ab37-db022a41ffa5",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "a4a2722c-ea4d-48b7-a595-d13c13e3f095",
+                "nodeId": "a4a2722c-ea4d-48b7-a595-d13c13e3f095",
                 "type": "Item",
                 "name": "item",
                 "displayName": "Complete",
@@ -169,8 +148,8 @@
             },
             "metadata": {
               "position": {
-                "x": 10170.472259521484,
-                "y": 9914.799987792969,
+                "x": 10324.582809448242,
+                "y": 9959.514251708984,
                 "z": 0
               },
               "repeatable": true,
@@ -178,11 +157,11 @@
             }
           },
           {
-            "id": "d20884be-6e12-4e6d-b6c4-84dca3b7c2a6",
+            "id": "c4190c57-b95e-4e96-a494-bc24a7d89283",
             "inputs": [
               {
-                "portId": "c3eb31ce-63be-44e5-927b-11804d64b106",
-                "nodeId": "c3eb31ce-63be-44e5-927b-11804d64b106",
+                "portId": "f67e4f48-3a9e-4e0e-852d-c6543d5cd820",
+                "nodeId": "f67e4f48-3a9e-4e0e-852d-c6543d5cd820",
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
@@ -191,8 +170,8 @@
             ],
             "outputs": [
               {
-                "portId": "629dc195-7746-415b-b827-ac3f882b267d",
-                "nodeId": "629dc195-7746-415b-b827-ac3f882b267d",
+                "portId": "32640cdf-84ab-4f79-8701-3c859e609cc7",
+                "nodeId": "32640cdf-84ab-4f79-8701-3c859e609cc7",
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
@@ -210,8 +189,8 @@
             },
             "metadata": {
               "position": {
-                "x": 10891.331634521484,
-                "y": 9914.027526855469,
+                "x": 11047.891403198242,
+                "y": 9958.194915771484,
                 "z": 0
               },
               "repeatable": true,
@@ -219,11 +198,11 @@
             }
           },
           {
-            "id": "857d0313-d56d-42d6-b895-ce6453b6b20b",
+            "id": "de817d99-62ed-4821-a9af-cb6a4b840330",
             "inputs": [
               {
-                "portId": "0fd21650-451a-4fc7-aa92-7a4b90d2a02d",
-                "nodeId": "0fd21650-451a-4fc7-aa92-7a4b90d2a02d",
+                "portId": "29752738-24b3-49c6-bc7d-d49bbbba2100",
+                "nodeId": "29752738-24b3-49c6-bc7d-d49bbbba2100",
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
@@ -232,8 +211,8 @@
             ],
             "outputs": [
               {
-                "portId": "ea2413bd-071b-43a7-9275-13598d31c472",
-                "nodeId": "ea2413bd-071b-43a7-9275-13598d31c472",
+                "portId": "387e09dc-46ac-4f9c-bd72-ee705806b3b6",
+                "nodeId": "387e09dc-46ac-4f9c-bd72-ee705806b3b6",
                 "type": "Item",
                 "name": "item",
                 "displayName": "Complete",
@@ -255,8 +234,8 @@
             },
             "metadata": {
               "position": {
-                "x": 10527.758392333984,
-                "y": 9914.727722167969,
+                "x": 10684.754296156509,
+                "y": 9959.894450220523,
                 "z": 0
               },
               "repeatable": true,
@@ -267,46 +246,46 @@
         "connections": [
           {
             "src": {
-              "nodeId": "1ba229cb-cd7d-4a8f-9224-2aa3fdff0ba2",
-              "portId": "279db30a-106c-487e-a205-7b1f5a08d876"
+              "nodeId": "c94c6eb2-faf9-4f03-9063-e7181709fa24",
+              "portId": "e6e4659e-15e7-4ed6-adfb-9f5c1545d8ca"
             },
             "tgt": {
-              "nodeId": "019286c2-104f-4ad5-8de3-8b967eb25311",
-              "portId": "396f7815-da89-41a6-b2ad-6a7f5684422d"
+              "nodeId": "c5e3ee3f-7984-45f7-b50b-c612da050986",
+              "portId": "b39d8193-b456-478a-8c7b-5aa9c482382c"
             },
             "condition": "{}"
           },
           {
             "src": {
-              "nodeId": "019286c2-104f-4ad5-8de3-8b967eb25311",
-              "portId": "f45bc5a8-2076-4dc2-aeb4-aa190ccd6047"
+              "nodeId": "c5e3ee3f-7984-45f7-b50b-c612da050986",
+              "portId": "dec6883d-b7d3-4c8c-b348-fda87aa43229"
             },
             "tgt": {
-              "nodeId": "b3572589-53ad-4a18-b3c0-ca6d3943032c",
-              "portId": "5daffcef-f91a-4316-8196-dae995fcb372"
+              "nodeId": "587efc31-28b0-44e7-80f0-1947d6e07951",
+              "portId": "78f950d3-00e3-4aa9-ab37-db022a41ffa5"
             },
             "condition": "{}"
           },
           {
             "src": {
-              "nodeId": "b3572589-53ad-4a18-b3c0-ca6d3943032c",
-              "portId": "22838c89-26a8-49a6-8f3e-c9404f5589d5"
+              "nodeId": "587efc31-28b0-44e7-80f0-1947d6e07951",
+              "portId": "a4a2722c-ea4d-48b7-a595-d13c13e3f095"
             },
             "tgt": {
-              "nodeId": "857d0313-d56d-42d6-b895-ce6453b6b20b",
-              "portId": "0fd21650-451a-4fc7-aa92-7a4b90d2a02d"
+              "nodeId": "de817d99-62ed-4821-a9af-cb6a4b840330",
+              "portId": "29752738-24b3-49c6-bc7d-d49bbbba2100"
             },
             "condition": "{}",
             "action": "completed"
           },
           {
             "src": {
-              "nodeId": "857d0313-d56d-42d6-b895-ce6453b6b20b",
-              "portId": "ea2413bd-071b-43a7-9275-13598d31c472"
+              "nodeId": "de817d99-62ed-4821-a9af-cb6a4b840330",
+              "portId": "387e09dc-46ac-4f9c-bd72-ee705806b3b6"
             },
             "tgt": {
-              "nodeId": "d20884be-6e12-4e6d-b6c4-84dca3b7c2a6",
-              "portId": "c3eb31ce-63be-44e5-927b-11804d64b106"
+              "nodeId": "c4190c57-b95e-4e96-a494-bc24a7d89283",
+              "portId": "f67e4f48-3a9e-4e0e-852d-c6543d5cd820"
             },
             "condition": "{}",
             "action": "completed"
@@ -314,20 +293,15 @@
         ],
         "startNodes": [
           {
-            "nodeId": "1ba229cb-cd7d-4a8f-9224-2aa3fdff0ba2",
+            "nodeId": "c94c6eb2-faf9-4f03-9063-e7181709fa24",
             "type": "root"
           }
         ],
-        "name": "Text Annotation Workflow",
-        "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
-        "preview": "669774796165ef5aa83937db",
-        "_id": "6697a8a27667ce2d369aeb78"
+        "name": "Preprocess Annotation Workflow",
+        "description": "Create preprocessing code and a QA task for a chosen Dataset",
+        "preview": "669774846165ef26aa3937f0",
+        "_id": "6697a7797667cede179aeb60"
       }
     ]
-  },
-  "dependencies": [
-    {
-      "name": "pdf_to_text"
-    }
-  ]
+  }
 }
