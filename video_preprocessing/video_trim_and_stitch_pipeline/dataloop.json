@@ -7,7 +7,7 @@
     },
     "displayName": "video-trim-and-stitch-pipeline",
     "description": null,
-    "scope": "organization",
+    "scope": "public",
     "components": {
         "pipelineTemplates": [
             {
