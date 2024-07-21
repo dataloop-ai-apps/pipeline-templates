@@ -3,9 +3,8 @@
   "version": "1.0.4",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "Template",
-    "Provider": "Dataloop",
-    "Template Type": "Data Engineering"
+    "Pipeline Type": "Data Engineering",
+    "Provider": "Dataloop"
   },
   "displayName": "PDF to Image - Text Detection",
   "description": "Automate the conversion of your pdf files to images for visualization and inference using Computer Visio models.",
@@ -104,8 +103,7 @@
                 "name": "PDF-to-Image",
                 "validation": {
                   "valid": true,
-                  "errors": [
-                  ]
+                  "errors": []
                 }
               },
               "codeApplicationName": "pdf-to-image-v2",
@@ -157,8 +155,7 @@
                 "name": "Text Detection",
                 "validation": {
                   "valid": true,
-                  "errors": [
-                  ]
+                  "errors": []
                 }
               },
               "codeApplicationName": "google-vision-text-detection",
@@ -212,8 +209,7 @@
                 "annotation_type": "Polygon",
                 "validation": {
                   "valid": true,
-                  "errors": [
-                  ]
+                  "errors": []
                 }
               },
               "codeApplicationName": "aws-detect-text-v2",

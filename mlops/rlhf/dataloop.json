@@ -4,8 +4,7 @@
   "attributes": {
     "Provider": "Dataloop",
     "Category": "Pipeline",
-    "Pipeline Type": "Template",
-    "Template Type": "MLOps"
+    "Pipeline Type": "MLOps"
   },
   "displayName": "RLHF",
   "description": "RLHF Pipeline Template",

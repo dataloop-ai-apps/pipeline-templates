@@ -3,9 +3,8 @@
   "version": "1.0.4",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "Template",
-    "Provider": "Dataloop",
-    "Template Type": "MLOps"
+    "Pipeline Type": "MLOps",
+    "Provider": "Dataloop"
   },
   "displayName": "Active Learning",
   "description": "Automate the iterative process of fine-tuning your model, covering labeling, model creation, training, evaluation, and deployment of the best version.",
