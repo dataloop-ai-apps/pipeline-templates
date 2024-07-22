@@ -5,7 +5,8 @@
     "Provider": "Dataloop",
     "Category": "Pipeline",
     "Pipeline Type": "Template",
-    "Template Type": "MLOps"
+    "Template Type": "MLOps",
+    "Media Type": ["Text"]
   },
   "displayName": "RLAIF",
   "description": "RLAIF Pipeline Template",

@@ -5,7 +5,7 @@
     "Category": "Pipeline",
     "Pipeline Type": "Labeling Workflow",
     "Provider": "Dataloop",
-    "Media Type": "All Media Types"
+    "Media Type": ["All Media Types"]
   },
   "displayName": "Annotation Task Workflow",
   "description": "Create annotation and a QA tasks for a chosen Dataset",

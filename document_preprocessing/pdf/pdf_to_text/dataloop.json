@@ -4,7 +4,8 @@
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Data Engineering",
-    "Provider": "Dataloop"
+    "Provider": "Dataloop",
+    "Media Type": ["Text"]
   },
   "displayName": "PDF Preprocessing Template",
   "description": "Automate the process of preprocess pdf files by extracting to text and clean using unstructured-io library.",
