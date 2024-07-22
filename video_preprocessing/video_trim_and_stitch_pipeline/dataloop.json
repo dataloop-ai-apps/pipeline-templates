@@ -16,302 +16,92 @@
                 "connections": [
                     {
                         "src": {
-                            "nodeId": "400765c8-6dd7-431d-8490-d003eb0929c6",
-                            "portId": "503ba539-3c3b-4f22-9b4b-6276a9e70cb5"
+                            "nodeId": "31415dc1-bc8e-41f4-85b9-8556ac561786",
+                            "portId": "d6296bb6-9990-45d8-b8ad-75c80b18cb27"
                         },
                         "tgt": {
-                            "nodeId": "74aa2fcb-e66d-4c83-998f-557b67e415d2",
-                            "portId": "69f5784b-a951-4b62-b985-32c0c89f8f43"
+                            "nodeId": "758f0338-259c-4390-8af5-e3381c921d5a",
+                            "portId": "d61efe0a-2c58-432e-a9de-861706658d22"
                         },
                         "condition": "{}"
                     },
                     {
                         "src": {
-                            "nodeId": "74aa2fcb-e66d-4c83-998f-557b67e415d2",
-                            "portId": "8b6f2e93-40e3-4591-8132-15d65c7d2b39"
+                            "nodeId": "758f0338-259c-4390-8af5-e3381c921d5a",
+                            "portId": "d2b833dd-e0db-4c4a-9b7b-082c14d927f7"
                         },
                         "tgt": {
-                            "nodeId": "3589b8e5-74b0-4a61-a68c-12c543aead15",
-                            "portId": "b2267db0-9d8b-40b2-b32f-8404ebf4df20"
+                            "nodeId": "bd743df2-f161-4f0b-b000-a4ab10230ea6",
+                            "portId": "2f3bba4c-ec1c-445a-ad9a-7063548d72e2"
+                        },
+                        "condition": "{}",
+                        "action": "completed"
+                    },
+                    {
+                        "src": {
+                            "nodeId": "bd743df2-f161-4f0b-b000-a4ab10230ea6",
+                            "portId": "efe7c471-1b48-4cee-b735-c0ec935f6854"
+                        },
+                        "tgt": {
+                            "nodeId": "6f8f8609-7f9d-4f72-9f66-1b970a41dca9",
+                            "portId": "42a16b44-d729-44e4-827d-49a818846a73"
                         },
                         "condition": "{}",
                         "action": "continue"
-                    },
-                    {
-                        "src": {
-                            "nodeId": "887c3c00-d3f5-487b-b612-f7df06e7abc1",
-                            "portId": "99ad182f-9ad4-4e45-a772-17b6df82a646"
-                        },
-                        "tgt": {
-                            "nodeId": "400765c8-6dd7-431d-8490-d003eb0929c6",
-                            "portId": "7c231e32-fca7-49dd-b3df-2a3bc87c2d24"
-                        },
-                        "condition": "{}"
                     }
                 ],
                 "startNodes": [
                     {
-                        "nodeId": "887c3c00-d3f5-487b-b612-f7df06e7abc1",
+                        "nodeId": "31415dc1-bc8e-41f4-85b9-8556ac561786",
                         "type": "root",
-                        "id": "5394b524-f1f5-4b0a-b806-8ee607fad350"
+                        "id": "cf88b560-4f96-4ba9-9dc8-f95ea1198184"
                     }
                 ],
-                "variables": [],
+                "variables": [
+
+                ],
                 "description": "",
                 "name": "vts-pipeline",
                 "templateKind": "org",
                 "nodes": [
                     {
-                        "id": "74aa2fcb-e66d-4c83-998f-557b67e415d2",
+                        "id": "31415dc1-bc8e-41f4-85b9-8556ac561786",
                         "inputs": [
                             {
-                                "portId": "69f5784b-a951-4b62-b985-32c0c89f8f43",
-                                "nodeId": "69f5784b-a951-4b62-b985-32c0c89f8f43",
-                                "type": "Item",
-                                "name": "item",
-                                "displayName": "item",
-                                "io": "input"
-                            }
-                        ],
-                        "outputs": [
-                            {
-                                "portId": "8b6f2e93-40e3-4591-8132-15d65c7d2b39",
-                                "nodeId": "8b6f2e93-40e3-4591-8132-15d65c7d2b39",
-                                "type": "Item",
-                                "name": "output_item",
-                                "displayName": "output_item",
-                                "actions": [
-                                    "continue",
-                                    "wait"
-                                ],
-                                "io": "output"
-                            }
-                        ],
-                        "name": "Wait For Cycle",
-                        "type": "custom",
-                        "namespace": {
-                            "functionName": "wait_for_cycle",
-                            "projectName": "templateTest",
-                            "serviceName": "wait-service",
-                            "moduleName": "wait_module",
-                            "packageName": "image-tiling-split"
-                        },
-                        "projectId": null,
-                        "appName": "Image Tiling Split",
-                        "dpkName": "image-tiling-split",
-                        "metadata": {
-                            "position": {
-                                "x": 10589.79296875,
-                                "y": 9966.478618909057,
-                                "z": 0
-                            },
-                            "serviceConfig": {
-                                "initParams": {},
-                                "name": "wait-service",
-                                "moduleName": "wait_module",
-                                "runtime": {
-                                    "podType": "regular-xs",
-                                    "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
-                                    "numReplicas": 1,
-                                    "concurrency": 1,
-                                    "singleAgent": false,
-                                    "autoscaler": {
-                                        "type": "rabbitmq",
-                                        "minReplicas": 0,
-                                        "maxReplicas": 1,
-                                        "queueLength": 10
-                                    },
-                                    "preemptible": false
-                                },
-                                "executionTimeout": 172800,
-                                "drainTime": 600,
-                                "onReset": "failed",
-                                "runExecutionAsProcess": false,
-                                "maxAttempts": 3,
-                                "operation": "none"
-                            },
-                            "componentGroupName": "image-utils",
-                            "repeatable": true,
-                            "pipelineNodeName": "wait_for_cycle"
-                        }
-                    },
-                    {
-                        "id": "400765c8-6dd7-431d-8490-d003eb0929c6",
-                        "inputs": [
-                            {
-                                "portId": "7c231e32-fca7-49dd-b3df-2a3bc87c2d24",
-                                "nodeId": "7c231e32-fca7-49dd-b3df-2a3bc87c2d24",
-                                "type": "Item",
-                                "name": "item",
-                                "displayName": "item",
-                                "io": "input"
-                            }
-                        ],
-                        "outputs": [
-                            {
-                                "portId": "503ba539-3c3b-4f22-9b4b-6276a9e70cb5",
-                                "nodeId": "503ba539-3c3b-4f22-9b4b-6276a9e70cb5",
-                                "type": "Item",
-                                "name": "item",
-                                "displayName": "item",
-                                "io": "output"
-                            }
-                        ],
-                        "name": "code",
-                        "type": "code",
-                        "namespace": {
-                            "functionName": "run",
-                            "projectName": "templateTest",
-                            "serviceName": "",
-                            "moduleName": null,
-                            "packageName": ""
-                        },
-                        "projectId": null,
-                        "config": {
-                            "package": {
-                                "code": "import dtlpy as dl\n\n\nclass ServiceRunner:\n    def run(self, item: dl.Item):\n        return item\n",
-                                "name": "run",
-                                "type": "code",
-                                "codebase": {
-                                    "type": "item"
-                                }
-                            }
-                        },
-                        "metadata": {
-                            "position": {
-                                "x": 10230.411772622196,
-                                "y": 9966.264573095059,
-                                "z": 0
-                            },
-                            "repeatable": true
-                        }
-                    },
-                    {
-                        "id": "3589b8e5-74b0-4a61-a68c-12c543aead15",
-                        "inputs": [
-                            {
-                                "portId": "b2267db0-9d8b-40b2-b32f-8404ebf4df20",
-                                "nodeId": "b2267db0-9d8b-40b2-b32f-8404ebf4df20",
+                                "portId": "e35b75cf-e393-4153-904a-a0e4cb68d913",
+                                "nodeId": "e35b75cf-e393-4153-904a-a0e4cb68d913",
                                 "type": "Item",
                                 "name": "item",
                                 "displayName": "item",
                                 "io": "input"
                             },
                             {
-                                "portId": "53e40c4c-abd2-4637-9042-6bff1e8059e9",
-                                "nodeId": "53e40c4c-abd2-4637-9042-6bff1e8059e9",
-                                "type": "Json",
-                                "name": "dql_filter",
-                                "displayName": "dql_filter",
-                                "io": "input"
-                            },
-                            {
-                                "portId": "0c5a9a2d-cc19-487b-9ffc-4e947dc49890",
-                                "nodeId": "0c5a9a2d-cc19-487b-9ffc-4e947dc49890",
-                                "type": "String",
-                                "name": "output_folder",
-                                "displayName": "output_folder",
-                                "io": "input"
-                            }
-                        ],
-                        "outputs": [
-                            {
-                                "portId": "5dde9f57-92ee-4882-a44e-d9b00a3edf92",
-                                "nodeId": "5dde9f57-92ee-4882-a44e-d9b00a3edf92",
-                                "type": "Item",
-                                "name": "item",
-                                "displayName": "item",
-                                "io": "output"
-                            }
-                        ],
-                        "name": "Videos to Video Merge",
-                        "type": "custom",
-                        "namespace": {
-                            "functionName": "videos_to_video",
-                            "projectName": "templateTest",
-                            "serviceName": "template-test-videos-to-video",
-                            "moduleName": "videos-to-video",
-                            "packageName": "video-utils-stitching"
-                        },
-                        "projectId": null,
-                        "appName": "[Video Utils] - Stitching",
-                        "dpkName": "video-utils-stitching",
-                        "metadata": {
-                            "position": {
-                                "x": 10985.422501807407,
-                                "y": 9964.145465282125,
-                                "z": 0
-                            },
-                            "serviceConfig": {
-                                "initParams": {},
-                                "name": "videos-to-video",
-                                "moduleName": "videos-to-video",
-                                "runtime": {
-                                    "podType": "regular-xs",
-                                    "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
-                                    "numReplicas": 1,
-                                    "concurrency": 10,
-                                    "pyPackages": {},
-                                    "singleAgent": false,
-                                    "autoscaler": {
-                                        "type": "rabbitmq",
-                                        "minReplicas": 0,
-                                        "maxReplicas": 2,
-                                        "queueLength": 10
-                                    },
-                                    "preemptible": false
-                                },
-                                "maxAttempts": 3,
-                                "executionTimeout": 172800,
-                                "drainTime": 600,
-                                "onReset": "failed",
-                                "runExecutionAsProcess": false,
-                                "operation": "none"
-                            },
-                            "componentGroupName": "video-utils",
-                            "codeApplicationName": "template-test-videos-to-video-qnx7",
-                            "repeatable": true,
-                            "pipelineNodeName": "videos-to-video"
-                        }
-                    },
-                    {
-                        "id": "887c3c00-d3f5-487b-b612-f7df06e7abc1",
-                        "inputs": [
-                            {
-                                "portId": "e4837559-b712-47f0-9c25-909c7263bd2d",
-                                "nodeId": "e4837559-b712-47f0-9c25-909c7263bd2d",
-                                "type": "Item",
-                                "name": "item",
-                                "displayName": "item",
-                                "io": "input"
-                            },
-                            {
-                                "portId": "82380c05-d016-4b1f-ab27-fa9bea4010bb",
-                                "nodeId": "82380c05-d016-4b1f-ab27-fa9bea4010bb",
+                                "portId": "07479ba2-f441-47b9-adba-3728bfdba115",
+                                "nodeId": "07479ba2-f441-47b9-adba-3728bfdba115",
                                 "type": "String",
                                 "name": "output_folder",
                                 "displayName": "output_folder",
                                 "io": "input"
                             },
                             {
-                                "portId": "7a7c6f65-a279-4931-8e5a-e50cafbf9f13",
-                                "nodeId": "7a7c6f65-a279-4931-8e5a-e50cafbf9f13",
+                                "portId": "4f090f90-9bce-4cf4-a4e7-4a194cafaa02",
+                                "nodeId": "4f090f90-9bce-4cf4-a4e7-4a194cafaa02",
                                 "type": "String",
                                 "name": "mode",
                                 "displayName": "mode",
                                 "io": "input"
                             },
                             {
-                                "portId": "00ea4b8f-4530-4be3-9246-3c545deef1a8",
-                                "nodeId": "00ea4b8f-4530-4be3-9246-3c545deef1a8",
+                                "portId": "1971dbc5-4a64-47d1-afff-3bb04cf54e6e",
+                                "nodeId": "1971dbc5-4a64-47d1-afff-3bb04cf54e6e",
                                 "type": "Integer",
                                 "name": "splitter_arg",
                                 "displayName": "splitter_arg",
                                 "io": "input"
                             },
                             {
-                                "portId": "22e797c4-d37c-4a18-9130-6bc73fb442e5",
-                                "nodeId": "22e797c4-d37c-4a18-9130-6bc73fb442e5",
+                                "portId": "db89ee6f-5b45-46e1-965e-3c37d4a3b98e",
+                                "nodeId": "db89ee6f-5b45-46e1-965e-3c37d4a3b98e",
                                 "type": "Integer",
                                 "name": "n_overlap",
                                 "displayName": "n_overlap",
@@ -320,16 +110,16 @@
                         ],
                         "outputs": [
                             {
-                                "portId": "38a213af-c3ff-46fb-a8f1-a8c73149e20b",
-                                "nodeId": "38a213af-c3ff-46fb-a8f1-a8c73149e20b",
+                                "portId": "c3ab4a97-540a-4884-a2d0-5efec27fa6ee",
+                                "nodeId": "c3ab4a97-540a-4884-a2d0-5efec27fa6ee",
                                 "type": "Item",
                                 "name": "item",
                                 "displayName": "item",
                                 "io": "output"
                             },
                             {
-                                "portId": "99ad182f-9ad4-4e45-a772-17b6df82a646",
-                                "nodeId": "99ad182f-9ad4-4e45-a772-17b6df82a646",
+                                "portId": "d6296bb6-9990-45d8-b8ad-75c80b18cb27",
+                                "nodeId": "d6296bb6-9990-45d8-b8ad-75c80b18cb27",
                                 "type": "Item[]",
                                 "name": "items",
                                 "displayName": "items",
@@ -340,8 +130,8 @@
                         "type": "custom",
                         "namespace": {
                             "functionName": "video_to_videos",
-                            "projectName": "templateTest",
-                            "serviceName": "template-test-video-to-videos",
+                            "projectName": null,
+                            "serviceName": "video-to-videos",
                             "moduleName": "video-to-videos",
                             "packageName": "video-utils-trimming"
                         },
@@ -350,12 +140,13 @@
                         "dpkName": "video-utils-trimming",
                         "metadata": {
                             "position": {
-                                "x": 9860.373060683589,
-                                "y": 9950.239148570809,
+                                "x": 9611.3515625,
+                                "y": 9878.5,
                                 "z": 0
                             },
                             "serviceConfig": {
-                                "initParams": {},
+                                "initParams": {
+                                },
                                 "name": "video-to-videos",
                                 "moduleName": "video-to-videos",
                                 "runtime": {
@@ -363,7 +154,8 @@
                                     "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
                                     "numReplicas": 1,
                                     "concurrency": 10,
-                                    "pyPackages": {},
+                                    "pyPackages": {
+                                    },
                                     "singleAgent": false,
                                     "autoscaler": {
                                         "type": "rabbitmq",
@@ -385,22 +177,235 @@
                                 "output_folder": "/",
                                 "mode": "num_frames",
                                 "splitter_arg": 100,
-                                "n_overlap": 1,
+                                "n_overlap": 0,
                                 "validation": {
                                     "valid": true,
-                                    "errors": []
+                                    "errors": [
+                                    ]
                                 }
                             },
-                            "codeApplicationName": "template-test-video-to-videos",
                             "repeatable": true,
                             "pipelineNodeName": "video-to-videos"
                         }
+                    },
+                    {
+                        "id": "758f0338-259c-4390-8af5-e3381c921d5a",
+                        "inputs": [
+                            {
+                                "portId": "d61efe0a-2c58-432e-a9de-861706658d22",
+                                "nodeId": "d61efe0a-2c58-432e-a9de-861706658d22",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "input"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "portId": "d2b833dd-e0db-4c4a-9b7b-082c14d927f7",
+                                "nodeId": "d2b833dd-e0db-4c4a-9b7b-082c14d927f7",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "Complete",
+                                "actions": [
+                                    "completed",
+                                    "discard"
+                                ],
+                                "io": "output"
+                            }
+                        ],
+                        "name": "Labeling",
+                        "type": "task",
+                        "namespace": {
+                            "functionName": "move_to_task",
+                            "projectName": "DataloopTasks",
+                            "serviceName": "pipeline-utils",
+                            "moduleName": "default_module",
+                            "packageName": "pipeline-utils"
+                        },
+                        "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+                        "metadata": {
+                            "position": {
+                                "x": 9911.3515625,
+                                "y": 9896.5,
+                                "z": 0
+                            },
+                            "taskType": "annotation",
+                            "repeatable": true,
+                            "priority": 2,
+                            "componentGroupName": "workflow"
+                        }
+                    },
+                    {
+                        "id": "bd743df2-f161-4f0b-b000-a4ab10230ea6",
+                        "inputs": [
+                            {
+                                "portId": "2f3bba4c-ec1c-445a-ad9a-7063548d72e2",
+                                "nodeId": "2f3bba4c-ec1c-445a-ad9a-7063548d72e2",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "input"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "portId": "efe7c471-1b48-4cee-b735-c0ec935f6854",
+                                "nodeId": "efe7c471-1b48-4cee-b735-c0ec935f6854",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "actions": [
+                                    "continue",
+                                    "wait"
+                                ],
+                                "io": "output"
+                            }
+                        ],
+                        "name": "Wait",
+                        "type": "custom",
+                        "namespace": {
+                            "functionName": "wait_for_cycle",
+                            "projectName": null,
+                            "serviceName": "wait-node",
+                            "moduleName": "wait-node",
+                            "packageName": "wait-node"
+                        },
+                        "projectId": null,
+                        "appName": "Wait Node",
+                        "dpkName": "wait-node",
+                        "metadata": {
+                            "position": {
+                                "x": 10258.703125,
+                                "y": 9897,
+                                "z": 0
+                            },
+                            "serviceConfig": {
+                                "initParams": {
+                                },
+                                "name": "wait-node",
+                                "moduleName": "wait-node",
+                                "runtime": {
+                                    "podType": "regular-xs",
+                                    "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
+                                    "concurrency": 1,
+                                    "autoscaler": {
+                                        "minReplicas": 0,
+                                        "maxReplicas": 1,
+                                        "queueLength": 10
+                                    }
+                                },
+                                "operation": "none"
+                            },
+                            "componentGroupName": "data",
+                            "customNodeConfig": {
+                                "name": "Wait",
+                                "returnParent": false,
+                                "validation": {
+                                    "valid": true,
+                                    "errors": [
+                                    ]
+                                }
+                            },
+                            "repeatable": true,
+                            "pipelineNodeName": "Wait Node"
+                        }
+                    },
+                    {
+                        "id": "6f8f8609-7f9d-4f72-9f66-1b970a41dca9",
+                        "inputs": [
+                            {
+                                "portId": "42a16b44-d729-44e4-827d-49a818846a73",
+                                "nodeId": "42a16b44-d729-44e4-827d-49a818846a73",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "input"
+                            },
+                            {
+                                "portId": "6bb01358-acbb-479c-b777-08c5ddce5708",
+                                "nodeId": "6bb01358-acbb-479c-b777-08c5ddce5708",
+                                "type": "Json",
+                                "name": "dql_filter",
+                                "displayName": "dql_filter",
+                                "io": "input"
+                            },
+                            {
+                                "portId": "797a4cb5-b47d-4a8c-8a9c-908c312f2ca3",
+                                "nodeId": "797a4cb5-b47d-4a8c-8a9c-908c312f2ca3",
+                                "type": "String",
+                                "name": "output_folder",
+                                "displayName": "output_folder",
+                                "io": "input"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "portId": "629f98a4-94c4-4688-bd3a-7997549815d2",
+                                "nodeId": "629f98a4-94c4-4688-bd3a-7997549815d2",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "output"
+                            }
+                        ],
+                        "name": "Videos to Video Merge",
+                        "type": "custom",
+                        "namespace": {
+                            "functionName": "videos_to_video",
+                            "projectName": null,
+                            "serviceName": "videos-to-video",
+                            "moduleName": "videos-to-video",
+                            "packageName": "video-utils-stitching"
+                        },
+                        "projectId": null,
+                        "appName": "[Video Utils] - Stitching",
+                        "dpkName": "video-utils-stitching",
+                        "metadata": {
+                            "position": {
+                                "x": 10614.703125,
+                                "y": 9900,
+                                "z": 0
+                            },
+                            "serviceConfig": {
+                                "initParams": {
+                                },
+                                "name": "videos-to-video",
+                                "moduleName": "videos-to-video",
+                                "runtime": {
+                                    "podType": "regular-xs",
+                                    "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
+                                    "numReplicas": 1,
+                                    "concurrency": 10,
+                                    "pyPackages": {
+                                    },
+                                    "singleAgent": false,
+                                    "autoscaler": {
+                                        "type": "rabbitmq",
+                                        "minReplicas": 0,
+                                        "maxReplicas": 2,
+                                        "queueLength": 10
+                                    },
+                                    "preemptible": false
+                                },
+                                "maxAttempts": 3,
+                                "executionTimeout": 172800,
+                                "drainTime": 600,
+                                "onReset": "failed",
+                                "runExecutionAsProcess": false,
+                                "operation": "none"
+                            },
+                            "componentGroupName": "video-utils",
+                            "repeatable": true,
+                            "pipelineNodeName": "videos-to-video"
+                        }
                     }
                 ],
-                "preview": "665ed5f565bd8071c33d0910",
-                "_id": "665ed7afbc4901833993c755"
+                "preview": "669e181cb4e925f5004ce13a",
+                "_id": "669e1845a7576b216f1243a3"
             }
-        ]
+        ],
+        "services": null
     },
     "dependencies": [
         {
@@ -410,7 +415,7 @@
             "name": "video-utils-stitching"
         },
         {
-            "name": "image-tiling-split"
+            "name": "wait-node"
         }
     ]
 }
