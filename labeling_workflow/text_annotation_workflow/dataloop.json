@@ -1,0 +1,333 @@
+{
+  "name": "text_annotation_workflow",
+  "version": "1.0.1",
+  "attributes": {
+    "Category": "Pipeline",
+    "Provider": "Dataloop",
+    "Pipeline Type": "Labeling Workflow",
+    "Media Type": ["Text"]
+  },
+  "displayName": "Text Annotation Workflow",
+  "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.1"
+  },
+  "components": {
+    "pipelineTemplates": [
+      {
+        "nodes": [
+          {
+            "id": "1ba229cb-cd7d-4a8f-9224-2aa3fdff0ba2",
+            "inputs": [
+              {
+                "portId": "ba9adb80-14d7-45f5-8cd0-50e098690bf3",
+                "nodeId": "ba9adb80-14d7-45f5-8cd0-50e098690bf3",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "279db30a-106c-487e-a205-7b1f5a08d876",
+                "nodeId": "279db30a-106c-487e-a205-7b1f5a08d876",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "dataset_handler",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 9601.462493896484,
+                "y": 9914.799987792969,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "data"
+            }
+          },
+          {
+            "id": "019286c2-104f-4ad5-8de3-8b967eb25311",
+            "inputs": [
+              {
+                "portId": "396f7815-da89-41a6-b2ad-6a7f5684422d",
+                "nodeId": "396f7815-da89-41a6-b2ad-6a7f5684422d",
+                "type": "Item[]",
+                "name": "items",
+                "displayName": "items",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "f45bc5a8-2076-4dc2-aeb4-aa190ccd6047",
+                "nodeId": "f45bc5a8-2076-4dc2-aeb4-aa190ccd6047",
+                "type": "Item[]",
+                "name": "items",
+                "displayName": "items",
+                "io": "output"
+              }
+            ],
+            "name": "Text Preprocessing",
+            "type": "custom",
+            "namespace": {
+              "functionName": "preprocess_text",
+              "projectName": "",
+              "serviceName": "preprocess-text-v2",
+              "moduleName": "preprocess_text_v2",
+              "packageName": "pdf_to_text"
+            },
+            "appName": "PDF to Preprocessed Text",
+            "dpkName": "pdf_to_text",
+            "metadata": {
+              "position": {
+                "x": 9891.462493896484,
+                "y": 9914.799987792969,
+                "z": 0
+              },
+              "serviceConfig": {
+                "initParams": {
+                },
+                "name": "preprocess-text-v2",
+                "moduleName": "preprocess_text_v2",
+                "secrets": [
+                ],
+                "runtime": {
+                  "podType": "regular-m",
+                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/cpu/document-preprocessing:0.1.1",
+                  "concurrency": 10,
+                  "autoscaler": {
+                    "minReplicas": 0,
+                    "maxReplicas": 2,
+                    "queueLength": 10
+                  }
+                },
+                "operation": "none"
+              },
+              "componentGroupName": "Text-Preprocessing",
+              "customNodeConfig": {
+                "name": "Preprocess-Text",
+                "to_spell": false,
+                "validation": {
+                  "valid": true,
+                  "errors": [
+                  ]
+                }
+              },
+              "repeatable": true,
+              "pipelineNodeName": "preprocess"
+            }
+          },
+          {
+            "id": "b3572589-53ad-4a18-b3c0-ca6d3943032c",
+            "inputs": [
+              {
+                "portId": "5daffcef-f91a-4316-8196-dae995fcb372",
+                "nodeId": "5daffcef-f91a-4316-8196-dae995fcb372",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "22838c89-26a8-49a6-8f3e-c9404f5589d5",
+                "nodeId": "22838c89-26a8-49a6-8f3e-c9404f5589d5",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "completed",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Labeling",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 10170.472259521484,
+                "y": 9914.799987792969,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "workflow"
+            }
+          },
+          {
+            "id": "d20884be-6e12-4e6d-b6c4-84dca3b7c2a6",
+            "inputs": [
+              {
+                "portId": "c3eb31ce-63be-44e5-927b-11804d64b106",
+                "nodeId": "c3eb31ce-63be-44e5-927b-11804d64b106",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "629dc195-7746-415b-b827-ac3f882b267d",
+                "nodeId": "629dc195-7746-415b-b827-ac3f882b267d",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "dataset_handler",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 10891.331634521484,
+                "y": 9914.027526855469,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "data"
+            }
+          },
+          {
+            "id": "857d0313-d56d-42d6-b895-ce6453b6b20b",
+            "inputs": [
+              {
+                "portId": "0fd21650-451a-4fc7-aa92-7a4b90d2a02d",
+                "nodeId": "0fd21650-451a-4fc7-aa92-7a4b90d2a02d",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "ea2413bd-071b-43a7-9275-13598d31c472",
+                "nodeId": "ea2413bd-071b-43a7-9275-13598d31c472",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "completed",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "QA Task",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 10527.758392333984,
+                "y": 9914.727722167969,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "workflow"
+            }
+          }
+        ],
+        "connections": [
+          {
+            "src": {
+              "nodeId": "1ba229cb-cd7d-4a8f-9224-2aa3fdff0ba2",
+              "portId": "279db30a-106c-487e-a205-7b1f5a08d876"
+            },
+            "tgt": {
+              "nodeId": "019286c2-104f-4ad5-8de3-8b967eb25311",
+              "portId": "396f7815-da89-41a6-b2ad-6a7f5684422d"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "019286c2-104f-4ad5-8de3-8b967eb25311",
+              "portId": "f45bc5a8-2076-4dc2-aeb4-aa190ccd6047"
+            },
+            "tgt": {
+              "nodeId": "b3572589-53ad-4a18-b3c0-ca6d3943032c",
+              "portId": "5daffcef-f91a-4316-8196-dae995fcb372"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "b3572589-53ad-4a18-b3c0-ca6d3943032c",
+              "portId": "22838c89-26a8-49a6-8f3e-c9404f5589d5"
+            },
+            "tgt": {
+              "nodeId": "857d0313-d56d-42d6-b895-ce6453b6b20b",
+              "portId": "0fd21650-451a-4fc7-aa92-7a4b90d2a02d"
+            },
+            "condition": "{}",
+            "action": "completed"
+          },
+          {
+            "src": {
+              "nodeId": "857d0313-d56d-42d6-b895-ce6453b6b20b",
+              "portId": "ea2413bd-071b-43a7-9275-13598d31c472"
+            },
+            "tgt": {
+              "nodeId": "d20884be-6e12-4e6d-b6c4-84dca3b7c2a6",
+              "portId": "c3eb31ce-63be-44e5-927b-11804d64b106"
+            },
+            "condition": "{}",
+            "action": "completed"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "1ba229cb-cd7d-4a8f-9224-2aa3fdff0ba2",
+            "type": "root"
+          }
+        ],
+        "name": "Text Annotation Workflow",
+        "description": "Create an annotated text dataset by applying an annotation task to a preprocessed dataset using unstructured-IO.",
+        "preview": "669774796165ef5aa83937db",
+        "_id": "6697a8a27667ce2d369aeb78"
+      }
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "pdf_to_text"
+    }
+  ]
+}
