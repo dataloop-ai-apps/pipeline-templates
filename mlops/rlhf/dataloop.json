@@ -5,7 +5,7 @@
     "Provider": "Dataloop",
     "Category": "Pipeline",
     "Pipeline Type": "MLOps",
-    "Media Type": ["Text"]
+    "Media Type": ["Text", "Image"]
   },
   "displayName": "RLHF",
   "description": "RLHF Pipeline Template",

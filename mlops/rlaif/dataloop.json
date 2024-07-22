@@ -6,7 +6,7 @@
     "Category": "Pipeline",
     "Pipeline Type": "Template",
     "Template Type": "MLOps",
-    "Media Type": ["Text"]
+    "Media Type": ["Text", "Image"]
   },
   "displayName": "RLAIF",
   "description": "RLAIF Pipeline Template",
