@@ -3,14 +3,18 @@
   "version": "0.0.13",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "Template",
-    "Provider": "Dataloop"
+    "Template Type": "Labeling Workflow",
+    "Provider": "Dataloop",
+    "Media Type": ["Image"]
   },
   "displayName": "Smart Tiling",
   "scope": "public",
   "dependencies": [
     {
       "name": "image-tiling-split"
+    },
+    {
+      "name": "wait-node"
     }
   ],
 
