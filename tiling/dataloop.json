@@ -3,7 +3,8 @@
   "version": "0.0.13",
   "attributes": {
     "Category": "Pipeline",
-    "Template Type": "Labeling Workflow",
+    "Template Type": "MLOps",
+    "Pipeline Type": "MLOps",
     "Provider": "Dataloop",
     "Media Type": ["Image"]
   },
