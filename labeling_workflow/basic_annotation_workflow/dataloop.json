@@ -9,7 +9,7 @@
       "All Media Types"
     ]
   },
-  "displayName": "Annotation Task Workflow",
+  "displayName": "QA Sampling Workflow",
   "description": "Create annotation and a QA tasks for a chosen Dataset",
   "scope": "public",
   "codebase": {
@@ -363,7 +363,7 @@
             "id": "87047c84-6a26-41ec-a938-ce16a15592ff"
           }
         ],
-        "name": "Annotation Task Workflow",
+        "name": "QA Sampling Workflow",
         "description": "Create annotation and a QA tasks for a chosen Dataset",
         "preview": "66b1d8027214de66293e44a1",
         "_id": "66b1d8257214de4e4d3e44ef"
