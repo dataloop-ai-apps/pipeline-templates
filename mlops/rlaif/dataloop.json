@@ -341,7 +341,7 @@
             "projectId": "e370fbba-7b8a-4f72-abf3-52b079f019e9",
             "config": {
               "package": {
-                "code": "import dtlpy as dl\n\nclass ServiceRunner:\n\n    def run(self, item):\n        return item\n",
+                "code": "import dtlpy as dl\\n\\nclass ServiceRunner:\\n\\n    def run(self, item, progress: dl.Progress):\\n        condition = True\\n        if condition:\\n            progress.update(action=\\\"accepted\\\")\\n        else:\\n            progress.update(action=\\\"rejected\\\")\\n        return item\\n",
                 "name": "run",
                 "type": "code",
                 "codebase": {
