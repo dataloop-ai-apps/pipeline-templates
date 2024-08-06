@@ -5,7 +5,9 @@
     "Category": "Pipeline",
     "Pipeline Type": "Labeling Workflow",
     "Provider": "Dataloop",
-    "Media Type": ["All Media Types"]
+    "Media Type": [
+      "All Media Types"
+    ]
   },
   "displayName": "Annotation Task Workflow",
   "description": "Create annotation and a QA tasks for a chosen Dataset",
@@ -106,51 +108,6 @@
             }
           },
           {
-            "id": "dae31834-94ec-4f29-b67c-2eb558564264",
-            "inputs": [
-              {
-                "portId": "08769c0e-2e09-46c0-b161-006c16bfe164",
-                "nodeId": "08769c0e-2e09-46c0-b161-006c16bfe164",
-                "type": "Item",
-                "name": "item",
-                "displayName": "item",
-                "io": "input"
-              }
-            ],
-            "outputs": [
-              {
-                "portId": "ef7aa278-f362-4596-ac4d-9365a8230339",
-                "nodeId": "ef7aa278-f362-4596-ac4d-9365a8230339",
-                "type": "Item",
-                "name": "item",
-                "displayName": "Complete",
-                "actions": [
-                  "completed",
-                  "discard"
-                ],
-                "io": "output"
-              }
-            ],
-            "name": "QA Task",
-            "type": "task",
-            "namespace": {
-              "functionName": "move_to_task",
-              "projectName": "DataloopTasks",
-              "serviceName": "pipeline-utils",
-              "moduleName": "default_module",
-              "packageName": "pipeline-utils"
-            },
-            "metadata": {
-              "position": {
-                "x": 10780.69140625,
-                "y": 9589.564453125,
-                "z": 0
-              },
-              "repeatable": true,
-              "componentGroupName": "workflow"
-            }
-          },
-          {
             "id": "39aacda4-4e53-4f2a-bb88-d8c7bf027431",
             "inputs": [
               {
@@ -183,8 +140,8 @@
             },
             "metadata": {
               "position": {
-                "x": 11151.126953125,
-                "y": 9672.1533203125,
+                "x": 11150.126953125,
+                "y": 9668.1533203125,
                 "z": 0
               },
               "repeatable": true,
@@ -329,8 +286,8 @@
             },
             "metadata": {
               "position": {
-                "x": 10781.91053333849,
-                "y": 9785.249477877474,
+                "x": 10772.91053333849,
+                "y": 9753.249477877474,
                 "z": 0
               },
               "repeatable": true,
@@ -352,18 +309,6 @@
           },
           {
             "src": {
-              "nodeId": "dae31834-94ec-4f29-b67c-2eb558564264",
-              "portId": "ef7aa278-f362-4596-ac4d-9365a8230339"
-            },
-            "tgt": {
-              "nodeId": "39aacda4-4e53-4f2a-bb88-d8c7bf027431",
-              "portId": "8d961c2a-ef94-40dc-a2ba-ee0779acf0b9"
-            },
-            "condition": "{}",
-            "action": "completed"
-          },
-          {
-            "src": {
               "nodeId": "a7adaa7d-4cc6-4966-9de0-bcc173f85609",
               "portId": "5b63d96d-7ee8-4f3b-8315-037c05979f03"
             },
@@ -373,18 +318,6 @@
             },
             "condition": "{}",
             "action": "completed"
-          },
-          {
-            "src": {
-              "nodeId": "7ddf6566-55ab-4143-a287-8dda5c42969b",
-              "portId": "d3d95e32-6edb-4fa3-8ecc-4b44912523b2"
-            },
-            "tgt": {
-              "nodeId": "dae31834-94ec-4f29-b67c-2eb558564264",
-              "portId": "08769c0e-2e09-46c0-b161-006c16bfe164"
-            },
-            "condition": "{}",
-            "action": "group_1"
           },
           {
             "src": {
@@ -409,6 +342,18 @@
             },
             "condition": "{}",
             "action": "completed"
+          },
+          {
+            "src": {
+              "nodeId": "7ddf6566-55ab-4143-a287-8dda5c42969b",
+              "portId": "d3d95e32-6edb-4fa3-8ecc-4b44912523b2"
+            },
+            "tgt": {
+              "nodeId": "39aacda4-4e53-4f2a-bb88-d8c7bf027431",
+              "portId": "8d961c2a-ef94-40dc-a2ba-ee0779acf0b9"
+            },
+            "condition": "{}",
+            "action": "group_1"
           }
         ],
         "startNodes": [
@@ -420,8 +365,8 @@
         ],
         "name": "Annotation Task Workflow",
         "description": "Create annotation and a QA tasks for a chosen Dataset",
-        "preview": "669774957667ce1d799aa154",
-        "_id": "6697a5127667ced37b9ae77a"
+        "preview": "66b1d8027214de66293e44a1",
+        "_id": "66b1d8257214de4e4d3e44ef"
       }
     ]
   }
