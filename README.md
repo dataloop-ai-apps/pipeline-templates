@@ -7,8 +7,7 @@
 - [RLAIF Pipeline Template](MLOps-GenAI/rlaif/README.md)
 - [Automatic Modalities Pipeline](labeling_workflow/automatic_modalities_pipeline/README.md)
 - [Microtasks Pipeline Template](labeling_workflow/microtasks_pipeline/README.md)
-
-
+- [Tiling Pipeline Template](tiling/README.md)
 
 ## Contributions, Bugs and Issues - How to Contribute
 
