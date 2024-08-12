@@ -1,5 +1,5 @@
 {
-  "name": "text_annotation_workflow",
+  "name": "text-annotation-workflow",
   "version": "1.0.17",
   "attributes": {
     "Category": "Pipeline",

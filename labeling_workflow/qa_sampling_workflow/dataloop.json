@@ -1,5 +1,5 @@
 {
-  "name": "basic_annotation_workflow",
+  "name": "qa-sampling-workflow",
   "version": "1.0.17",
   "attributes": {
     "Category": "Pipeline",

@@ -1,5 +1,5 @@
 {
-  "name": "preprocess_annotation_workflow",
+  "name": "preprocess-annotation-workflow",
   "version": "1.0.17",
   "attributes": {
     "Category": "Pipeline",
