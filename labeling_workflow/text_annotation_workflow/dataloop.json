@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
   "name": "text-annotation-workflow",
-  "version": "1.0.17",
-=======
-  "name": "text_annotation_workflow",
   "version": "1.0.18",
->>>>>>> 3aa022f4ddc559a93622fbbd39cf4a2964a70092
   "attributes": {
     "Category": "Pipeline",
     "Provider": "Dataloop",
