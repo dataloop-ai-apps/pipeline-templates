@@ -1,10 +1,9 @@
 {
   "name": "smart-tiling-template",
-  "version": "0.0.13",
+  "version": "0.0.18",
   "description": "Smart Tiling pipeline template to tile image to tiles and merge. Used for high-resolution images",
   "attributes": {
     "Category": "Pipeline",
-    "Template Type": "MLOps",
     "Pipeline Type": "MLOps",
     "Provider": "Dataloop",
     "Media Type": ["Image"]
