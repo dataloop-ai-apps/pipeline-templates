@@ -264,7 +264,7 @@
                 "io": "output"
               }
             ],
-            "name": "Wait For Cycle",
+            "name": "Wait Node",
             "type": "custom",
             "namespace": {
               "functionName": "wait_for_cycle",
