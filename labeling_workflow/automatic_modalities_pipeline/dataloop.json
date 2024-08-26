@@ -3,7 +3,7 @@
   "version": "1.0.21",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "Data",
+    "Pipeline Type": "Data Engineering",
     "Provider": "Dataloop",
     "Media Type": ["All Media Types"]
   },
