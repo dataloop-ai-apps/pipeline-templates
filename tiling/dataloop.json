@@ -1,6 +1,6 @@
 {
   "name": "smart-tiling-template",
-  "version": "1.0.21",
+  "version": "1.0.23",
   "description": "Smart Tiling pipeline template to tile image to tiles and merge. Used for high-resolution images",
   "attributes": {
     "Category": "Pipeline",
@@ -264,7 +264,7 @@
                 "io": "output"
               }
             ],
-            "name": "Wait For Cycle",
+            "name": "Wait Node",
             "type": "custom",
             "namespace": {
               "functionName": "wait_for_cycle",
