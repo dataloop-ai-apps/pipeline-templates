@@ -299,7 +299,7 @@
               "componentGroupName": "data",
               "customNodeConfig": {
                 "name": "Wait",
-                "returnParent": false,
+                "returnParent": true,
                 "validation": {
                   "valid": true,
                   "errors": []
