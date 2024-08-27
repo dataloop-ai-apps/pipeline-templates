@@ -1,6 +1,6 @@
 {
   "name": "smart-tiling-template",
-  "version": "1.0.23",
+  "version": "1.0.26",
   "description": "Smart Tiling pipeline template to tile image to tiles and merge. Used for high-resolution images",
   "attributes": {
     "Category": "Pipeline",
@@ -258,13 +258,13 @@
                 "portId": "56dd06b7-036d-4ac8-8921-8646e4a6764b",
                 "nodeId": "56dd06b7-036d-4ac8-8921-8646e4a6764b",
                 "type": "Item",
-                "name": "output_item",
-                "displayName": "output_item",
+                "name": "item",
+                "displayName": "item",
                 "actions": ["continue", "wait"],
                 "io": "output"
               }
             ],
-            "name": "Wait Node",
+            "name": "Wait",
             "type": "custom",
             "namespace": {
               "functionName": "wait_for_cycle",
@@ -272,7 +272,7 @@
               "moduleName": "wait-node",
               "packageName": "wait-node"
             },
-            "appName": "wait-node",
+            "appName": "Wait Node",
             "dpkName": "wait-node",
             "metadata": {
               "position": {
@@ -287,27 +287,26 @@
                 "runtime": {
                   "podType": "regular-xs",
                   "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
-                  "numReplicas": 1,
                   "concurrency": 1,
-                  "singleAgent": false,
                   "autoscaler": {
-                    "type": "rabbitmq",
                     "minReplicas": 0,
                     "maxReplicas": 1,
                     "queueLength": 10
-                  },
-                  "preemptible": false
+                  }
                 },
-                "executionTimeout": 172800,
-                "drainTime": 600,
-                "onReset": "failed",
-                "runExecutionAsProcess": false,
-                "maxAttempts": 3,
                 "operation": "none"
               },
               "componentGroupName": "data",
+              "customNodeConfig": {
+                "name": "Wait",
+                "returnParent": true,
+                "validation": {
+                  "valid": true,
+                  "errors": []
+                }
+              },
               "repeatable": true,
-              "pipelineNodeName": "wait_for_cycle"
+              "pipelineNodeName": "Wait Node"
             }
           },
           {
