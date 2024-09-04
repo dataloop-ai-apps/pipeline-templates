@@ -3,7 +3,7 @@
   "version": "1.0.28",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "MLOps",
+    "Pipeline Type": "GenAI",
     "Provider": "Dataloop",
     "Media Type": ["Text"]
   },
