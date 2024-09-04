@@ -1,6 +1,6 @@
 {
   "name": "rag-template",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "MLOps",
