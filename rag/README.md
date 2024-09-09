@@ -34,6 +34,10 @@ and the gradio app will open:
 
 <img src="assets/gradio.png" alt="gradio">
 
+5. To start using the rag template via gradio, click on `Refresh pipelines`, and choose your pipline by it's name. Then you can use the text box to write you questions and get the model's answers.
+
+<img src="assets/gradio_refresh.png" alt="gradio">
+
 ### 2. OpenAI Text Embeddings
 
 OpenAI's `text-embedding-3` model is used to convert user questions into embeddings. These embeddings serve as the
@@ -53,6 +57,18 @@ inputs:
 - **Feature Set ID**: The specific feature set within the dataset.
 - **Query Filter**: Optional filtering DQL to refine the search results.
 - **K Nearest Items**: Defines how many of the closest items to return based on the similarity of embeddings.
+#### To edit these parameters on the pipeline node:
+1. Click on one of the input parameters of the `retriever` node to add the variables to the pipeline:
+
+<img src="assets/set_up_parameters.png" alt="set_up_parameters.png">
+
+2. Insert the values of the `dataset_id`, `featureset_id`, `k nearest items` and save changes.
+
+<img src="assets/pipeline_variables.png" alt="pipeline_variables.png">
+
+3. Then, assign each pipeline variable for each input parameter on the node:
+
+<img src="assets/choose_variable.png" alt="choose_variable.png">
 
 #### A Preprocess stage is to create a feature set to the dataset using OpenAI's `text-embedding-3` embedder.
 
@@ -66,6 +82,11 @@ Once the retriever finds the most relevant items, a ChatGPT model generates a co
 #### You can modify the model's system prompt in the Model Management tab under the Configuration section on the model's page:
 
 <img src="assets/edit_system_prompt.png" alt="Image of the pipeline creation page">
+
+An optional prompt:
+```plaintext
+"You are an AI assistant designed to answer questions using a provided set of documents. Your primary goal is to deliver precise and accurate responses, citing the relevant document sources for each answer. If the documents do not contain the necessary information, inform the user accordingly. Maintain a friendly and professional demeanor in all interactions."
+```
 
 ### Installation:
 
