@@ -1,0 +1,207 @@
+{
+  "name": "pre-annotation-pipeline",
+  "version": "1.0.29",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "Labeling Workflow",
+    "Provider": "Dataloop",
+    "Media Type": ["All Media Types"]
+  },
+  "displayName": "Pre-annotation Pipeline",
+  "description": "Utilize pre-trained models to generate pre-annotations and validate them against the task requirements",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.29"
+  },
+  "components": {
+    "pipelineTemplates": [
+      {
+        "projectId": null,
+        "orgId": null,
+        "connections": [
+          {
+            "src": {
+              "nodeId": "a84992b2-7379-4cb3-b521-cf46efed7b83",
+              "portId": "cd105da1-78f5-45c2-a7ab-8eae645af2fe"
+            },
+            "tgt": {
+              "nodeId": "a3898ea7-9fb6-4698-a281-d43e7a63b5d2",
+              "portId": "88d9cf57-a804-4cde-8d85-100082964193"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "a3898ea7-9fb6-4698-a281-d43e7a63b5d2",
+              "portId": "b15623e5-8b40-4c82-b3bb-b4f24a0dcf58"
+            },
+            "tgt": {
+              "nodeId": "78541f6c-9b2f-44f8-9a85-3fc2c56cf8f6",
+              "portId": "fcd2336e-6cc8-40f4-acb8-fcd4910b91ea"
+            },
+            "condition": "{}",
+            "action": "completed"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "a84992b2-7379-4cb3-b521-cf46efed7b83",
+            "type": "root"
+          }
+        ],
+        "variables": [
+
+        ],
+        "description": "",
+        "name": "pre-annotation-pipeline",
+        "templateKind": "org",
+        "nodes": [
+          {
+            "id": "a84992b2-7379-4cb3-b521-cf46efed7b83",
+            "inputs": [
+              {
+                "portId": "e5ac42dc-b695-4505-9181-9512e739b89b",
+                "nodeId": "e5ac42dc-b695-4505-9181-9512e739b89b",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "cd105da1-78f5-45c2-a7ab-8eae645af2fe",
+                "nodeId": "cd105da1-78f5-45c2-a7ab-8eae645af2fe",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              },
+              {
+                "portId": "db3f57a5-4439-46a2-995b-f227b56436f3",
+                "nodeId": "db3f57a5-4439-46a2-995b-f227b56436f3",
+                "type": "Annotation[]",
+                "name": "annotations",
+                "displayName": "annotations",
+                "io": "output"
+              }
+            ],
+            "name": "Predict",
+            "type": "ml",
+            "namespace": {
+              "functionName": "predict",
+              "projectName": null,
+              "serviceName": "model-mgmt-app-predict",
+              "moduleName": "model-mgmt-app-predict",
+              "packageName": "model-mgmt-app"
+            },
+            "projectId": null,
+            "metadata": {
+              "position": {
+                "x": 9815.231246948242,
+                "y": 9997.399993896484,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "models"
+            }
+          },
+          {
+            "id": "a3898ea7-9fb6-4698-a281-d43e7a63b5d2",
+            "inputs": [
+              {
+                "portId": "88d9cf57-a804-4cde-8d85-100082964193",
+                "nodeId": "88d9cf57-a804-4cde-8d85-100082964193",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "b15623e5-8b40-4c82-b3bb-b4f24a0dcf58",
+                "nodeId": "b15623e5-8b40-4c82-b3bb-b4f24a0dcf58",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "completed",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Labeling",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 10084.231246948242,
+                "y": 9997.399993896484,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "workflow"
+            }
+          },
+          {
+            "id": "78541f6c-9b2f-44f8-9a85-3fc2c56cf8f6",
+            "inputs": [
+              {
+                "portId": "fcd2336e-6cc8-40f4-acb8-fcd4910b91ea",
+                "nodeId": "fcd2336e-6cc8-40f4-acb8-fcd4910b91ea",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "5a2cfe15-daa3-4d3a-bf2a-59d417e323ae",
+                "nodeId": "5a2cfe15-daa3-4d3a-bf2a-59d417e323ae",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "completed",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "QA",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": 10438.231246948242,
+                "y": 9997.399993896484,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "workflow"
+            }
+          }
+        ],
+        "preview": null,
+        "_id": "66ded84b9a4d37d16d01e3f2"
+      }
+    ]
+  }
+}
