@@ -1,0 +1,494 @@
+{
+  "name": "rag-template",
+  "version": "1.0.29",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "GenAI",
+    "Provider": "Dataloop",
+    "Media Type": ["Text"]
+  },
+  "displayName": "rag-template",
+  "description": "RAG template",
+
+  "scope": "public",
+  "dependencies": [
+    {
+      "name": "text-embeddings-3"
+    },
+    {
+      "name": "pipeline-trigger-gradio"
+    },
+    {
+      "name": "llm-tools-retriever"
+    },
+    {
+      "name": "chat-completion"
+    }
+  ],
+  "components": {
+    "pipelineTemplates": [
+      {
+        "connections": [
+          {
+            "src": {
+              "nodeId": "9dd1586d-6007-4200-bc4d-540a689b4052",
+              "portId": "a0f5709e-6a89-4542-baf0-8b90eac259cb"
+            },
+            "tgt": {
+              "nodeId": "51f3d9e8-5144-4562-b93c-019cb9dffcce",
+              "portId": "753c8c1b-dda9-496d-a5b8-6e4ea646689a"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "4835982a-978d-46e2-890c-b90a20e86b2a",
+              "portId": "a84c2bc7-8dd9-4cc2-9c56-5f509e93e789"
+            },
+            "tgt": {
+              "nodeId": "1dbb6d1b-634a-4e25-b69e-e27c2cdc533d",
+              "portId": "27e2bd82-1b2f-45cc-921d-7e97df7a2b6c"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "51f3d9e8-5144-4562-b93c-019cb9dffcce",
+              "portId": "196ccfc8-9924-4a88-ab9e-1036a87993e6"
+            },
+            "tgt": {
+              "nodeId": "4835982a-978d-46e2-890c-b90a20e86b2a",
+              "portId": "b25339af-7c8a-47a1-aee7-3838a40bc3fc"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "51f3d9e8-5144-4562-b93c-019cb9dffcce",
+              "portId": "251778ad-54e3-42c1-92ab-163ac8877de0"
+            },
+            "tgt": {
+              "nodeId": "4835982a-978d-46e2-890c-b90a20e86b2a",
+              "portId": "6760baac-6335-4367-a36f-e42cc3a52acd"
+            },
+            "condition": "{}"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "9dd1586d-6007-4200-bc4d-540a689b4052",
+            "type": "root",
+            "id": "b686c363-71a3-43c3-9486-224a34f90c06"
+          }
+        ],
+        "variables": [
+          {
+            "id": "66d036e2079a49f4e3d36703",
+            "name": "fs_id",
+            "reference": "66cf31996b32ef19758fcc89",
+            "type": "String",
+            "description": "Feature set id for given model in second node",
+            "value": null,
+            "_id": "66d036e2079a49f4e3d36703"
+          },
+          {
+            "id": "66d036e2079a49e3c8d36704",
+            "name": "dataset_id",
+            "reference": "66cf31996b32ef19758fcc89",
+
+            "type": "String",
+            "description": "RAG dataset id",
+            "value": null,
+            "_id": "66d036e2079a49e3c8d36704"
+          },
+          {
+            "id": "66d036e2079a4970b6d36705",
+            "name": "k",
+            "reference": "66cf31996b32ef19758fcc89",
+            "type": "Integer",
+            "description": null,
+            "value": 3,
+            "_id": "66d036e2079a4970b6d36705"
+          }
+        ],
+        "description": "RAG template",
+        "name": "rag-template",
+        "templateKind": "org",
+        "nodes": [
+          {
+            "id": "9dd1586d-6007-4200-bc4d-540a689b4052",
+            "inputs": [
+              {
+                "portId": "bbd31ee2-c081-4882-856e-23ed9708cde1",
+                "nodeId": "bbd31ee2-c081-4882-856e-23ed9708cde1",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "a0f5709e-6a89-4542-baf0-8b90eac259cb",
+                "nodeId": "a0f5709e-6a89-4542-baf0-8b90eac259cb",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Gradio Start",
+            "type": "custom",
+            "namespace": {
+              "functionName": "start_pipe",
+              "serviceName": "pipeline-trigger-gradio-service",
+              "moduleName": "gradio-module",
+              "packageName": "pipeline-trigger-gradio"
+            },
+            "appName": "Gradio Pipeline Trigger",
+            "dpkName": "pipeline-trigger-gradio",
+            "metadata": {
+              "position": {
+                "x": 9786.3515625,
+                "y": 9992,
+                "z": 0
+              },
+              "serviceConfig": {
+                "initParams": {},
+                "name": "pipeline-trigger-gradio-service",
+                "moduleName": "gradio-module",
+                "panelNames": ["gradio"],
+                "runtime": {
+                  "runnerImage": "gcr.io/viewo-g/piper/agent/apps/ingest-gradio:0.1.14",
+                  "podType": "regular-xs",
+                  "concurrency": 10,
+                  "autoscaler": {
+                    "minReplicas": 1,
+                    "maxReplicas": 2,
+                    "queueLength": 10
+                  }
+                },
+                "packageRevision": "0.0.4"
+              },
+              "componentGroupName": "Integrations",
+              "customNodeConfig": {
+                "name": "Gradio",
+                "validation": { "valid": true, "errors": [] }
+              },
+              "repeatable": true,
+              "pipelineNodeName": "Gradio Start"
+            }
+          },
+          {
+            "id": "51f3d9e8-5144-4562-b93c-019cb9dffcce",
+            "inputs": [
+              {
+                "portId": "753c8c1b-dda9-496d-a5b8-6e4ea646689a",
+                "nodeId": "753c8c1b-dda9-496d-a5b8-6e4ea646689a",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "196ccfc8-9924-4a88-ab9e-1036a87993e6",
+                "nodeId": "196ccfc8-9924-4a88-ab9e-1036a87993e6",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              },
+              {
+                "portId": "251778ad-54e3-42c1-92ab-163ac8877de0",
+                "nodeId": "251778ad-54e3-42c1-92ab-163ac8877de0",
+                "type": "Json",
+                "name": "json",
+                "displayName": "json",
+                "io": "output"
+              }
+            ],
+            "name": "openai-prompt-embeddings-3l",
+            "type": "ml",
+            "namespace": {
+              "functionName": "embed",
+              "serviceName": "embed-66cf31cf9dd0e309b093828d-ilvn",
+              "moduleName": "text-embeddings-module",
+              "packageName": "text-embeddings-3"
+            },
+            "appName": "Text Embedding 3",
+            "dpkName": "text-embeddings-3",
+            "metadata": {
+              "position": {
+                "x": 10088.3515625,
+                "y": 10000,
+                "z": 0
+              },
+              "serviceConfig": {
+                "name": "text-embeddings-deploy",
+                "versions": { "dtlpy": "1.94.3" },
+                "runtime": {
+                  "podType": "regular-xs",
+                  "concurrency": 1,
+                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/apps/openai-model-adapters:0.0.13",
+                  "autoscaler": {
+                    "type": "rabbitmq",
+                    "minReplicas": 1,
+                    "maxReplicas": 2,
+                    "queueLength": 10
+                  },
+                  "preemptible": false
+                },
+                "initParams": {},
+                "secrets": [],
+                "executionTimeout": 3600,
+                "drainTime": 600,
+                "onReset": "failed",
+                "maxAttempts": 3,
+                "runExecutionAsProcess": false,
+                "integrations": []
+              },
+              "repeatable": true,
+              "componentGroupName": "models",
+              "pipelineNodeName": "text-embeddings-3"
+            }
+          },
+          {
+            "id": "1dbb6d1b-634a-4e25-b69e-e27c2cdc533d",
+            "inputs": [
+              {
+                "portId": "27e2bd82-1b2f-45cc-921d-7e97df7a2b6c",
+                "nodeId": "27e2bd82-1b2f-45cc-921d-7e97df7a2b6c",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "18f82e50-ce36-4e21-b68c-0c28339769d8",
+                "nodeId": "18f82e50-ce36-4e21-b68c-0c28339769d8",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              },
+              {
+                "portId": "2fa184e4-6bc7-4be2-a6e0-924f0ba7ec00",
+                "nodeId": "2fa184e4-6bc7-4be2-a6e0-924f0ba7ec00",
+                "type": "Annotation[]",
+                "name": "annotations",
+                "displayName": "annotations",
+                "io": "output"
+              }
+            ],
+            "name": "openai-gpt-4o-Gunv7",
+            "type": "ml",
+            "namespace": {
+              "functionName": "predict",
+              "serviceName": "predict-66cf31c5956c5109e12cfe-gucb",
+              "moduleName": "chat-completion-module",
+              "packageName": "chat-completion"
+            },
+            "appName": "Chat Completion",
+            "dpkName": "chat-completion",
+            "metadata": {
+              "position": {
+                "x": 10719.703125,
+                "y": 9993,
+                "z": 0
+              },
+              "serviceConfig": {
+                "name": "chat-completion-deploy",
+                "versions": { "dtlpy": "1.93.9" },
+                "runtime": {
+                  "podType": "regular-xs",
+                  "concurrency": 10,
+                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/apps/openai-model-adapters:0.0.12",
+                  "autoscaler": {
+                    "type": "rabbitmq",
+                    "minReplicas": 1,
+                    "maxReplicas": 2,
+                    "queueLength": 10,
+                    "cooldownPeriod": 300,
+                    "pollingInterval": 30
+                  },
+                  "numReplicas": 1,
+                  "preemptible": false
+                },
+                "packageId": "66c4a91b19e52000b01699d1",
+                "packageRevision": "0.0.27",
+                "initParams": {},
+                "useUserJwt": false,
+                "global": false,
+                "active": true,
+                "runExecutionAsProcess": false,
+                "executionTimeout": 3600,
+                "drainTime": 600,
+                "onReset": "failed",
+                "moduleName": "chat-completion-module",
+                "driverId": "azure-plugins",
+                "id": "66d03ae2e7cead406ea113dd",
+                "version": "1.0.3",
+                "url": "https://gate.dataloop.ai/api/v1/services/66d03ae2e7cead406ea113dd",
+                "createdAt": "2024-08-29T09:09:54.045Z",
+                "updatedAt": "2024-08-29T10:58:46.917Z",
+                "secrets": [],
+                "maxAttempts": 3,
+                "metadata": {
+                  "system": {
+                    "refs": [
+                      {
+                        "id": "66cf31996b32ef19758fcc89",
+                        "type": "pipeline",
+                        "metadata": {
+                          "relation": "createdBy"
+                        }
+                      },
+                      {
+                        "id": "66cf31996b32ef19758fcc89",
+                        "type": "pipeline",
+                        "metadata": {
+                          "relation": "usedBy"
+                        }
+                      }
+                    ]
+                  },
+                  "ml": {
+                    "modelId": "66cf31c5956c5109e12cfe49",
+                    "modelOperation": "deploy",
+                    "deployOperation": "predict"
+                  }
+                },
+                "displayName": "predict-openai-gpt-4o-gunv7",
+                "app": {
+                  "id": "66c197df88987478d891283e",
+                  "dpkName": "chat-completion",
+                  "dpkVersion": "0.0.27"
+                },
+                "settings": { "autoUpdate": true },
+                "integrations": [],
+
+                "_name": "predict-66cf31c5956c5109e12cfe-gucb"
+              },
+              "repeatable": true,
+              "componentGroupName": "models",
+              "pipelineNodeName": "chat-completion"
+            }
+          },
+          {
+            "id": "4835982a-978d-46e2-890c-b90a20e86b2a",
+            "inputs": [
+              {
+                "portId": "b25339af-7c8a-47a1-aee7-3838a40bc3fc",
+                "nodeId": "b25339af-7c8a-47a1-aee7-3838a40bc3fc",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              },
+              {
+                "portId": "89c37d77-fc00-4319-89be-c7d9e4fe051f",
+                "nodeId": "89c37d77-fc00-4319-89be-c7d9e4fe051f",
+                "type": "String",
+                "name": "feature_set_id",
+                "displayName": "feature_set_id",
+                "defaultValue": "",
+                "variableName": "fs_id",
+                "io": "input"
+              },
+              {
+                "portId": "b3254225-f839-4e9d-9c03-90d74ec759ec",
+                "nodeId": "b3254225-f839-4e9d-9c03-90d74ec759ec",
+                "type": "String",
+                "name": "dataset_id",
+                "displayName": "dataset_id",
+                "defaultValue": "",
+                "variableName": "dataset_id",
+                "io": "input"
+              },
+              {
+                "portId": "6760baac-6335-4367-a36f-e42cc3a52acd",
+                "nodeId": "6760baac-6335-4367-a36f-e42cc3a52acd",
+                "type": "Json",
+                "name": "embeddings",
+                "displayName": "embeddings",
+                "io": "input"
+              },
+              {
+                "portId": "e0277b5e-5b8d-4eb1-9497-3304b249db42",
+                "nodeId": "e0277b5e-5b8d-4eb1-9497-3304b249db42",
+                "type": "Json",
+                "name": "query",
+                "displayName": "query",
+                "defaultValue": {},
+                "io": "input"
+              },
+              {
+                "portId": "2262e254-af3f-4e51-b428-7a48b21c27dd",
+                "nodeId": "2262e254-af3f-4e51-b428-7a48b21c27dd",
+                "type": "Integer",
+                "name": "k",
+                "displayName": "k",
+                "defaultValue": "",
+                "variableName": "k",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "a84c2bc7-8dd9-4cc2-9c56-5f509e93e789",
+                "nodeId": "a84c2bc7-8dd9-4cc2-9c56-5f509e93e789",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Retriever Prompt",
+            "type": "custom",
+            "namespace": {
+              "functionName": "query_nearest_items_prompt",
+              "serviceName": "retriever-service",
+              "moduleName": "retriever-module",
+              "packageName": "llm-tools-retriever"
+            },
+            "appName": "Retriever",
+            "dpkName": "llm-tools-retriever",
+            "metadata": {
+              "position": {
+                "x": 10406.582809448242,
+                "y": 9983.399993896484,
+                "z": 0
+              },
+              "componentGroupName": "query",
+              "customNodeConfig": {
+                "name": "Retriever Prompt",
+                "validation": { "valid": true, "errors": [] }
+              },
+              "repeatable": true,
+              "pipelineNodeName": "Retriever Prompt"
+            }
+          }
+        ],
+        "preview": "",
+        "_id": "66d739839115f46441499cbd"
+      }
+    ],
+    "services": null,
+    "panels": [],
+    "modules": [],
+    "triggers": [],
+    "pipelines": [],
+    "pipelineNodes": [],
+    "toolbars": [],
+    "models": [],
+    "computeConfigs": [],
+    "channels": []
+  },
+  "trusted": null,
+
+  "baseId": "66d738b9723533296579b9b2"
+}
