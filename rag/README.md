@@ -26,7 +26,7 @@ interaction.
 <img src="assets/marketplace.png" alt="Marketplace">
 
 3. Click on this link: [EndPoint](https://gate.dataloop.ai/api/v1/apps/) and insert the copied `Installation ID`.
-4. Click on the `gradio` link:
+4. Click on the `app route`:
 
 <img src="assets/endpoint.png" alt="EndPoint">
 
@@ -65,6 +65,13 @@ inputs:
 2. Insert the values of the `dataset_id`, `featureset_id`, `k nearest items` and save changes.
 
 <img src="assets/pipeline_variables.png" alt="pipeline_variables.png">
+
+to get your `feature_set_id` use the SDK:
+```python
+import dtlpy as dl
+project = dl.projects.get(project_name=<your-project-name>)
+fs_id = project.feature_sets.get(feature_set_name=<your-fs-name>).id
+```
 
 3. Then, assign each pipeline variable for each input parameter on the node:
 
