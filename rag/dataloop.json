@@ -10,7 +10,7 @@
     ]
   },
   "displayName": "RAG template",
-  "description": "RAG template",
+  "description": "This RAG template uses OpenAI's text embedder for query embedding, retrieves relevant documents, and leverages ChatGPT to generate accurate, context-based responses.",
   "scope": "public",
   "dependencies": [
     {
@@ -83,7 +83,7 @@
           }
         ],
         "variables": [],
-        "description": "RAG template",
+        "description": "This RAG template uses OpenAI's text embedder for query embedding, retrieves relevant documents, and leverages ChatGPT to generate accurate, context-based responses.",
         "name": "rag-template",
         "nodes": [
           {
