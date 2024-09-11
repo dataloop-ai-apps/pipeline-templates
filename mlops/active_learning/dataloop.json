@@ -1093,5 +1093,13 @@
         "_id": "660943843d4343774f8c0c21"
       }
     ]
-  }
+  },
+  "dependencies": [
+    {
+      "name": "ml-compare-example"
+    },
+    {
+        "name": "active-learning"
+    }
+  ]
 }
