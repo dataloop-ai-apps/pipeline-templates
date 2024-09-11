@@ -1,6 +1,6 @@
 {
   "name": "rag-template",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "GenAI",
