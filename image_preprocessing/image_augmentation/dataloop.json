@@ -1,0 +1,369 @@
+{
+  "name": "image-augmentation-template",
+  "version": "1.0.30",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "Data Engineering",
+    "Provider": "Dataloop",
+    "Media Type": [
+      "Image"
+    ]
+  },
+  "displayName": "Image Augmentation Preprocessing Template",
+  "description": "Automate the preprocessing of images with image augmentations.",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.30"
+  },
+  "components": {
+    "pipelineTemplates": [
+      {
+        "nodes": [
+          {
+            "id": "94a2b5f5-d9e6-4e19-beca-cb03ae7cbd04",
+            "inputs": [
+              {
+                "portId": "4aa7e26b-570d-4cff-af76-9e08d4ef7b29",
+                "nodeId": "4aa7e26b-570d-4cff-af76-9e08d4ef7b29",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "b8f78346-3cfb-4863-81e0-47164acb683d",
+                "nodeId": "b8f78346-3cfb-4863-81e0-47164acb683d",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Flip Image",
+            "type": "custom",
+            "namespace": {
+              "functionName": "flip_image",
+              "projectName": "Make DPKs",
+              "serviceName": "make-dp-ks-image-utils-img-aug-v7v",
+              "moduleName": "image_utils_img_aug",
+              "packageName": "image-utils-img-aug"
+            },
+            "projectId": "37e21bc2-3d9a-481f-9dff-a074e4e85117",
+            "appName": "Image Augmentation",
+            "dpkName": "image-utils-img-aug",
+            "metadata": {
+              "position": {
+                "x": 10083.419641779961,
+                "y": 9755.87638596345,
+                "z": 0
+              },
+              "serviceConfig": {
+                "initParams": {
+
+                },
+                "name": "image-utils-img-aug",
+                "moduleName": "image_utils_img_aug",
+                "runtime": {
+                  "podType": "regular-xs",
+                  "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
+                  "numReplicas": 1,
+                  "concurrency": 10,
+                  "singleAgent": false,
+                  "autoscaler": {
+                    "type": "rabbitmq",
+                    "minReplicas": 1,
+                    "maxReplicas": 2,
+                    "queueLength": 10
+                  },
+                  "preemptible": false
+                },
+                "executionTimeout": 172800,
+                "drainTime": 600,
+                "onReset": "failed",
+                "runExecutionAsProcess": false,
+                "maxAttempts": 3,
+                "operation": "none",
+                "packageRevision": "0.0.8"
+              },
+              "componentGroupName": "image-utils",
+              "customNodeConfig": {
+                "flip_type": "horizontal",
+                "validation": {
+                  "valid": true,
+                  "errors": [
+
+                  ]
+                }
+              },
+              "repeatable": true,
+              "pipelineNodeName": "Flip Image"
+            }
+          },
+          {
+            "id": "326855fb-624c-4cf7-b996-63904f27d7d3",
+            "inputs": [
+              {
+                "portId": "8221f118-c18d-478e-921f-a8ed5f411795",
+                "nodeId": "8221f118-c18d-478e-921f-a8ed5f411795",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "85d3dfff-adb0-4a65-a5a4-d7ba522c46bd",
+                "nodeId": "85d3dfff-adb0-4a65-a5a4-d7ba522c46bd",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Pool Image",
+            "type": "custom",
+            "namespace": {
+              "functionName": "pooling",
+              "projectName": "Make DPKs",
+              "serviceName": "make-dp-ks-image-utils-img-aug-pwr",
+              "moduleName": "image_utils_img_aug",
+              "packageName": "image-utils-img-aug"
+            },
+            "projectId": "37e21bc2-3d9a-481f-9dff-a074e4e85117",
+            "appName": "Image Augmentation",
+            "dpkName": "image-utils-img-aug",
+            "metadata": {
+              "position": {
+                "x": 10074.419641779961,
+                "y": 9879.87638596345,
+                "z": 0
+              },
+              "serviceConfig": {
+                "initParams": {
+
+                },
+                "name": "image-utils-img-aug",
+                "moduleName": "image_utils_img_aug",
+                "runtime": {
+                  "podType": "regular-xs",
+                  "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
+                  "numReplicas": 1,
+                  "concurrency": 10,
+                  "singleAgent": false,
+                  "autoscaler": {
+                    "type": "rabbitmq",
+                    "minReplicas": 1,
+                    "maxReplicas": 2,
+                    "queueLength": 10
+                  },
+                  "preemptible": false
+                },
+                "executionTimeout": 172800,
+                "drainTime": 600,
+                "onReset": "failed",
+                "runExecutionAsProcess": false,
+                "maxAttempts": 3,
+                "operation": "none",
+                "packageRevision": "0.0.8"
+              },
+              "componentGroupName": "image-utils",
+              "customNodeConfig": {
+                "pooling_type": "max",
+                "h_value": 2,
+                "w_value": 2,
+                "validation": {
+                  "valid": true,
+                  "errors": [
+
+                  ]
+                }
+              },
+              "repeatable": true,
+              "pipelineNodeName": "Pool Image"
+            }
+          },
+          {
+            "id": "a6c43646-7573-4d4a-933f-ac3daaf8ee22",
+            "inputs": [
+              {
+                "portId": "59eb7fea-20c2-4f7a-9fbf-c336ca7b353d",
+                "nodeId": "59eb7fea-20c2-4f7a-9fbf-c336ca7b353d",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "9cf85ddf-8923-4120-8114-65f59a2cf821",
+                "nodeId": "9cf85ddf-8923-4120-8114-65f59a2cf821",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Corrupt Image",
+            "type": "custom",
+            "namespace": {
+              "functionName": "corrupt_like_image",
+              "projectName": "Make DPKs",
+              "serviceName": "make-dp-ks-image-utils-img-aug-if5",
+              "moduleName": "image_utils_img_aug",
+              "packageName": "image-utils-img-aug"
+            },
+            "projectId": "37e21bc2-3d9a-481f-9dff-a074e4e85117",
+            "appName": "Image Augmentation",
+            "dpkName": "image-utils-img-aug",
+            "metadata": {
+              "position": {
+                "x": 10069.419641779961,
+                "y": 9619.87638596345,
+                "z": 0
+              },
+              "serviceConfig": {
+                "initParams": {
+
+                },
+                "name": "image-utils-img-aug",
+                "moduleName": "image_utils_img_aug",
+                "runtime": {
+                  "podType": "regular-xs",
+                  "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
+                  "numReplicas": 1,
+                  "concurrency": 10,
+                  "singleAgent": false,
+                  "autoscaler": {
+                    "type": "rabbitmq",
+                    "minReplicas": 1,
+                    "maxReplicas": 2,
+                    "queueLength": 10
+                  },
+                  "preemptible": false
+                },
+                "executionTimeout": 172800,
+                "drainTime": 600,
+                "onReset": "failed",
+                "runExecutionAsProcess": false,
+                "maxAttempts": 3,
+                "operation": "none",
+                "packageRevision": "0.0.8"
+              },
+              "componentGroupName": "image-utils",
+              "customNodeConfig": {
+                "corrupt_type": "gaussian_noise",
+                "severity": 1,
+                "validation": {
+                  "valid": true,
+                  "errors": [
+
+                  ]
+                }
+              },
+              "repeatable": true,
+              "pipelineNodeName": "Corrupt Image"
+            }
+          },
+          {
+            "id": "873d5eaf-c360-4a4b-9150-1208295e4b12",
+            "inputs": [
+              {
+                "portId": "b7f6d2e9-73ab-4083-917b-2def2dfe8d67",
+                "nodeId": "b7f6d2e9-73ab-4083-917b-2def2dfe8d67",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "f228d2dd-3869-4787-955b-d1a2532ebe70",
+                "nodeId": "f228d2dd-3869-4787-955b-d1a2532ebe70",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Not Selected",
+            "type": "storage",
+            "namespace": {
+              "functionName": "clone_item",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "metadata": {
+              "position": {
+                "x": 9754.318625111258,
+                "y": 9750.901369923688,
+                "z": 0
+              },
+              "repeatable": true,
+              "componentGroupName": "data"
+            }
+          }
+        ],
+        "connections": [
+          {
+            "src": {
+              "nodeId": "873d5eaf-c360-4a4b-9150-1208295e4b12",
+              "portId": "f228d2dd-3869-4787-955b-d1a2532ebe70"
+            },
+            "tgt": {
+              "nodeId": "94a2b5f5-d9e6-4e19-beca-cb03ae7cbd04",
+              "portId": "4aa7e26b-570d-4cff-af76-9e08d4ef7b29"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "873d5eaf-c360-4a4b-9150-1208295e4b12",
+              "portId": "f228d2dd-3869-4787-955b-d1a2532ebe70"
+            },
+            "tgt": {
+              "nodeId": "a6c43646-7573-4d4a-933f-ac3daaf8ee22",
+              "portId": "59eb7fea-20c2-4f7a-9fbf-c336ca7b353d"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "873d5eaf-c360-4a4b-9150-1208295e4b12",
+              "portId": "f228d2dd-3869-4787-955b-d1a2532ebe70"
+            },
+            "tgt": {
+              "nodeId": "326855fb-624c-4cf7-b996-63904f27d7d3",
+              "portId": "8221f118-c18d-478e-921f-a8ed5f411795"
+            },
+            "condition": "{}"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "873d5eaf-c360-4a4b-9150-1208295e4b12",
+            "type": "root",
+            "id": "3d3ab2c9-4d2a-433b-93d1-23cae8f9de9f"
+          }
+        ],
+        "name": "Image Augmentation Preprocessing Template",
+        "description": "Automate the preprocessing of images with image augmentations.",
+        "preview": "66e185ccf161e96aaae8146f"
+      }
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "image-utils-img-aug"
+    }
+  ]
+}
