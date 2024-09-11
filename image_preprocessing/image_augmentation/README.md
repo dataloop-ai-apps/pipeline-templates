@@ -1,12 +1,11 @@
-# *PDF to Image - Text Detection Pipeline Template*
+# *Image Augmentations Pipeline Template*
 
-<img src="assets/pdf_to_image_template.png" alt="Image of the pipeline">
+<img src="assets/image_augmentation_template.png" alt="Image of the pipeline">
 
 ### Introduction:
 
-This template application creates a pipeline flows that converts pdfs to images, where each page is a single image.
-The generated images serve as input to computer vision models:  `AWS Rekognition - Detect Text`,
-`Google vision - Text Detection` and any other predictive model from Dataloop's Marketplace with images as an input.
+This template application creates a pipeline flows that adds images with differnet augmentations and saves them to the dataset.
+
 
 ### Installation:
 
@@ -21,7 +20,7 @@ There are two options for installing and using the template:
 
 1. Pipelines:
 
-* In the search bar, type `PDF to Image - Text Detection`, select the template and click install.
+* In the search bar, type `Image Augmentation Template`, select the template and click install.
 * Once the template is installed, click on *Create Pipeline*.
 
 <img src="assets/marketplace.png" alt="Image of the pipeline">
@@ -37,4 +36,4 @@ There are two options for installing and using the template:
 ## Contributions, Bugs and Issues - How to Contribute
 
 We welcome anyone to help us improve this app.  
-[Here's](CONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request.
+[Here's](CONTRIBUTING.md) detailed instructions to help you open a bug or ask for a feature request.
