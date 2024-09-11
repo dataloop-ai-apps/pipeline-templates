@@ -25,7 +25,7 @@ interaction.
 
 <img src="assets/marketplace.png" alt="Marketplace">
 
-3. Click on this link: [EndPoint](https://gate.dataloop.ai/api/v1/apps/) and insert the copied `Installation ID`.
+3. Click on this link: [EndPoint](https://gate.dataloop.ai/api/v1/apps/<installation_id>) and insert the copied `Installation ID`.
 4. Click on the `app route`:
 
 <img src="assets/endpoint.png" alt="EndPoint">
