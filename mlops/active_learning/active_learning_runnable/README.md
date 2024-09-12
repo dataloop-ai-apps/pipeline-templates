@@ -1,4 +1,4 @@
-# *Active Learning* Template
+# *Active Learning* Runnable Pipeline
 
 <img src="assets/pipeline.png" alt="Image of the pipeline">
 
@@ -7,7 +7,7 @@
 Automate the iterative process of fine-tuning your model, covering labeling, model creation, training, evaluation, and
 deployment of the best version.
 
-### Installation:
+###  Installation:
 
 In order to use the template, you need to follow these steps:
 
