@@ -985,13 +985,13 @@
             "name": "Best Model",
             "type": "Model",
             "description": "Insert baseline Model ID",
-            "value": ""
+            "value": "$var(resnet__model)"
           },
           {
             "name": "Ground Truth Dataset",
             "type": "Dataset",
             "description": "Insert Ground Truth Dataset ID",
-            "value": ""
+            "value": "$var(plantSeedlingsDataset__dataset)"
           },
           {
             "name": "Train Subset Filter",
@@ -1099,7 +1099,16 @@
       "name": "ml-compare-example"
     },
     {
-        "name": "active-learning"
+      "name": "active-learning"
     }
+  ],
+  "variables": [
+    {
+      "best_model": "dpkA.model.resnet"
+    },
+    {
+      "ground_truth_dataset": "dpkA.dataset.v2-plant-seedlings-dataset"
+    }
+
   ]
 }

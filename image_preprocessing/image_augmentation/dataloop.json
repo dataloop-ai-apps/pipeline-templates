@@ -9,8 +9,14 @@
       "Image"
     ]
   },
-  "displayName": "Image Augmentation Preprocessing Template",
+  "displayName": "Image Augmentation Template",
   "description": "Automate the preprocessing of images with image augmentations.",
+  "dependencies": [
+    {
+      "name": "image-utils-img-aug"
+    }
+  ],
+
   "scope": "public",
   "codebase": {
     "type": "git",
@@ -355,15 +361,10 @@
             "id": "3d3ab2c9-4d2a-433b-93d1-23cae8f9de9f"
           }
         ],
-        "name": "Image Augmentation Preprocessing Template",
+        "name": "Image Augmentation Template",
         "description": "Automate the preprocessing of images with image augmentations.",
         "preview": "66e185ccf161e96aaae8146f"
       }
     ]
-  },
-  "dependencies": [
-    {
-      "name": "image-utils-img-aug"
-    }
-  ]
+  }
 }
