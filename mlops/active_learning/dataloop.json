@@ -1096,19 +1096,7 @@
   },
   "dependencies": [
     {
-      "name": "ml-compare-example"
-    },
-    {
       "name": "active-learning"
     }
-  ],
-  "variables": [
-    {
-      "best_model": "dpkA.model.resnet"
-    },
-    {
-      "ground_truth_dataset": "dpkA.dataset.v2-plant-seedlings-dataset"
-    }
-
   ]
 }
