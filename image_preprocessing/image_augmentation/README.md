@@ -4,8 +4,7 @@
 
 ### Introduction:
 
-This template application creates a pipeline flows that adds images with differnet augmentations and saves them to the dataset.
-
+This template application creates a pipeline flows that adds images with different augmentations and saves them to the dataset.
 
 ### Installation:
 
@@ -33,7 +32,3 @@ There are two options for installing and using the template:
 
 [//]: # (the [Active Learning Pipeline Documentation]&#40;https://dataloop.ai/docs/active-learning-pipeline&#41;)
 
-## Contributions, Bugs and Issues - How to Contribute
-
-We welcome anyone to help us improve this app.  
-[Here's](CONTRIBUTING.md) detailed instructions to help you open a bug or ask for a feature request.

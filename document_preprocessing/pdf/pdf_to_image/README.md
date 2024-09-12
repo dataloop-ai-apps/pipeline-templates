@@ -4,9 +4,9 @@
 
 ### Introduction:
 
-This template application creates a pipeline flows that converts pdfs to images, where each page is a single image.
+This template application creates a pipeline flow that converts PDFs to images, where each page is a single image.
 The generated images serve as input to computer vision models:  `AWS Rekognition - Detect Text`,
-`Google vision - Text Detection` and any other predictive model from Dataloop's Marketplace with images as an input.
+`Google Vision - Text Detection` and any other predictive model from Dataloop's Marketplace with images as an input.
 
 ### Installation:
 
@@ -19,7 +19,7 @@ There are two options for installing and using the template:
 
 <img src="assets/pipeline_create.png" alt="Image of the pipeline creation page">
 
-1. Pipelines:
+2. Marketplace:
 
 * In the search bar, type `PDF to Image - Text Detection`, select the template and click install.
 * Once the template is installed, click on *Create Pipeline*.
@@ -34,7 +34,3 @@ There are two options for installing and using the template:
 
 [//]: # (the [Active Learning Pipeline Documentation]&#40;https://dataloop.ai/docs/active-learning-pipeline&#41;)
 
-## Contributions, Bugs and Issues - How to Contribute
-
-We welcome anyone to help us improve this app.  
-[Here's](../../../CONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request.
