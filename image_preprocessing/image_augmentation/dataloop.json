@@ -9,7 +9,7 @@
       "Image"
     ]
   },
-  "displayName": "Image Augmentation Template",
+  "displayName": "Image Augmentation",
   "description": "Automate the preprocessing of images with image augmentations.",
   "scope": "public",
   "codebase": {
