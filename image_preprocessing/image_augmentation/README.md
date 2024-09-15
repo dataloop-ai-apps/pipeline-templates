@@ -4,7 +4,7 @@
 
 ### Introduction:
 
-This template application creates a pipeline flows that adds images with different augmentations and saves them to the dataset.
+This template application creates a pipeline flow that adds images with different augmentations and saves them to the dataset.
 
 ### Installation:
 
