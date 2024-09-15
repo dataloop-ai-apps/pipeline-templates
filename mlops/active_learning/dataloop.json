@@ -985,13 +985,13 @@
             "name": "Best Model",
             "type": "Model",
             "description": "Insert baseline Model ID",
-            "value": "$var(resnet__model)"
+            "value": ""
           },
           {
             "name": "Ground Truth Dataset",
             "type": "Dataset",
             "description": "Insert Ground Truth Dataset ID",
-            "value": "$var(plantSeedlingsDataset__dataset)"
+            "value": ""
           },
           {
             "name": "Train Subset Filter",
