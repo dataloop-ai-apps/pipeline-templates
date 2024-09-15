@@ -7,7 +7,7 @@
     "Provider": "Dataloop",
     "Media Type": ["All Media Types"]
   },
-  "displayName": "Active Learning",
+  "displayName": "Active Learning Pipeline",
   "description": "Automate the iterative process of fine-tuning your model, covering labeling, model creation, training, evaluation, and deployment of the best version.",
   "scope": "public",
   "codebase": {

@@ -1,4 +1,4 @@
-# *Active Learning* Runnable Pipeline
+# *Active Learning* Pipeline Example
 
 <img src="assets/pipeline.png" alt="Image of the pipeline">
 
