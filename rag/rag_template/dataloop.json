@@ -1,6 +1,6 @@
 {
   "name": "rag-template",
-  "version": "1.0.36",
+  "version": "1.0.47",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "GenAI",
@@ -347,19 +347,19 @@
             "name": "dataset",
             "type": "Dataset",
             "description": "Source dataset.",
-            "value": "$var(dataset)"
+            "value": ""
           },
           {
             "name": "embedder_retriever",
             "type": "Model",
             "description": "The Model used to embedd the Source Dataset.",
-            "value": "$var(embedder_retriever)"
+            "value": ""
           },
           {
             "name": "k",
             "type": "Integer",
             "description": "K nearest items - The number of closest items to retrieve.",
-            "value": "$var(k_nearest)"
+            "value": ""
           }
         ],
         "_id": "66e6c43dd0baf308561d82b7"
