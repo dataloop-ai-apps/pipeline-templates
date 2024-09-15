@@ -1,5 +1,5 @@
 {
-  "name": "active-learning-template-runnable",
+  "name": "active-learning-example",
   "version": "1.0.39",
   "attributes": {
     "Category": "Pipeline",
@@ -7,7 +7,7 @@
     "Provider": "Dataloop",
     "Media Type": ["All Media Types"]
   },
-  "displayName": "Active Learning Ready-to-Run",
+  "displayName": "Active Learning Example",
   "description": "Automate the iterative process of fine-tuning your model, covering labeling, model creation, training, evaluation, and deployment of the best version. Pre-loaded with a dataset and model.",
   "scope": "public",
   "codebase": {
@@ -90,7 +90,7 @@
                 "io": "output"
               }
             ],
-            "name": "Not Selected",
+            "name": "Ground Truth Dataset",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -106,7 +106,8 @@
                 "y": 128.157066345215,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "variableDataset": "Ground Truth Dataset"
             }
           },
           {
@@ -230,7 +231,7 @@
                 "io": "output"
               }
             ],
-            "name": "Not Selected",
+            "name": "Ground Truth Dataset",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -246,7 +247,8 @@
                 "y": 124.413399259784,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "variableDataset": "Ground Truth Dataset"
             }
           },
           {
@@ -538,7 +540,7 @@
               "packageName": "active-learning"
             },
             "projectId": null,
-            "appName": "Active Learning Ready",
+            "appName": "Active Learning",
             "dpkName": "active-learning",
             "metadata": {
               "position": {
