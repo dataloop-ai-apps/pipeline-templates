@@ -1102,12 +1102,8 @@
       "name": "ml-compare-example"
     }
   ],
-  "variables": [
-    {
-      "plantsDataset__dataset": "ml-compare-example.dataset.V2 Plant Seedlings Dataset"
-    },
-    {
-      "resnet__model": "ml-compare-example.model.pretrained-resnet"
-    }
-  ]
+  "variables": {
+    "plantsDataset__dataset": "ml-compare-example.dataset.V2 Plant Seedlings Dataset",
+    "resnet__model": "resnet.models.pretrained-resnet"
+  }
 }
