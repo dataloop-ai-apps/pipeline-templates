@@ -31,6 +31,39 @@
       "name": "chat-completion"
     }
   ],
+  "variables": [
+    {
+      "name": "dataset",
+      "type": "Dataset",
+      "description": "Source dataset.",
+      "value": "$var(dataset)"
+    },
+    {
+      "name": "embedder_retriever",
+      "type": "Model",
+      "description": "The Model used to embedd the Source Dataset.",
+      "value": "$var(embedder_retriever)"
+    },
+    {
+      "name": "k",
+      "type": "Integer",
+      "description": "K nearest items - The number of closest items to retrieve.",
+      "value": "$var(k_nearest)"
+    },
+    {
+      "name": "model",
+      "type": "Model",
+      "description": "Chat gpt openai model that generate the response.",
+      "value": "$var(model)"
+    },
+    {
+      "name": "embedder",
+      "reference": "66e2df5d77cd595cde99eca1",
+      "type": "Model",
+      "description": "Text embedding openai model, used for embedding the user prompt questions.",
+      "value": "$var(embedder)"
+    }
+  ],
   "components": {
     "pipelineTemplates": [
       {
@@ -211,7 +244,7 @@
                 "type": "Model",
                 "name": "embedder",
                 "displayName": "embedder",
-                "variableName": "embedder",
+                "variableName": "embedder_retriever",
                 "io": "input"
               },
               {
