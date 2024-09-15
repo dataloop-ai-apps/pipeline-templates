@@ -87,7 +87,6 @@
             "id": "3a9dc713-f755-46b6-b472-7ae1b545b457"
           }
         ],
-        "variables": [],
         "description": "This RAG template uses OpenAI's text embedder for query embedding, retrieves relevant documents, and leverages ChatGPT to generate accurate, context-based responses.",
         "name": "rag-template",
         "nodes": [
