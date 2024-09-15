@@ -1,0 +1,45 @@
+{
+  "displayName": "RAG Onboarding Solution",
+  "name": "rag-onboarding-solution",
+  "description": "RAG Onboarding Solution",
+  "scope": "public",
+  "version": "1.0.36",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.36"
+  },
+  "attributes": {
+    "Provider": "Dataloop",
+    "Category": "Application",
+    "Application Type": "Other",
+    "Media Type": [
+      "Text"
+    ]
+  },
+  "metadata": {
+    "system": {
+      "systemCompute": true
+    }
+  },
+  "dependencies": [
+    {
+      "name": "rag-template-onboarding"
+    },
+    {
+      "name": "dataset-text-recipes"
+    },
+    {
+      "name": "text-embeddings-3"
+    },
+    {
+      "name": "chat-completion"
+    }
+  ],
+  "variables": {
+    "dataset": "dataset-text-recipes.dataset.dataset-text-recipes",
+    "embedder_retriever": "chat-completion.model.openai-text-embeddings-3l",
+    "model": "text-embeddings-3.model.openai-gpt-4o",
+    "embedder": "chat-completion.model.openai-prompt-embeddings-3l"
+  }
+}
