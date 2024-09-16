@@ -2,19 +2,19 @@
 
 ### Table of Contents:
 
-#### Document preprocessing:
+#### Document Preprocessing:
 - [PDF to Image Pipeline Template](document_preprocessing/pdf/pdf_to_image/README.md)
 - [PDF to Text Pipeline Template](document_preprocessing/pdf/pdf_to_text/README.md)
-- 
-#### Document preprocessing:
-- [Image Augmentation Template](image_preprocessing/image_augmentation/README.md)
+
+#### Image Preprocessing:
+- [Image Augmentation Pipeline Template](image_preprocessing/image_augmentation/README.md)
 
 #### Labeling Workflows:
 - [Automatic Modalities Pipeline](labeling_workflow/automatic_modalities_pipeline/README.md)
 - [Microtasks Pipeline Template](labeling_workflow/microtasks_pipeline/README.md)
 - [Preprocess Annotation Workflow Pipeline](labeling_workflow/preprocess_annotation_workflow/README.md)
 - [Text Annotation Workflow Pipeline](labeling_workflow/text_annotation_workflow/README.md)
-- [QA Sampling Workflow Workflow Pipeline](labeling_workflow/qa_sampling_workflow/README.md)
+- [QA Sampling Workflow Pipeline](labeling_workflow/qa_sampling_workflow/README.md)
 
 #### MLOPS:
 - [Active Learning Pipeline Template](mlops/active_learning/README.md)
