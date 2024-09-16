@@ -176,6 +176,7 @@
               },
               "taskType": "annotation",
               "repeatable": true,
+              "variableModel": "embedder",
               "componentGroupName": "models",
               "pipelineNodeName": "text-embeddings-3"
             }
@@ -322,6 +323,7 @@
               },
               "taskType": "annotation",
               "repeatable": true,
+              "variableModel": "model",
               "componentGroupName": "models",
               "pipelineNodeName": "chat-completion"
             }
