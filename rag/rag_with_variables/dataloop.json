@@ -9,8 +9,8 @@
       "Text"
     ]
   },
-  "displayName": "RAG template",
-  "description": "This RAG template uses OpenAI's text embedder for query embedding, retrieves relevant documents, and leverages ChatGPT to generate accurate, context-based responses.",
+  "displayName": "RAG template Example",
+  "description": "This RAG template uses OpenAI's text embedder for query embedding, retrieves relevant documents, and leverages ChatGPT to generate accurate, context-based responses. It pre-load a food and recipes dataset as a source dataset.",
   "scope": "public",
   "codebase": {
     "type": "git",
@@ -74,7 +74,7 @@
           }
         ],
         "description": "This RAG template uses OpenAI's text embedder for query embedding, retrieves relevant documents, and leverages ChatGPT to generate accurate, context-based responses.",
-        "name": "rag-template",
+        "name": "rag-template-example",
         "nodes": [
           {
             "id": "da7ad090-7c1f-4047-8bd3-2ddd712f3ecd",
