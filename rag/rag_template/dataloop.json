@@ -190,6 +190,7 @@
               },
               "taskType": "annotation",
               "repeatable": true,
+              "variableModel": "embedder",
               "componentGroupName": "models",
               "pipelineNodeName": "text-embeddings-3"
             }
@@ -244,8 +245,8 @@
                 "nodeId": "24e022c8-dc95-463f-b13b-97c8661c973a",
                 "type": "Integer",
                 "name": "k",
-                "displayName": "k",
-                "variableName": "k",
+                "displayName": "K Nearest Items",
+                "variableName": "k_nearest_items",
                 "io": "input"
               }
             ],
@@ -336,6 +337,7 @@
               },
               "taskType": "annotation",
               "repeatable": true,
+              "variableModel": "model",
               "componentGroupName": "models",
               "pipelineNodeName": "chat-completion"
             }
@@ -346,19 +348,31 @@
           {
             "name": "dataset",
             "type": "Dataset",
-            "description": "Source dataset.",
+            "description": "Insert Source Dataset ID.",
             "value": ""
           },
           {
             "name": "embedder_retriever",
             "type": "Model",
-            "description": "The Model used to embedd the Source Dataset.",
+            "description": "The Model used to embedd the Source Dataset. Insert Model ID.",
             "value": ""
           },
           {
-            "name": "k",
+            "name": "k_nearest_items",
             "type": "Integer",
             "description": "K nearest items - The number of closest items to retrieve.",
+            "value": ""
+          },
+          {
+            "name": "model",
+            "type": "Model",
+            "description": "Chat gpt openai model that generate the response.",
+            "value": ""
+          },
+          {
+            "name": "embedder",
+            "type": "Model",
+            "description": "Text embedding openai model, used for embedding the user prompt questions.",
             "value": ""
           }
         ],
