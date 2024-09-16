@@ -1,5 +1,5 @@
 {
-  "name": "image-augmentation-template",
+  "name": "image-augmentation-pipeline",
   "version": "1.0.47",
   "attributes": {
     "Category": "Pipeline",
@@ -9,7 +9,7 @@
       "Image"
     ]
   },
-  "displayName": "Image Augmentation",
+  "displayName": "Image Augmentation Pipeline",
   "description": "Automate the preprocessing of images with image augmentations.",
   "scope": "public",
   "codebase": {
