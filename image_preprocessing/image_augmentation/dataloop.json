@@ -1,5 +1,5 @@
 {
-  "name": "image-augmentation-template",
+  "name": "image-augmentation-pipeline",
   "version": "1.0.50",
   "attributes": {
     "Category": "Pipeline",
@@ -9,7 +9,7 @@
       "Image"
     ]
   },
-  "displayName": "Image Augmentation",
+  "displayName": "Image Augmentation Pipeline",
   "description": "Automate the preprocessing of images with image augmentations.",
   "scope": "public",
   "codebase": {
@@ -20,8 +20,6 @@
   "components": {
     "pipelineTemplates": [
       {
-        "projectId": "37e21bc2-3d9a-481f-9dff-a074e4e85117",
-        "orgId": "d25cecad-34f7-4e38-9750-bd9a1d387bfd",
         "connections": [
           {
             "src": {
@@ -60,16 +58,12 @@
         "startNodes": [
           {
             "nodeId": "3c43c2cc-632e-4427-8125-455ef3d7c6c9",
-            "type": "root",
-            "id": "c56e5939-0685-4b76-be43-6ca5a4f81d1e"
+            "type": "root"
           }
         ],
-        "variables": [
-
-        ],
-        "description": "",
+        "variables": [],
+        "description": "Automate the preprocessing of images with image augmentations.",
         "name": "Image Augmentations Template",
-        "templateKind": "org",
         "nodes": [
           {
             "id": "94a2b5f5-d9e6-4e19-beca-cb03ae7cbd04",
