@@ -230,8 +230,8 @@
                 "nodeId": "24e022c8-dc95-463f-b13b-97c8661c973a",
                 "type": "Integer",
                 "name": "k",
-                "displayName": "k",
-                "variableName": "k",
+                "displayName": "K Nearest Items",
+                "variableName": "k_nearest_items",
                 "io": "input"
               }
             ],
@@ -342,7 +342,7 @@
             "value": "$var(embedderRetriever__model)"
           },
           {
-            "name": "k",
+            "name": "k_nearest_items",
             "type": "Integer",
             "description": "K nearest items - The number of closest items to retrieve.",
             "value": 3
@@ -366,7 +366,16 @@
   },
   "dependencies": [
     {
-      "name": "rag-template"
+      "name": "text-embeddings-3"
+    },
+    {
+      "name": "pipeline-trigger-gradio"
+    },
+    {
+      "name": "llm-tools-retriever"
+    },
+    {
+      "name": "chat-completion"
     },
     {
       "name": "dataset-text-recipes"
