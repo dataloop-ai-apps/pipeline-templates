@@ -377,7 +377,25 @@
       "name": "llm-tools-retriever"
     },
     {
-      "name": "chat-completion"
+      "name": "chat-completion",
+      "components": {
+        "models": [
+          {
+            "name": "openai-gpt-4o",
+            "configuration": {
+              "system_prompt": "You are an AI assistant designed to answer questions using a provided set of documents. Your primary goal is to deliver precise and accurate responses, citing the relevant document sources for each answer. If the documents do not contain the necessary information, inform the user accordingly. Maintain a friendly and professional demeanor in all interactions.",
+              "model_name": "gpt-4o",
+              "add_metadata": [
+                "system.document.source"
+              ],
+              "stream": true,
+              "max_tokens": null,
+              "temperature": null,
+              "top_p": null
+            }
+          }
+        ]
+      }
     },
     {
       "name": "dataset-text-recipes"
