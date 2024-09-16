@@ -373,7 +373,7 @@
     }
   ],
   "variables": {
-    "sourceDataset__dataset": "dataset-text-recipes.datasets.dataset-text-recipes",
+    "sourceDataset__dataset": "dataset-text-recipes.datasets.Recipes Text Dataset",
     "embedderRetriever__model": "chat-completion.models.openai-text-embeddings-3l",
     "genModel__model": "chat-completion.models.openai-gpt-4o",
     "embedder__model": "text-embeddings-3.models.openai-prompt-embeddings-3l"
