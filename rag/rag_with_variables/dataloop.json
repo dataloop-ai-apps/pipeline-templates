@@ -1,5 +1,5 @@
 {
-  "name": "rag-template",
+  "name": "rag-template-example",
   "version": "1.0.36",
   "attributes": {
     "Category": "Pipeline",
@@ -17,20 +17,6 @@
     "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
     "gitTag": "1.0.36"
   },
-  "dependencies": [
-    {
-      "name": "text-embeddings-3"
-    },
-    {
-      "name": "pipeline-trigger-gradio"
-    },
-    {
-      "name": "llm-tools-retriever"
-    },
-    {
-      "name": "chat-completion"
-    }
-  ],
   "components": {
     "pipelineTemplates": [
       {
@@ -211,7 +197,7 @@
                 "type": "Model",
                 "name": "embedder",
                 "displayName": "embedder",
-                "variableName": "embedder",
+                "variableName": "embedder_retriever",
                 "io": "input"
               },
               {
@@ -245,7 +231,6 @@
                 "type": "Integer",
                 "name": "k",
                 "displayName": "k",
-                "defaultValue": "",
                 "variableName": "k",
                 "io": "input"
               }
@@ -347,14 +332,14 @@
           {
             "name": "dataset",
             "type": "Dataset",
-            "description": "Source dataset.",
-            "value": "$var(dataset)"
+            "description": "Insert Source Dataset ID.",
+            "value": "$var(sourceDataset__dataset)"
           },
           {
             "name": "embedder_retriever",
             "type": "Model",
-            "description": "The Model used to embedd the Source Dataset.",
-            "value": "$var(embedder_retriever)"
+            "description": "The Model used to embedd the Source Dataset. Insert Model ID.",
+            "value": "$var(embedderRetriever__model)"
           },
           {
             "name": "k",
@@ -366,17 +351,31 @@
             "name": "model",
             "type": "Model",
             "description": "Chat gpt openai model that generate the response.",
-            "value": "$var(model)"
+            "value": "$var(genModel__model)"
           },
           {
             "name": "embedder",
             "type": "Model",
             "description": "Text embedding openai model, used for embedding the user prompt questions.",
-            "value": "$var(embedder)"
+            "value": "$var(embedder__model)"
           }
         ],
         "_id": "66e6c43dd0baf308561d82b7"
       }
     ]
+  },
+  "dependencies": [
+    {
+      "name": "rag-template"
+    },
+    {
+      "name": "dataset-text-recipes"
+    }
+  ],
+  "variables": {
+    "sourceDataset__dataset": "dataset-text-recipes.dataset.dataset-text-recipes",
+    "embedderRetriever__model": "chat-completion.model.openai-text-embeddings-3l",
+    "genModel__model": "chat-completion.model.openai-gpt-4o",
+    "embedder__model": "text-embeddings-3.model.openai-prompt-embeddings-3l"
   }
 }
