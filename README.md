@@ -5,6 +5,9 @@
 #### Document preprocessing:
 - [PDF to Image Pipeline Template](document_preprocessing/pdf/pdf_to_image/README.md)
 - [PDF to Text Pipeline Template](document_preprocessing/pdf/pdf_to_text/README.md)
+- 
+#### Document preprocessing:
+- [Image Augmentation Template](image_preprocessing/image_augmentation/README.md)
 
 #### Image preprocessing:
 - [Image Augmentation Pipeline Template](image_preprocessing/image_augmentation/README.md)
@@ -21,10 +24,13 @@
 - [RLHF Pipeline Template](mlops/rlhf/README.md)
 - [RLAIF Pipeline Template](mlops/rlaif/README.md)
 
+#### RAG:
+- [RAG Pipeline Template](rag/README.md)
+
 #### Tiling:
 - [Tiling Pipeline Template](tiling/README.md)
 
 ## Contributions, Bugs and Issues - How to Contribute
 
 We welcome anyone to help us improve this app.  
-[Here's](CONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request.
+[Here](CONTRIBUTING.md) are detailed instructions to help you report a bug or submit a feature request.

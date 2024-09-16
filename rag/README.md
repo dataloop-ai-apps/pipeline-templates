@@ -107,8 +107,3 @@ In order to use the template, you need to follow these steps:
 * In the search bar, type `RAG`, select the template and click install.
 * Once the template is installed, click on *Create Pipeline*.
 
-
-## Contributions, Bugs and Issues - How to Contribute
-
-We welcome anyone to help us improve this app.  
-[Here's](CONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request.
