@@ -1078,7 +1078,6 @@
             "value": {}
           },
           {
-            "id": "65c3c34b6743f36368d3b77f",
             "name": "Comparison Configuration",
             "type": "Json",
             "description": "Insert comparison config (new model vs. best model), the comparison will use the evaluation results (precision-recall).",
