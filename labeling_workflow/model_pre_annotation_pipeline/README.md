@@ -1,4 +1,4 @@
-# *Pre-Annotation Pipeline*
+# *Model Pre-Annotation Pipeline*
 
 <img src="assets/model-pre-annotation-pipeline.png" alt="Image of the pipeline">
 
@@ -22,7 +22,7 @@ Option 1:
 
 Option 2:
 
-* In the search bar, type `Pre-annotation Pipeline`, select the template and click install.
+* In the search bar, type `Model Pre-annotation Pipeline`, select the template and click install.
 * Once the template is installed, click on *Create Pipeline*.
 
 
