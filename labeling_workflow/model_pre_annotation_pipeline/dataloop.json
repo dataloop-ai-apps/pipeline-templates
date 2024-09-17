@@ -1,13 +1,13 @@
 {
-  "name": "pre-annotation-pipeline",
-  "version": "1.0.29",
+  "name": "model-pre-annotation-pipeline",
+  "version": "1.0.52",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Labeling Workflow",
     "Provider": "Dataloop",
     "Media Type": ["All Media Types"]
   },
-  "displayName": "Pre-annotation Pipeline",
+  "displayName": "Model Pre-annotation Pipeline",
   "description": "Utilize pre-trained models to generate pre-annotations and validate them against the task requirements",
   "scope": "public",
   "codebase": {
@@ -88,7 +88,7 @@
 
         ],
         "description": "",
-        "name": "pre-annotation-pipeline",
+        "name": "model-pre-annotation-pipeline",
         "templateKind": "org",
         "nodes": [
           {

@@ -53,8 +53,3 @@ Now that the pipeline is running, the annotation tasks and QA tasks defined in t
 For example, in the screenshot below, you can see that 5 items were uploaded to the dataset and immediately flowed into the first annotation task. 3 items were annotated and marked completed and so flowed into the first QA task. Two of these items were approved in the first QA task and flowed to the next annotation task, and so on.
 
 <img src="./assets/microtasking-pipeline-temp-running.png" alt="Image of the microtasing pipeline template - running">
-
-## Contributions, Bugs and Issues - How to Contribute
-
-We welcome anyone to help us improve this app.  
-[Here's](CONTRIBUTING.md) the detailed instructions to help you open a bug or ask for a feature request.

@@ -1,6 +1,6 @@
 # *Pre-Annotation Pipeline*
 
-<img src="assets/pre-annotation-pipeline.png" alt="Image of the pipeline">
+<img src="assets/model-pre-annotation-pipeline.png" alt="Image of the pipeline">
 
 
 ### Introduction:

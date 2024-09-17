@@ -4,10 +4,11 @@
 
 ### Introduction:
 
-This template create the process of converting pdf items to text files. Each file is generated for a specific chunk of
-data. The text files undergo preprocessing using cleaning functions provided by the `UnstructedIO` library.
+This template creates the process of converting pdf items to text files. Each file is generated for a specific chunk of
+data. The text files undergo preprocessing using cleaning functions provided by the `UnstructuredIO` library.
 
 ### Installation:
+
 There are two options for installing and using the template:
 
 1. Pipelines:
@@ -32,7 +33,3 @@ There are two options for installing and using the template:
 
 [//]: # (the [Active Learning Pipeline Documentation]&#40;https://dataloop.ai/docs/active-learning-pipeline&#41;)
 
-## Contributions, Bugs and Issues - How to Contribute
-
-We welcome anyone to help us improve this app.  
-[Here's](CONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request.

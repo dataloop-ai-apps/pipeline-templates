@@ -166,8 +166,3 @@ def pre_modality(self, item, progress=None):
         return pre_modality_results 
 ```
 
-
-## Contributions, Bugs and Issues - How to Contribute
-
-We welcome anyone to help us improve this app.  
-[Here's](CONTRIBUTING.md) the detailed instructions to help you open a bug or ask for a feature request.
