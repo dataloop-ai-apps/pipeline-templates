@@ -2,12 +2,12 @@
 
 ### Table of Contents:
 
-#### Document preprocessing:
+#### Document Preprocessing:
 - [PDF to Image Pipeline Template](document_preprocessing/pdf/pdf_to_image/README.md)
 - [PDF to Text Pipeline Template](document_preprocessing/pdf/pdf_to_text/README.md)
-- 
-#### Document preprocessing:
-- [Image Augmentation Template](image_preprocessing/image_augmentation/README.md)
+
+#### Image Preprocessing:
+- [Image Augmentation Pipeline Template](image_preprocessing/image_augmentation/README.md)
 
 #### Image preprocessing:
 - [Image Augmentation Pipeline Template](image_preprocessing/image_augmentation/README.md)
