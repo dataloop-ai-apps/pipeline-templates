@@ -15,6 +15,7 @@
 #### Labeling Workflows:
 - [Automatic Modalities Pipeline](labeling_workflow/automatic_modalities_pipeline/README.md)
 - [Microtasks Pipeline Template](labeling_workflow/microtasks_pipeline/README.md)
+- [Model Pre-Annotation Workflow](labeling_workflow/model_pre_annotation_workflow/README.md)
 - [Preprocess Annotation Workflow Pipeline](labeling_workflow/preprocess_annotation_workflow/README.md)
 - [Text Annotation Workflow Pipeline](labeling_workflow/text_annotation_workflow/README.md)
 - [QA Sampling Workflow Pipeline](labeling_workflow/qa_sampling_workflow/README.md)
