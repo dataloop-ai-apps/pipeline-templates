@@ -1,5 +1,5 @@
 {
-  "name": "model-pre-annotation-pipeline",
+  "name": "model-pre-annotation-workflow",
   "version": "1.0.52",
   "attributes": {
     "Category": "Pipeline",
@@ -7,7 +7,7 @@
     "Provider": "Dataloop",
     "Media Type": ["All Media Types"]
   },
-  "displayName": "Model Pre-annotation Pipeline",
+  "displayName": "Model Pre-annotation Workflow",
   "description": "Utilize pre-trained models to generate pre-annotations and validate them against the task requirements",
   "scope": "public",
   "codebase": {
@@ -88,7 +88,7 @@
 
         ],
         "description": "",
-        "name": "model-pre-annotation-pipeline",
+        "name": "model-pre-annotation-workflow",
         "templateKind": "org",
         "nodes": [
           {

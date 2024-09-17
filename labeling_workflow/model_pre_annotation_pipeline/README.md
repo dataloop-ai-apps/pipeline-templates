@@ -1,6 +1,6 @@
-# *Model Pre-Annotation Pipeline*
+# *Model Pre-Annotation Workflow*
 
-<img src="assets/model-pre-annotation-pipeline.png" alt="Image of the pipeline">
+<img src="assets/model-pre-annotation-workflow.png" alt="Image of the pipeline">
 
 
 ### Introduction:
@@ -22,5 +22,5 @@ Option 1:
 
 Option 2:
 
-* In the search bar, type `Model Pre-annotation Pipeline`, select the template and click install.
+* In the search bar, type `Model Pre-annotation Workflow`, select the template and click install.
 * Once the template is installed, click on *Create Pipeline*.
