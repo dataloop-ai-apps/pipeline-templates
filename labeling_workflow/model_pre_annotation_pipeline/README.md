@@ -24,9 +24,3 @@ Option 2:
 
 * In the search bar, type `Model Pre-annotation Pipeline`, select the template and click install.
 * Once the template is installed, click on *Create Pipeline*.
-
-
-## Contributions, Bugs and Issues - How to Contribute
-
-We welcome anyone to help us improve this app.  
-[Here's](../../CONTRIBUTING.md) a detailed instructions to help you open a bug or ask for a feature request.
