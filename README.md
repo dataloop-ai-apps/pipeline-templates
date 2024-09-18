@@ -9,9 +9,6 @@
 #### Image Preprocessing:
 - [Image Augmentation Pipeline Template](image_preprocessing/image_augmentation/README.md)
 
-#### Image preprocessing:
-- [Image Augmentation Pipeline Template](image_preprocessing/image_augmentation/README.md)
-
 #### Labeling Workflows:
 - [Automatic Modalities Pipeline](labeling_workflow/automatic_modalities_pipeline/README.md)
 - [Microtasks Pipeline Template](labeling_workflow/microtasks_pipeline/README.md)
