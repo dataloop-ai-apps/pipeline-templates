@@ -222,7 +222,8 @@
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
-                "io": "input"
+                "io": "input",
+                "description": "Prompt item, created by the Gradio app."
               },
               {
                 "portId": "c92ec09d-30ff-453e-963c-aee8346173b4",
@@ -231,7 +232,8 @@
                 "name": "embedder",
                 "displayName": "embedder",
                 "variableName": "embedder_retriever",
-                "io": "input"
+                "io": "input",
+                "description": "The Model used to embedd the Source Dataset."
               },
               {
                 "portId": "e6e08629-047a-4434-90f9-cf497c2c349e",
@@ -240,7 +242,8 @@
                 "name": "dataset",
                 "displayName": "dataset",
                 "variableName": "dataset",
-                "io": "input"
+                "io": "input",
+                "description": "The Source Dataset. Recipes Text Dataset is assigned as default."
               },
               {
                 "portId": "3177900d-b26d-495f-90ea-15bbe24ad9b3",
@@ -248,7 +251,8 @@
                 "type": "Json",
                 "name": "embeddings",
                 "displayName": "embeddings",
-                "io": "input"
+                "io": "input",
+                "description": "Embeddings vector of the user question."
               },
               {
                 "portId": "2e88a5ee-8065-4618-9513-63686b69c62d",
@@ -256,7 +260,8 @@
                 "type": "Json",
                 "name": "query",
                 "displayName": "query",
-                "io": "input"
+                "io": "input",
+                "description": "Input items query (DQL) to filter the searchable items."
               },
               {
                 "portId": "24e022c8-dc95-463f-b13b-97c8661c973a",
@@ -265,7 +270,8 @@
                 "name": "k",
                 "displayName": "K Nearest Items",
                 "variableName": "k_nearest_items",
-                "io": "input"
+                "io": "input",
+                "description": "K nearest items - The number of closest items to retrieve."
               }
             ],
             "outputs": [
