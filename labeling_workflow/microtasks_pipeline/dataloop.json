@@ -83,13 +83,13 @@
                 "name": "item",
                 "displayName": "Complete",
                 "actions": [
-                  "completed",
+                  "1st completed",
                   "discard"
                 ],
                 "io": "output"
               }
             ],
-            "name": "Labeling Task",
+            "name": "1st Ann Task",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -129,13 +129,13 @@
                 "name": "item",
                 "displayName": "Complete",
                 "actions": [
-                  "completed",
+                  "1st approved",
                   "discard"
                 ],
                 "io": "output"
               }
             ],
-            "name": "QA Task",
+            "name": "1st QA Task",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -175,13 +175,13 @@
                 "name": "item",
                 "displayName": "Complete",
                 "actions": [
-                  "completed",
+                  "2nd completed",
                   "discard"
                 ],
                 "io": "output"
               }
             ],
-            "name": "Labeling Task",
+            "name": "2nd Ann Task",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -221,13 +221,13 @@
                 "name": "item",
                 "displayName": "Complete",
                 "actions": [
-                  "completed",
+                  "2nd approved",
                   "discard"
                 ],
                 "io": "output"
               }
             ],
-            "name": "QA Task",
+            "name": "2nd QA Task",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -267,13 +267,13 @@
                 "name": "item",
                 "displayName": "Complete",
                 "actions": [
-                  "completed",
+                  "3rd completed",
                   "discard"
                 ],
                 "io": "output"
               }
             ],
-            "name": "Labeling Task",
+            "name": "3rd Ann Task",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -313,13 +313,13 @@
                 "name": "item",
                 "displayName": "Complete",
                 "actions": [
-                  "completed",
+                  "3rd approved",
                   "discard"
                 ],
                 "io": "output"
               }
             ],
-            "name": "QA Task",
+            "name": "3rd QA Task",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -351,7 +351,7 @@
               "portId": "7d3010f7-4956-4a42-b977-e900046df9f2"
             },
             "condition": "{}",
-            "action": "completed"
+            "action": "1st completed"
           },
           {
             "src": {
@@ -374,7 +374,7 @@
               "portId": "e5a8934e-dc68-46c7-92d7-29d90af1c07d"
             },
             "condition": "{}",
-            "action": "completed"
+            "action": "1st approved"
           },
           {
             "src": {
@@ -386,7 +386,7 @@
               "portId": "25667c61-e0ef-4831-9432-6ec7036c427e"
             },
             "condition": "{}",
-            "action": "completed"
+            "action": "2nd completed"
           },
           {
             "src": {
@@ -398,7 +398,7 @@
               "portId": "a5476728-2283-42df-a4b5-f25eac28dd69"
             },
             "condition": "{}",
-            "action": "completed"
+            "action": "2nd approved"
           },
           {
             "src": {
@@ -410,7 +410,7 @@
               "portId": "62c27cf1-2ad4-4c4f-93d1-7e74137d9f32"
             },
             "condition": "{}",
-            "action": "completed"
+            "action": "3rd completed"
           }
         ],
         "startNodes": [
