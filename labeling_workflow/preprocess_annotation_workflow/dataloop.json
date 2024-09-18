@@ -154,8 +154,9 @@
                 "y": 9959.514251708984,
                 "z": 0
               },
+              "taskType": "annotation",
               "repeatable": true,
-              "componentGroupName": "workflow"
+              "componentGroupName": "labeling"
             }
           },
           {
@@ -219,7 +220,7 @@
                 "name": "item",
                 "displayName": "Complete",
                 "actions": [
-                  "completed",
+                  "approved",
                   "discard"
                 ],
                 "io": "output"
@@ -240,8 +241,9 @@
                 "y": 9959.894450220523,
                 "z": 0
               },
+              "taskType": "qa",
               "repeatable": true,
-              "componentGroupName": "workflow"
+              "componentGroupName": "labeling"
             }
           }
         ],
@@ -290,7 +292,7 @@
               "portId": "f67e4f48-3a9e-4e0e-852d-c6543d5cd820"
             },
             "condition": "{}",
-            "action": "completed"
+            "action": "approved"
           }
         ],
         "startNodes": [

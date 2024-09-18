@@ -103,8 +103,9 @@
                 "y": 9681.6552734375,
                 "z": 0
               },
+              "taskType": "annotation",
               "repeatable": true,
-              "componentGroupName": "workflow"
+              "componentGroupName": "labeling"
             }
           },
           {
@@ -140,8 +141,8 @@
             },
             "metadata": {
               "position": {
-                "x": 11150.126953125,
-                "y": 9668.1533203125,
+                "x": 11148.126953125,
+                "y": 9661.1533203125,
                 "z": 0
               },
               "repeatable": true,
@@ -269,7 +270,7 @@
                 "name": "item",
                 "displayName": "Complete",
                 "actions": [
-                  "completed",
+                  "approved",
                   "discard"
                 ],
                 "io": "output"
@@ -290,8 +291,9 @@
                 "y": 9753.249477877474,
                 "z": 0
               },
+              "taskType": "qa",
               "repeatable": true,
-              "componentGroupName": "workflow"
+              "componentGroupName": "labeling"
             }
           }
         ],
@@ -341,7 +343,7 @@
               "portId": "8d961c2a-ef94-40dc-a2ba-ee0779acf0b9"
             },
             "condition": "{}",
-            "action": "completed"
+            "action": "approved"
           },
           {
             "src": {
