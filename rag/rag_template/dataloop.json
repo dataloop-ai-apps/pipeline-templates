@@ -363,7 +363,8 @@
               "repeatable": true,
               "variableModel": "model",
               "componentGroupName": "models",
-              "pipelineNodeName": "chat-completion"
+              "pipelineNodeName": "chat-completion",
+              "mlType": "genAi"
             }
           }
         ],
