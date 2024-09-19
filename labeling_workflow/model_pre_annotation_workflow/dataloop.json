@@ -251,7 +251,7 @@
                 "name": "item",
                 "displayName": "Complete",
                 "actions": [
-                  "completed",
+                  "approved",
                   "discard"
                 ],
                 "io": "output"

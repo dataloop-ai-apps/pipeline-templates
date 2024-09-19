@@ -182,7 +182,7 @@
                 "name": "item",
                 "displayName": "Complete",
                 "actions": [
-                  "completed",
+                  "approved",
                   "discard"
                 ],
                 "io": "output"
@@ -296,7 +296,7 @@
               "portId": "c37f07ad-57f1-4387-813f-570448e611a5"
             },
             "condition": "{}",
-            "action": "completed"
+            "action": "approved"
           }
         ],
         "startNodes": [
