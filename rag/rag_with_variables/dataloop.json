@@ -112,6 +112,22 @@
                 "y": 418.5,
                 "z": 0
               },
+              "serviceConfig": {
+                "initParams": {},
+                "name": "gradio-service",
+                "moduleName": "gradio_module",
+                "panelNames": ["gradio"],
+                "runtime": {
+                  "runnerImage": "gcr.io/viewo-g/piper/agent/apps/ingest-gradio:0.1.14",
+                  "podType": "regular-xs",
+                  "concurrency": 10,
+                  "autoscaler": {
+                    "minReplicas": 1,
+                    "maxReplicas": 2,
+                    "queueLength": 10
+                  }
+                }
+              },
               "taskType": "annotation",
               "componentGroupName": "Integrations",
               "customNodeConfig": {
