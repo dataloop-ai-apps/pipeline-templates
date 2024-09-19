@@ -101,7 +101,7 @@
             "namespace": {
               "functionName": "start_pipe",
               "serviceName": "gradio-service",
-              "moduleName": "gradio-module",
+              "moduleName": "gradio_module",
               "packageName": "pipeline-trigger-gradio"
             },
             "appName": "Gradio Pipeline Trigger",
