@@ -5,9 +5,7 @@
     "Category": "Pipeline",
     "Pipeline Type": "GenAI",
     "Provider": "Dataloop",
-    "Media Type": [
-      "Text"
-    ]
+    "Media Type": ["Text"]
   },
   "displayName": "RAG template Example",
   "description": "This RAG template uses OpenAI's text embedder for query embedding, retrieves relevant documents, and leverages ChatGPT to generate accurate, context-based responses. It pre-load a food and recipes dataset as a source dataset.",
@@ -91,7 +89,7 @@
             "outputs": [
               {
                 "portId": "ab207b19-b376-4a25-bc12-1f76bc0bc1f1",
-                "nodeId": "ab207b19-b376-4a25-bc12-1f76bc0bc1f1",
+                "nodeId": "da7ad090-7c1f-4047-8bd3-2ddd712f3ecd",
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
@@ -121,8 +119,7 @@
                 "name": "Gradio",
                 "validation": {
                   "valid": true,
-                  "errors": [
-                  ]
+                  "errors": []
                 }
               },
               "repeatable": true,
@@ -274,8 +271,7 @@
                 "name": "Retriever Prompt",
                 "validation": {
                   "valid": true,
-                  "errors": [
-                  ]
+                  "errors": []
                 }
               },
               "repeatable": true,
@@ -392,9 +388,7 @@
             "configuration": {
               "system_prompt": "You are an AI assistant designed to answer questions using a provided set of documents. Your primary goal is to deliver precise and accurate responses, citing the relevant document sources for each answer. If the documents do not contain the necessary information, inform the user accordingly. Maintain a friendly and professional demeanor in all interactions.",
               "model_name": "gpt-4o",
-              "add_metadata": [
-                "system.document.source"
-              ],
+              "add_metadata": ["system.document.source"],
               "stream": true,
               "max_tokens": null,
               "temperature": null,
