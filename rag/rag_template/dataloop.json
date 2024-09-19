@@ -130,8 +130,7 @@
             "type": "custom",
             "namespace": {
               "functionName": "start_pipe",
-              "projectName": "test-organization",
-              "serviceName": "pipeline-trigger-gradio-service",
+              "serviceName": "gradio-service",
               "moduleName": "gradio-module",
               "packageName": "pipeline-trigger-gradio"
             },
@@ -286,7 +285,6 @@
               "moduleName": "retriever-module",
               "packageName": "llm-tools-retriever"
             },
-            "projectId": "d3d72ccb-e6d3-4465-af0f-344dabafc2c0",
             "appName": "Retriever",
             "dpkName": "llm-tools-retriever",
             "metadata": {
