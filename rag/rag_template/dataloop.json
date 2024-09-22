@@ -5,7 +5,9 @@
     "Category": "Pipeline",
     "Pipeline Type": "GenAI",
     "Provider": "Dataloop",
-    "Media Type": ["Text"]
+    "Media Type": [
+      "Text"
+    ]
   },
   "displayName": "RAG template",
   "description": "This RAG template uses OpenAI's text embedder for query embedding, retrieves relevant documents, and leverages ChatGPT to generate accurate, context-based responses.",
@@ -34,11 +36,13 @@
             "configuration": {
               "system_prompt": "You are an AI assistant designed to answer questions using a provided set of documents. Your primary goal is to deliver precise and accurate responses, citing the relevant document sources for each answer. If the documents do not contain the necessary information, inform the user accordingly. Maintain a friendly and professional demeanor in all interactions.",
               "model_name": "gpt-4o",
-              "add_metadata": ["system.document.source"],
+              "add_metadata": [
+                "system.document.source"
+              ],
               "stream": true,
-              "max_tokens": null,
-              "temperature": null,
-              "top_p": null
+              "max_tokens": 4096,
+              "temperature": 1.0,
+              "top_p": 1.0
             }
           }
         ]
@@ -146,7 +150,9 @@
                 "initParams": {},
                 "name": "gradio-service",
                 "moduleName": "gradio_module",
-                "panelNames": ["gradio"],
+                "panelNames": [
+                  "gradio"
+                ],
                 "runtime": {
                   "runnerImage": "gcr.io/viewo-g/piper/agent/apps/ingest-gradio:0.1.14",
                   "podType": "regular-xs",
