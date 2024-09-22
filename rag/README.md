@@ -20,23 +20,15 @@ interaction.
 
 #### To reach the gradio:
 
-1. Go to marketplace, application tab, search for `Gradio Pipeline Trigger` and install it.
-2. On the left panel, click on `Copy Installation ID`:
+- Open the RAG Pipeline and click on `Start`.
+- Select the `Gradio Start` node, then in the left panel, click `Open Gradio App`.
 
-<img src="assets/marketplace.png" alt="Marketplace">
+<img src="assets/open_gradio_pipeline.png" alt="set_up_parameters.png">
 
-3. Click on this link: [EndPoint](https://gate.dataloop.ai/api/v1/apps/<installation_id>) and insert the copied `Installation ID`.
-4. Click on the `app route`:
+- A new window will appear. In the `Textbox`, enter your question. You will receive the answer in the same interface.
 
-<img src="assets/endpoint.png" alt="EndPoint">
 
-and the gradio app will open:
-
-<img src="assets/gradio.png" alt="gradio">
-
-5. To start using the rag template via gradio, click on `Refresh pipelines`, and choose your pipline by it's name. Then you can use the text box to write you questions and get the model's answers.
-
-<img src="assets/gradio_refresh.png" alt="gradio">
+  <img src="assets/gradio__app.png" alt="set_up_parameters.png">
 
 ### 2. OpenAI Text Embeddings
 
@@ -57,7 +49,9 @@ inputs:
 - **Feature Set ID**: The specific feature set within the dataset.
 - **Query Filter**: Optional filtering DQL to refine the search results.
 - **K Nearest Items**: Defines how many of the closest items to return based on the similarity of embeddings.
+
 #### To edit these parameters on the pipeline node:
+
 1. Click on one of the input parameters of the `retriever` node to add the variables to the pipeline:
 
 <img src="assets/set_up_parameters.png" alt="set_up_parameters.png">
@@ -67,10 +61,12 @@ inputs:
 <img src="assets/pipeline_variables.png" alt="pipeline_variables.png">
 
 to get your `feature_set_id` use the SDK:
+
 ```python
 import dtlpy as dl
-project = dl.projects.get(project_name=<your-project-name>)
-fs_id = project.feature_sets.get(feature_set_name=<your-fs-name>).id
+
+project = dl.projects.get(project_name= < your - project - name >)
+fs_id = project.feature_sets.get(feature_set_name= < your - fs - name >).id
 ```
 
 3. Then, assign each pipeline variable for each input parameter on the node:
@@ -91,6 +87,7 @@ Once the retriever finds the most relevant items, a ChatGPT model generates a co
 <img src="assets/edit_system_prompt.png" alt="Image of the pipeline creation page">
 
 An optional prompt:
+
 ```plaintext
 "You are an AI assistant designed to answer questions using a provided set of documents. Your primary goal is to deliver precise and accurate responses, citing the relevant document sources for each answer. If the documents do not contain the necessary information, inform the user accordingly. Maintain a friendly and professional demeanor in all interactions."
 ```
