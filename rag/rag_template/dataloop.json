@@ -305,6 +305,7 @@
             "namespace": {
               "functionName": "query_nearest_items_prompt",
               "moduleName": "retriever-module",
+              "serviceName": "retriever-service",
               "packageName": "llm-tools-retriever"
             },
             "appName": "Retriever",
