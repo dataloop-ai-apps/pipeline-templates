@@ -136,7 +136,7 @@
     },
     "dependencies": [
         {
-            "name": "active-learning-template"
+            "name": "active-learning"
         },
         {
             "name": "ml-compare-example"
