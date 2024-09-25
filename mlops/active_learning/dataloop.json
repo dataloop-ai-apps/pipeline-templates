@@ -53,15 +53,15 @@
             "type": "ml",
             "namespace": {
               "functionName": "predict",
+              "projectName": null,
               "serviceName": "model-mgmt-app-predict",
               "moduleName": "model-mgmt-app-predict",
               "packageName": "model-mgmt-app"
             },
-            "projectId": null,
             "metadata": {
               "position": {
-                "x": 529.338119506836,
-                "y": 127.379859924316,
+                "x": 533.8538665771486,
+                "y": 124.379859924316,
                 "z": 0
               },
               "repeatable": true,
@@ -90,7 +90,7 @@
                 "io": "output"
               }
             ],
-            "name": "Not Selected",
+            "name": "Dataset",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -99,14 +99,18 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": null,
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
-                "x": 251.91845703125,
-                "y": 128.157066345215,
+                "x": 251.43417358398438,
+                "y": 128.6413497924806,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "variableDataset": "Ground Truth Dataset",
+              "triggerToPipeline": {
+                "active": true
+              }
             }
           },
           {
@@ -144,11 +148,11 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": null,
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
-                "x": 815.278213500977,
-                "y": 128.079475402832,
+                "x": 827.8992462158208,
+                "y": 124.63735198974607,
                 "z": 0
               },
               "taskType": "annotation",
@@ -194,7 +198,7 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": null,
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
                 "x": 1185.75947570801,
@@ -230,7 +234,7 @@
                 "io": "output"
               }
             ],
-            "name": "Not Selected",
+            "name": "Dataset",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -239,14 +243,15 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": null,
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
                 "x": 1931.20001391662,
-                "y": 124.413399259784,
+                "y": 123.413399259784,
                 "z": 0
               },
-              "repeatable": true
+              "repeatable": true,
+              "variableDataset": "Ground Truth Dataset"
             }
           },
           {
@@ -275,11 +280,11 @@
             "type": "ml",
             "namespace": {
               "functionName": "train",
+              "projectName": null,
               "serviceName": "model-mgmt-app-train",
               "moduleName": "model-mgmt-app-train",
               "packageName": "model-mgmt-app"
             },
-            "projectId": null,
             "metadata": {
               "position": {
                 "x": 653.506285690054,
@@ -341,11 +346,11 @@
             "type": "ml",
             "namespace": {
               "functionName": "evaluate",
+              "projectName": null,
               "serviceName": "model-mgmt-app-evaluate",
               "moduleName": "model-mgmt-app-evaluate",
               "packageName": "model-mgmt-app"
             },
-            "projectId": null,
             "metadata": {
               "position": {
                 "x": 954.644903117166,
@@ -407,11 +412,11 @@
             "type": "ml",
             "namespace": {
               "functionName": "evaluate",
+              "projectName": null,
               "serviceName": "model-mgmt-app-evaluate",
               "moduleName": "model-mgmt-app-evaluate",
               "packageName": "model-mgmt-app"
             },
-            "projectId": null,
             "metadata": {
               "position": {
                 "x": 953.840546821315,
@@ -443,7 +448,7 @@
                 "io": "output"
               }
             ],
-            "name": "Update Variable",
+            "name": "Update Variables",
             "type": "updateVariable",
             "namespace": {
               "functionName": "update_variable",
@@ -452,7 +457,7 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": null,
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
                 "x": 1711.35921166919,
@@ -533,11 +538,11 @@
             "type": "custom",
             "namespace": {
               "functionName": "create_new_model",
-              "serviceName": "create-new-model",
+              "projectName": null,
+              "serviceName": "make-dp-ks-create-new-model-z3nn8i",
               "moduleName": "create_new_model",
               "packageName": "active-learning"
             },
-            "projectId": null,
             "appName": "Active Learning",
             "dpkName": "active-learning",
             "metadata": {
@@ -547,7 +552,9 @@
                 "z": 0
               },
               "serviceConfig": {
-                "initParams": {},
+                "initParams": {
+
+                },
                 "name": "create-new-model",
                 "moduleName": "create_new_model",
                 "runtime": {
@@ -559,13 +566,16 @@
                     "queueLength": 10
                   }
                 },
-                "operation": "none"
+                "operation": "none",
+                "packageRevision": "0.1.6"
               },
               "componentGroupName": "models",
               "customNodeConfig": {
                 "name": "Create New Model",
                 "modelName": "{model.name}-{datetime.datetime.now().strftime('%Y_%m_%d-T%H_%M_%S')}",
-                "modelParameters": {},
+                "modelParameters": {
+
+                },
                 "dataQuery": {
                   "value": {
                     "query": "SELECT * FROM {model.name}"
@@ -573,10 +583,11 @@
                 },
                 "validation": {
                   "valid": true,
-                  "errors": []
+                  "errors": [
+
+                  ]
                 }
               },
-              "codeApplicationName": "create-new-model",
               "repeatable": true,
               "pipelineNodeName": "createNewModel"
             }
@@ -638,11 +649,11 @@
             "type": "custom",
             "namespace": {
               "functionName": "compare_models",
-              "serviceName": "compare-models",
+              "projectName": null,
+              "serviceName": "make-dp-ks-compare-models-4sfhtpeu",
               "moduleName": "compare_models",
               "packageName": "active-learning"
             },
-            "projectId": null,
             "appName": "Active Learning",
             "dpkName": "active-learning",
             "metadata": {
@@ -652,7 +663,9 @@
                 "z": 0
               },
               "serviceConfig": {
-                "initParams": {},
+                "initParams": {
+
+                },
                 "name": "compare-models",
                 "moduleName": "compare_models",
                 "runtime": {
@@ -664,7 +677,8 @@
                     "queueLength": 10
                   }
                 },
-                "operation": "none"
+                "operation": "none",
+                "packageRevision": "0.1.6"
               },
               "componentGroupName": "models",
               "customNodeConfig": {
@@ -677,10 +691,11 @@
                 "gitTag": "",
                 "validation": {
                   "valid": true,
-                  "errors": []
+                  "errors": [
+
+                  ]
                 }
               },
-              "codeApplicationName": "compare-models",
               "repeatable": true,
               "pipelineNodeName": "compareModels"
             }
@@ -716,21 +731,23 @@
             "type": "custom",
             "namespace": {
               "functionName": "data_split",
-              "serviceName": "model-data-split",
+              "projectName": null,
+              "serviceName": "make-dp-ks-model-data-split-v0niwd",
               "moduleName": "model_data_split",
               "packageName": "active-learning"
             },
-            "projectId": null,
             "appName": "Active Learning",
             "dpkName": "active-learning",
             "metadata": {
               "position": {
-                "x": 1549.41233825684,
+                "x": 1548.0928802490275,
                 "y": 123.763328552246,
                 "z": 0
               },
               "serviceConfig": {
-                "initParams": {},
+                "initParams": {
+
+                },
                 "name": "model-data-split",
                 "moduleName": "model_data_split",
                 "runtime": {
@@ -742,7 +759,8 @@
                     "queueLength": 10
                   }
                 },
-                "operation": "none"
+                "operation": "none",
+                "packageRevision": "0.1.6"
               },
               "componentGroupName": "models",
               "customNodeConfig": {
@@ -768,7 +786,9 @@
                 "itemMetadata": true,
                 "validation": {
                   "valid": true,
-                  "errors": []
+                  "errors": [
+
+                  ]
                 },
                 "ports": [
                   {
@@ -791,7 +811,6 @@
                   }
                 ]
               },
-              "codeApplicationName": "model-data-split",
               "repeatable": true,
               "pipelineNodeName": "dataSplit"
             }
@@ -1095,7 +1114,7 @@
   },
   "dependencies": [
     {
-      "name": "active-learning"
+      "name": "active-learning-components"
     }
   ]
 }
