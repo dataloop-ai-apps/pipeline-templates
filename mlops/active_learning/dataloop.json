@@ -1004,13 +1004,13 @@
             "name": "Best Model",
             "type": "Model",
             "description": "Insert baseline Model ID",
-            "value": ""
+            "value": "$var(best_model__model)"
           },
           {
             "name": "Ground Truth Dataset",
             "type": "Dataset",
             "description": "Insert Ground Truth Dataset ID",
-            "value": ""
+            "value": "$var(ground_truth__dataset)"
           },
           {
             "name": "Train Subset Filter",
@@ -1114,7 +1114,7 @@
   },
   "dependencies": [
     {
-      "name": "active-learning-components"
+      "name": "active-learning"
     }
   ]
 }
