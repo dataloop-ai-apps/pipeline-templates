@@ -58,6 +58,7 @@
               "moduleName": "model-mgmt-app-predict",
               "packageName": "model-mgmt-app"
             },
+            "projectId": null,
             "metadata": {
               "position": {
                 "x": 533.8538665771486,
@@ -90,7 +91,7 @@
                 "io": "output"
               }
             ],
-            "name": "Dataset",
+            "name": "New Unannotated Data ",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -99,11 +100,11 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "projectId": null,
             "metadata": {
               "position": {
-                "x": 251.43417358398438,
-                "y": 128.6413497924806,
+                "x": 254.7496337890625,
+                "y": 122.41803741455092,
                 "z": 0
               },
               "repeatable": true,
@@ -148,7 +149,7 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "projectId": null,
             "metadata": {
               "position": {
                 "x": 827.8992462158208,
@@ -198,7 +199,7 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "projectId": null,
             "metadata": {
               "position": {
                 "x": 1185.75947570801,
@@ -234,7 +235,7 @@
                 "io": "output"
               }
             ],
-            "name": "Dataset",
+            "name": "Ground Truth",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -243,7 +244,7 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "projectId": null,
             "metadata": {
               "position": {
                 "x": 1931.20001391662,
@@ -285,6 +286,7 @@
               "moduleName": "model-mgmt-app-train",
               "packageName": "model-mgmt-app"
             },
+            "projectId": null,
             "metadata": {
               "position": {
                 "x": 653.506285690054,
@@ -351,6 +353,7 @@
               "moduleName": "model-mgmt-app-evaluate",
               "packageName": "model-mgmt-app"
             },
+            "projectId": null,
             "metadata": {
               "position": {
                 "x": 954.644903117166,
@@ -417,6 +420,7 @@
               "moduleName": "model-mgmt-app-evaluate",
               "packageName": "model-mgmt-app"
             },
+            "projectId": null,
             "metadata": {
               "position": {
                 "x": 953.840546821315,
@@ -457,7 +461,7 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "projectId": null,
             "metadata": {
               "position": {
                 "x": 1711.35921166919,
@@ -539,10 +543,11 @@
             "namespace": {
               "functionName": "create_new_model",
               "projectName": null,
-              "serviceName": "make-dp-ks-create-new-model-z3nn8i",
+              "serviceName": "create-new-model-nodes",
               "moduleName": "create_new_model",
               "packageName": "active-learning"
             },
+            "projectId": null,
             "appName": "Active Learning",
             "dpkName": "active-learning",
             "metadata": {
@@ -567,7 +572,7 @@
                   }
                 },
                 "operation": "none",
-                "packageRevision": "0.1.6"
+                "packageRevision": "0.1.10"
               },
               "componentGroupName": "models",
               "customNodeConfig": {
@@ -650,10 +655,11 @@
             "namespace": {
               "functionName": "compare_models",
               "projectName": null,
-              "serviceName": "make-dp-ks-compare-models-4sfhtpeu",
+              "serviceName": "compare-models-nodes",
               "moduleName": "compare_models",
               "packageName": "active-learning"
             },
+            "projectId": null,
             "appName": "Active Learning",
             "dpkName": "active-learning",
             "metadata": {
@@ -678,7 +684,7 @@
                   }
                 },
                 "operation": "none",
-                "packageRevision": "0.1.6"
+                "packageRevision": "0.1.10"
               },
               "componentGroupName": "models",
               "customNodeConfig": {
@@ -732,10 +738,11 @@
             "namespace": {
               "functionName": "data_split",
               "projectName": null,
-              "serviceName": "make-dp-ks-model-data-split-v0niwd",
+              "serviceName": "model-data-split-nodes",
               "moduleName": "model_data_split",
               "packageName": "active-learning"
             },
+            "projectId": null,
             "appName": "Active Learning",
             "dpkName": "active-learning",
             "metadata": {
@@ -760,7 +767,7 @@
                   }
                 },
                 "operation": "none",
-                "packageRevision": "0.1.6"
+                "packageRevision": "0.1.10"
               },
               "componentGroupName": "models",
               "customNodeConfig": {
