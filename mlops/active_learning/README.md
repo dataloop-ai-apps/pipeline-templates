@@ -4,7 +4,7 @@
 
 ### Introduction:
 
-Automate the iterative process of fine-tuning your model, covering labeling, model creation, training, evaluation, and
+Active Learning automates the iterative process of fine-tuning your model, covering labeling, model creation, training, evaluation, and
 deployment of the best version.
 
 ### Installation:
@@ -16,11 +16,11 @@ To use the template, follow these steps:
 
 <img src="assets/pipeline_create.png" alt="Image of the pipeline creation page">
 
-* In the search bar, enter `Active Learning Pipeline`, select the template and click install.
-* Once the template is installed, click on _**Use Template**_ or _**Create Pipeline**_.
+* In the search bar, type `Active Learning Template`, select the template and click _**Install**_.
+* Once the template is installed, click on _**Use Template**_ at the top or _**Create Pipeline**_ at the bottom.
 * Fill in the required IDs and start pipeline.
 
-<img src="assets/startline_create_pipeline.png" alt="Image of the pipeline">
+<img src="assets/marketplace_create_pipeline.png" alt="Image of the pipeline">
 
 ### Usage:
 
