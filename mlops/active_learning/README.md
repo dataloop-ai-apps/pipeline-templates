@@ -9,19 +9,20 @@ deployment of the best version.
 
 ### Installation:
 
-In order to use the template, you need to follow these steps:
+To use the template, follow these steps:
 
-* Open the pipelines page and select Create Pipeline.
-* Select Use a Template from the dropdown list.
+* Open the Pipelines page and select _**Create Pipeline**_.
+* Select _**Use a Template**_ from the dropdown list.
 
 <img src="assets/pipeline_create.png" alt="Image of the pipeline creation page">
 
-* In the search bar, type `Active Learning Template`, select the template and click install.
-* Once the template is installed, click on *Create Pipeline*.
+* In the search bar, enter `Active Learning Pipeline`, select the template and click install.
+* Once the template is installed, click on _**Use Template**_ or _**Create Pipeline**_.
+* Fill in the required IDs and start pipeline.
 
 <img src="assets/startline_create_pipeline.png" alt="Image of the pipeline">
 
 ### Usage:
 
-For the complete documentation of the Active learning pipeline, please refer to
+For the complete documentation of the Active Learning pipeline, please refer to
 the [Active Learning Pipeline Documentation](https://docs.dataloop.ai/docs/active-learning-pipeline)
