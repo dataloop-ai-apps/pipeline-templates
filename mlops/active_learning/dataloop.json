@@ -109,7 +109,7 @@
                 "z": 0
               },
               "repeatable": true,
-              "variableDataset": "New Data Dataset",
+              "variableDataset": "Raw Dataset",
               "triggerToPipeline": {
                 "active": true
               }
