@@ -1,14 +1,24 @@
 # *RAG Pipeline* Template
 
-<img src="assets/rag_template.png" alt="Image of the pipeline">
+<img src="assets/template.png" alt="Image of the pipeline">
 
 ### Introduction:
 
-This repository provides a Retrieval-Augmented Generation (RAG) pipeline template designed to handle user queries,
-retrieve relevant information, and generate detailed responses using OpenAI models
-in [Dataloop Platform](https://dataloop.ai/).
-The pipeline integrates multiple components, including a Gradio app, an OpenAI text embedder, a retriever, and a ChatGPT
-model.
+This app provides a customizable **Retrieval-Augmented Generation (RAG)** pipeline template, designed to streamline 
+query processing and response generation.
+
+## Key Features:
+- **Gradio App**: For seamless user interaction.
+- **Embedder**: Embed user queries.
+- **Retriever**: Supports retrieving relevant documents.
+- **Generative Model**: Generates detailed, context-based responses.
+
+You can install any embedding and generative models from the Dataloop Marketplace and configure 
+them within the relevant nodes of the pipeline [Dataloop Website](https://dataloop.ai/).
+
+### Note:
+Source datasets must be pre-embedded during the preprocessing stage for optimal performance.
+
 
 ## Components
 
@@ -30,10 +40,9 @@ interaction.
 
   <img src="assets/gradio__app.png" alt="set_up_parameters.png">
 
-### 2. OpenAI Text Embeddings
+### 2. Embedder
 
-OpenAI's `text-embedding-3` model is used to convert user questions into embeddings. These embeddings serve as the
-foundation for retrieving relevant information from a dataset.
+Choose an Embedder form Marketplace and assign the model in the embeddings node.
 
 - **How it works**:
     - The user input is processed and embedded.
@@ -73,11 +82,12 @@ fs_id = project.feature_sets.get(feature_set_name= < your - fs - name >).id
 
 <img src="assets/choose_variable.png" alt="choose_variable.png">
 
-#### A Preprocess stage is to create a feature set to the dataset using OpenAI's `text-embedding-3` embedder.
+#### A Preprocess stage is to create a feature set to the dataset using the embedder you chose.
 
-### 4. ChatGPT Model
+### 4. Generative Model
 
-Once the retriever finds the most relevant items, a ChatGPT model generates a comprehensive response. The model:
+Choose a Generative model form Marketplace and assign the model in the generate node.
+Once the retriever finds the most relevant items, a generative model generates a comprehensive response. The model:
 
 - Summarizes the retrieved information.
 - Answers the user's question based on the system's predefined prompt and the retrieved results.
