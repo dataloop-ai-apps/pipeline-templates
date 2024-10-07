@@ -220,7 +220,7 @@
                 "nodeId": "0dbdfa4c-ba30-4031-845d-f546cb9670ac",
                 "type": "Model",
                 "name": "embedder",
-                "displayName": "embedder",
+                "displayName": "embedder_retriever",
                 "io": "input",
                 "variableName": "embedder_retriever",
                 "description": "The Model used to embedd the Source Dataset."
@@ -242,7 +242,6 @@
                 "name": "embeddings",
                 "displayName": "embeddings",
                 "io": "input",
-                "variableName": "embedder",
                 "description": "Embeddings vector of the user question."
               },
               {
