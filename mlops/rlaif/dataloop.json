@@ -1,6 +1,6 @@
 {
   "name": "rlaif-pipeline-template",
-  "version": "1.0.78",
+  "version": "1.0.79",
   "attributes": {
     "Provider": "Dataloop",
     "Category": "Pipeline",
@@ -13,7 +13,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
-    "gitTag": "1.0.78"
+    "gitTag": "1.0.79"
   },
   "components": {
     "pipelineTemplates": [
