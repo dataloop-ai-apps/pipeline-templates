@@ -1022,7 +1022,8 @@
           {
             "name": "Ground Truth Dataset",
             "type": "Dataset",
-            "description": "Insert dataset ID for the ground truth"
+            "description": "Insert dataset ID for the ground truth",
+            "value": "$var(Ground Truth Dataset__dataset)"
           },
           {
             "name": "Train Subset Filter",
