@@ -557,24 +557,6 @@
                 "y": 340.763328552246,
                 "z": 0
               },
-              "serviceConfig": {
-                "initParams": {
-
-                },
-                "name": "create-new-model",
-                "moduleName": "create_new_model",
-                "runtime": {
-                  "podType": "regular-xs",
-                  "autoscaler": {
-                    "type": "rabbitmq",
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  }
-                },
-                "operation": "none",
-                "packageRevision": "0.1.10"
-              },
               "componentGroupName": "models",
               "customNodeConfig": {
                 "name": "Create New Model",
@@ -669,24 +651,6 @@
                 "y": 345.519065856934,
                 "z": 0
               },
-              "serviceConfig": {
-                "initParams": {
-
-                },
-                "name": "compare-models",
-                "moduleName": "compare_models",
-                "runtime": {
-                  "podType": "regular-xs",
-                  "autoscaler": {
-                    "type": "rabbitmq",
-                    "minReplicas": 1,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  }
-                },
-                "operation": "none",
-                "packageRevision": "0.1.10"
-              },
               "componentGroupName": "models",
               "customNodeConfig": {
                 "name": "Compare Models",
@@ -751,24 +715,6 @@
                 "x": 1548.0928802490275,
                 "y": 123.763328552246,
                 "z": 0
-              },
-              "serviceConfig": {
-                "initParams": {
-
-                },
-                "name": "model-data-split",
-                "moduleName": "model_data_split",
-                "runtime": {
-                  "podType": "regular-xs",
-                  "autoscaler": {
-                    "type": "rabbitmq",
-                    "minReplicas": 0,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  }
-                },
-                "operation": "none",
-                "packageRevision": "0.1.10"
               },
               "componentGroupName": "models",
               "customNodeConfig": {
