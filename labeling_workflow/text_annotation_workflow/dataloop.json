@@ -1,6 +1,6 @@
 {
   "name": "text-annotation-workflow",
-  "version": "1.0.80",
+  "version": "1.0.81",
   "attributes": {
     "Category": "Pipeline",
     "Provider": "Dataloop",
@@ -15,7 +15,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
-    "gitTag": "1.0.80"
+    "gitTag": "1.0.81"
   },
   "components": {
     "pipelineTemplates": [
