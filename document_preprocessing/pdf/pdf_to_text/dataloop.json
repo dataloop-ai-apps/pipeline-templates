@@ -5,7 +5,9 @@
     "Category": "Pipeline",
     "Pipeline Type": "Data Engineering",
     "Provider": "Dataloop",
-    "Media Type": ["Text"]
+    "Media Type": [
+      "Text"
+    ]
   },
   "displayName": "PDF Preprocessing Template",
   "description": "Automate the process of preprocess pdf files by extracting to text and clean using unstructured-io library.",
@@ -76,19 +78,19 @@
               {
                 "portId": "2a6a3e95-7a3b-4e7c-b5cc-7c74f673db59",
                 "nodeId": "2a6a3e95-7a3b-4e7c-b5cc-7c74f673db59",
-                "type": "Item[]",
-                "name": "items",
-                "displayName": "items",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
                 "io": "output"
               }
             ],
-            "name": "PDF to Text",
+            "name": "Text to Chunks",
             "type": "custom",
             "namespace": {
-              "functionName": "pdf_item_to_text",
-              "serviceName": "pdf-to-text-v2",
-              "moduleName": "pdf_to_text_v2",
-              "packageName": "pdf_to_text"
+              "functionName": "create_chunks",
+              "serviceName": "chunks-v2-service",
+              "moduleName": "chunks-v2-module",
+              "packageName": "txt_to_chunks"
             },
             "projectId": null,
             "metadata": {
@@ -99,12 +101,12 @@
               },
               "serviceConfig": {
                 "initParams": {},
-                "name": "pdf-to-text-v2",
-                "moduleName": "pdf_to_text_v2",
+                "name": "chunks-v2-service",
+                "moduleName": "chunks-v2-module",
                 "secrets": [],
                 "runtime": {
-                  "podType": "regular-m",
-                  "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.10.opencv",
+                  "podType": "regular-s",
+                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/apps/document-preprocessing:0.1.3",
                   "concurrency": 10,
                   "autoscaler": {
                     "minReplicas": 0,
@@ -114,23 +116,24 @@
                 },
                 "operation": "none"
               },
-              "componentGroupName": "Text-Preprocessing",
+              "componentGroupName": "text-utils",
               "customNodeConfig": {
-                "name": "PDF-to-Text",
+                "name": "Text-to-Chunks",
                 "chunking_strategy": "fixed-size",
                 "max_chunk_size": 300,
                 "chunk_overlap": 20,
+                "remote_path_for_chunks": "/chunk_files",
                 "validation": {
                   "valid": true,
                   "errors": []
                 }
               },
-              "codeApplicationName": "pdf-to-text-v2",
+              "codeApplicationName": "txt_to_chunks",
               "repeatable": true,
-              "pipelineNodeName": "pdf_to_text"
+              "pipelineNodeName": "create_chunks"
             },
-            "appName": "PDF to Preprocessed Text",
-            "dpkName": "pdf_to_text"
+            "appName": "Text Chunk Generator",
+            "dpkName": "txt_to_chunks"
           },
           {
             "id": "2f2bad55-ea25-4999-a88e-eb0201c778a5",
@@ -138,9 +141,9 @@
               {
                 "portId": "dcc161b5-0fb4-44dd-be09-d8a62abe28db",
                 "nodeId": "dcc161b5-0fb4-44dd-be09-d8a62abe28db",
-                "type": "Item[]",
-                "name": "items",
-                "displayName": "items",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
                 "io": "input"
               }
             ],
@@ -148,19 +151,19 @@
               {
                 "portId": "08cd3857-4bfe-4fe3-a11b-078dc4bb8414",
                 "nodeId": "08cd3857-4bfe-4fe3-a11b-078dc4bb8414",
-                "type": "Item[]",
-                "name": "items",
-                "displayName": "items",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
                 "io": "output"
               }
             ],
-            "name": "Text Preprocessing",
+            "name": "Clean Chunks",
             "type": "custom",
             "namespace": {
-              "functionName": "preprocess_text",
-              "serviceName": "preprocess-text-v2",
-              "moduleName": "preprocess_text_v2",
-              "packageName": "pdf_to_text"
+              "functionName": "clean_multiple_chunks",
+              "serviceName": "preprocess",
+              "moduleName": "chunks-v2-module",
+              "packageName": "txt_to_chunks"
             },
             "projectId": null,
             "metadata": {
@@ -171,12 +174,12 @@
               },
               "serviceConfig": {
                 "initParams": {},
-                "name": "preprocess-text-v2",
-                "moduleName": "preprocess_text_v2",
+                "name": "chunks-v2-service",
+                "moduleName": "chunks-v2-module",
                 "secrets": [],
                 "runtime": {
-                  "podType": "regular-m",
-                  "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.10.opencv",
+                  "podType": "regular-s",
+                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/apps/document-preprocessing:0.1.3",
                   "concurrency": 10,
                   "autoscaler": {
                     "minReplicas": 0,
@@ -186,21 +189,22 @@
                 },
                 "operation": "none"
               },
-              "componentGroupName": "Text-Preprocessing",
+              "componentGroupName": "text-utils",
               "customNodeConfig": {
-                "name": "Preprocess-Text",
-                "to_spell": false,
+                "name": "Clean-Chunks",
+                "to_correct_spelling": false,
+                "remote_path_for_clean_chunks": "/clean_chunks",
                 "validation": {
                   "valid": true,
                   "errors": []
                 }
               },
-              "codeApplicationName": "preprocess-text-v2",
+              "codeApplicationName": "chunks-v2-service",
               "repeatable": true,
-              "pipelineNodeName": "preprocess"
+              "pipelineNodeName": "clean_multiple_chunks"
             },
-            "appName": "PDF to Preprocessed Text",
-            "dpkName": "pdf_to_text"
+            "appName": "Text Chunk Generator",
+            "dpkName": "txt_to_chunks"
           },
           {
             "id": "c894c0f5-d191-42b0-b46c-a4c8c983d884",
@@ -232,7 +236,7 @@
                 "io": "output"
               }
             ],
-            "name": "Predict Model",
+            "name": "Generate",
             "type": "ml",
             "namespace": {
               "functionName": "predict",
@@ -302,7 +306,7 @@
   },
   "dependencies": [
     {
-      "name": "pdf_to_text"
+      "name": "txt_to_chunks"
     }
   ]
 }
