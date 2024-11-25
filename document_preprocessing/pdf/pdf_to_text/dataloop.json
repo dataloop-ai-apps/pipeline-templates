@@ -334,7 +334,10 @@
   },
   "dependencies": [
     {
-      "name": "pdf_to_text"
+      "name": "pdf_to_txt"
+    },
+    {
+      "name": "txt_to_chunks"
     }
   ]
 }
