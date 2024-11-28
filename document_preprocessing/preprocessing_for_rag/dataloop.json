@@ -420,7 +420,7 @@
               "nodeId": "ae894756-d763-4f43-b4b8-9bcaedf02cda",
               "portId": "1c946843-9022-4c40-b9b7-ba0205b9fb34"
             },
-            "condition": "{\"metadata.system.mimetype\":\"text/plain\"}"
+            "condition": "{\"metadata.system.mimetype\":\"application/pdf\"}"
           },
           {
             "src": {
