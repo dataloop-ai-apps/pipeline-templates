@@ -43,7 +43,7 @@
                 "io": "output"
               }
             ],
-            "name": "Dataset",
+            "name": "Source Dataset",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -84,7 +84,7 @@
                 "io": "output"
               }
             ],
-            "name": "Dataset",
+            "name": "Source Txt",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -388,7 +388,7 @@
                 "io": "output"
               }
             ],
-            "name": "Dataset",
+            "name": "Chunks Dataset",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -458,7 +458,7 @@
               "componentGroupName": "text-utils",
               "customNodeConfig": {
                 "name": "Context-to-Chunk",
-                "overwrite_chunk": true,
+                "overwrite_chunk": false,
                 "remote_path": "/contextual_chunks",
                 "validation": {
                   "valid": true,
