@@ -5,6 +5,8 @@
 #### Document Preprocessing:
 - [PDF to Image Pipeline Template](document_preprocessing/pdf/pdf_to_image/README.md)
 - [PDF to Text Pipeline Template](document_preprocessing/pdf/pdf_to_text/README.md)
+- [RAG Preprocessing Pipeline Template](document_preprocessing/preprocessing_for_rag/README.md)
+- [RAG Contextual Preprocessing Pipeline Template](document_preprocessing/contextual_preprocessing_for_rag/README.md)
 
 #### Image Preprocessing:
 - [Image Augmentation Pipeline Template](image_preprocessing/image_augmentation/README.md)
