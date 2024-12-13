@@ -28,6 +28,17 @@
         "connections": [
           {
             "src": {
+              "nodeId": "8086b6b3-f10a-4c33-b8a6-a01e1107e315",
+              "portId": "75602147-feda-4387-b8f2-c2b669f6e6e8"
+            },
+            "tgt": {
+              "nodeId": "fab21d5f-7104-4a9a-9777-4a843a609ffc",
+              "portId": "e7894519-5566-4b05-9102-d21ecf72aa63"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
               "nodeId": "ff38b364-c064-454a-848c-82a5c8cf4ae2",
               "portId": "7fcd6a2b-97f3-4021-b642-2b3754c1e04b"
             },
@@ -76,15 +87,74 @@
         ],
         "startNodes": [
           {
-            "nodeId": "fab21d5f-7104-4a9a-9777-4a843a609ffc",
+            "nodeId": "8086b6b3-f10a-4c33-b8a6-a01e1107e315",
             "type": "root",
-            "id": "30431107-bbdb-4163-897f-b336c94cc21d"
+            "trigger": {
+              "type": "Event",
+              "spec": {
+                "actions": [
+                  "Created"
+                ],
+                "resource": "Item",
+                "executionMode": "Once",
+                "filter": {
+                  "$and": [
+                    {
+                      "hidden": false
+                    },
+                    {
+                      "type": "file"
+                    }
+                  ]
+                }
+              }
+            }
           }
         ],
         "variables": [],
         "description": "",
         "name": "Consensus with Agreement",
         "nodes": [
+          {
+            "id": "8086b6b3-f10a-4c33-b8a6-a01e1107e315",
+            "inputs": [
+              {
+                "portId": "3623b37e-5c1a-40f0-bdca-c2ffc1066b50",
+                "nodeId": "3623b37e-5c1a-40f0-bdca-c2ffc1066b50",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "75602147-feda-4387-b8f2-c2b669f6e6e8",
+                "nodeId": "75602147-feda-4387-b8f2-c2b669f6e6e8",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Data Storage",
+            "type": "storage",
+            "namespace": {
+              "functionName": "dataset_handler",
+              "serviceName": "pipeline-utils",
+              "moduleName": null,
+              "packageName": null
+            },
+            "metadata": {
+              "position": {
+                "x": -216.854502230672,
+                "y": 299.930242983697,
+                "z": 0
+              },
+              "componentGroupName": "data",
+              "repeatable": true
+            }
+          },
           {
             "id": "fab21d5f-7104-4a9a-9777-4a843a609ffc",
             "inputs": [
