@@ -31,8 +31,8 @@ There are two options for installing and using the template:
 
 1. Pipelines:
 
-* Open the pipelines page and select Create Pipeline.
-* Select Use a Template from the dropdown list.
+* Open the pipelines page and select *Create Pipeline*.
+* Select *Use a Template* from the dropdown list.
 
 <img src="assets/pipeline_create.png" alt="Image of the pipeline creation page">
 
