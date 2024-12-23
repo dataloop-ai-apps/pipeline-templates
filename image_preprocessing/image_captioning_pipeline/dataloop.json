@@ -1,0 +1,395 @@
+{
+  "name": "image-captioning-template",
+  "version": "1.0.85",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "Labeling Workflow",
+    "Provider": "Dataloop",
+    "Media Type": [
+      "Image"
+    ]
+  },
+  "displayName": "Image Captioning Pipeline",
+  "description": "This app creates an image captioning pipeline template that generates captions for images and allows selection of the best response.",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.85"
+  },
+  "components": {
+    "pipelineTemplates": [
+      {
+        "orgId": "18739a63-4393-43ea-a87e-9a284b14978f",
+        "connections": [
+          {
+            "src": {
+              "nodeId": "228c8572-cd63-4d73-94bc-fe48e8e60007",
+              "portId": "00f71429-a1a7-40bb-b554-39c456878972"
+            },
+            "tgt": {
+              "nodeId": "f9c6f071-e6fe-4c68-abc1-8f490e065b86",
+              "portId": "13585101-e270-4254-b04a-5e634c44fbee"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "228c8572-cd63-4d73-94bc-fe48e8e60007",
+              "portId": "00f71429-a1a7-40bb-b554-39c456878972"
+            },
+            "tgt": {
+              "nodeId": "019cb5b5-b7d3-42c5-afcf-d7553afea81f",
+              "portId": "7d91d634-f3b5-4881-a055-4b8d5f43b6cc"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "228c8572-cd63-4d73-94bc-fe48e8e60007",
+              "portId": "00f71429-a1a7-40bb-b554-39c456878972"
+            },
+            "tgt": {
+              "nodeId": "6e53cc7a-69ab-4d06-ba84-1ef4da080bf0",
+              "portId": "a9ca3d8f-4d5f-4351-8630-7e69f9281011"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "019cb5b5-b7d3-42c5-afcf-d7553afea81f",
+              "portId": "1102c996-ab9a-49df-88ec-2fac8484ac92"
+            },
+            "tgt": {
+              "nodeId": "000bcba2-2ff0-4ca6-8b2e-9a5c4ba3b29d",
+              "portId": "e239fc5c-ec91-4c16-9316-0503c52e09bb"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "f9c6f071-e6fe-4c68-abc1-8f490e065b86",
+              "portId": "f286c0d2-78a4-43e8-8aa4-06eef8643e99"
+            },
+            "tgt": {
+              "nodeId": "000bcba2-2ff0-4ca6-8b2e-9a5c4ba3b29d",
+              "portId": "e239fc5c-ec91-4c16-9316-0503c52e09bb"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "6e53cc7a-69ab-4d06-ba84-1ef4da080bf0",
+              "portId": "4eb728b4-8bef-4f37-9900-90e09d5ccfab"
+            },
+            "tgt": {
+              "nodeId": "000bcba2-2ff0-4ca6-8b2e-9a5c4ba3b29d",
+              "portId": "e239fc5c-ec91-4c16-9316-0503c52e09bb"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "000bcba2-2ff0-4ca6-8b2e-9a5c4ba3b29d",
+              "portId": "ad474f38-3190-4df8-a0bf-33d835158e65"
+            },
+            "tgt": {
+              "nodeId": "cd151ff3-e50d-4d01-93e2-56b5fb13aa49",
+              "portId": "335e5022-8b15-45dd-84bb-12f4631a195f"
+            },
+            "condition": "{}",
+            "action": "approved"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "228c8572-cd63-4d73-94bc-fe48e8e60007",
+            "type": "root",
+            "id": "e51dbf90-0fe3-45cd-a3f5-480e2930bf62"
+          }
+        ],
+        "variables": [],
+        "description": "",
+        "name": "image-captioning-template",
+        "templateKind": "org",
+        "nodes": [
+          {
+            "id": "228c8572-cd63-4d73-94bc-fe48e8e60007",
+            "inputs": [
+              {
+                "portId": "183b64c2-3ce2-4aca-bddd-05d85419a300",
+                "nodeId": "183b64c2-3ce2-4aca-bddd-05d85419a300",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "00f71429-a1a7-40bb-b554-39c456878972",
+                "nodeId": "00f71429-a1a7-40bb-b554-39c456878972",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "clone_item",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 9964.08153839183,
+                "y": 10230.9994536364,
+                "z": 0
+              },
+              "componentGroupName": "data",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "019cb5b5-b7d3-42c5-afcf-d7553afea81f",
+            "inputs": [
+              {
+                "portId": "7d91d634-f3b5-4881-a055-4b8d5f43b6cc",
+                "nodeId": "7d91d634-f3b5-4881-a055-4b8d5f43b6cc",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "1102c996-ab9a-49df-88ec-2fac8484ac92",
+                "nodeId": "1102c996-ab9a-49df-88ec-2fac8484ac92",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              },
+              {
+                "portId": "5e81365a-a266-46d5-8acc-d5f9ea3a7944",
+                "nodeId": "5e81365a-a266-46d5-8acc-d5f9ea3a7944",
+                "type": "Annotation[]",
+                "name": "annotations",
+                "displayName": "annotations",
+                "io": "output"
+              }
+            ],
+            "name": "Image Model 1",
+            "type": "ml",
+            "namespace": {
+              "functionName": "predict"
+            },
+            "metadata": {
+              "position": {
+                "x": 10239.902391925,
+                "y": 10093.1668379865,
+                "z": 0
+              },
+              "componentGroupName": "models",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "f9c6f071-e6fe-4c68-abc1-8f490e065b86",
+            "inputs": [
+              {
+                "portId": "13585101-e270-4254-b04a-5e634c44fbee",
+                "nodeId": "13585101-e270-4254-b04a-5e634c44fbee",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "f286c0d2-78a4-43e8-8aa4-06eef8643e99",
+                "nodeId": "f286c0d2-78a4-43e8-8aa4-06eef8643e99",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              },
+              {
+                "portId": "ea8a5e8b-3e2d-4abf-b66e-27e0c81df6a7",
+                "nodeId": "ea8a5e8b-3e2d-4abf-b66e-27e0c81df6a7",
+                "type": "Annotation[]",
+                "name": "annotations",
+                "displayName": "annotations",
+                "io": "output"
+              }
+            ],
+            "name": "Image Model 2",
+            "type": "ml",
+            "namespace": {
+              "functionName": "predict"
+            },
+            "metadata": {
+              "position": {
+                "x": 10240.6418755754,
+                "y": 10229.4866314457,
+                "z": 0
+              },
+              "componentGroupName": "models",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "6e53cc7a-69ab-4d06-ba84-1ef4da080bf0",
+            "inputs": [
+              {
+                "portId": "a9ca3d8f-4d5f-4351-8630-7e69f9281011",
+                "nodeId": "a9ca3d8f-4d5f-4351-8630-7e69f9281011",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "4eb728b4-8bef-4f37-9900-90e09d5ccfab",
+                "nodeId": "4eb728b4-8bef-4f37-9900-90e09d5ccfab",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              },
+              {
+                "portId": "42c5c32a-76c3-40ac-b380-a9b3086419f7",
+                "nodeId": "42c5c32a-76c3-40ac-b380-a9b3086419f7",
+                "type": "Annotation[]",
+                "name": "annotations",
+                "displayName": "annotations",
+                "io": "output"
+              }
+            ],
+            "name": "Image Model 3",
+            "type": "ml",
+            "namespace": {
+              "functionName": "predict"
+            },
+            "metadata": {
+              "position": {
+                "x": 10240.6415672135,
+                "y": 10361.54404474,
+                "z": 0
+              },
+              "componentGroupName": "models",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "000bcba2-2ff0-4ca6-8b2e-9a5c4ba3b29d",
+            "inputs": [
+              {
+                "portId": "e239fc5c-ec91-4c16-9316-0503c52e09bb",
+                "nodeId": "e239fc5c-ec91-4c16-9316-0503c52e09bb",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "ad474f38-3190-4df8-a0bf-33d835158e65",
+                "nodeId": "ad474f38-3190-4df8-a0bf-33d835158e65",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Approve",
+                "actions": [
+                  "approved",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Review Task",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "metadata": {
+              "position": {
+                "x": 10552.9409383763,
+                "y": 10229.4868161598,
+                "z": 0
+              },
+              "taskType": "qa",
+              "componentGroupName": "labeling",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "cd151ff3-e50d-4d01-93e2-56b5fb13aa49",
+            "inputs": [
+              {
+                "portId": "335e5022-8b15-45dd-84bb-12f4631a195f",
+                "nodeId": "335e5022-8b15-45dd-84bb-12f4631a195f",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "127edff4-747f-44a5-b892-a5abf4df1015",
+                "nodeId": "127edff4-747f-44a5-b892-a5abf4df1015",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Keep Best Response",
+            "type": "code",
+            "namespace": {
+              "functionName": "keep_best_response",
+              "packageName": "",
+              "serviceName": ""
+            },
+            "config": {
+              "package": {
+                "code": "import dtlpy as dl\n\nclass ServiceRunner:\n\n    def keep_best_response(self, item):\n        \"\"\"\n        Retains only the best response annotation for a given item and deletes all others.\n\n        This method iterates through all annotations associated with the specified item,\n        identifies the annotation marked as the best response (determined by the 'isBest'\n        attribute in the annotation's metadata), and deletes all other annotations.\n\n        Parameters:\n        item (dl.Item): The item object containing annotations to be filtered.\n\n        Returns:\n        dl.Item: The item object with only the best response annotation retained.\n\n        Raises:\n        ValueError: If no annotation is marked as the best response.\n        \"\"\"\n        annotations = item.annotations.list()\n\n        best_response = next(\n            (\n                ann\n                for ann in annotations\n                if ann.metadata.get(\"system\", {}).get(\"attributes\", {}).get(\"isBest\") == \"true\"\n            ),\n            None,\n        )\n\n        if not best_response:\n            raise ValueError(\"No annotation marked as the best response.\")\n\n        for annotation in annotations:\n            if annotation != best_response:\n                annotation.delete()\n\n        return item",
+                "name": "run",
+                "type": "code",
+                "codebase": {
+                  "type": "item"
+                }
+              }
+            },
+            "metadata": {
+              "position": {
+                "x": 10921.5737044438,
+                "y": 10229.4868691517,
+                "z": 0
+              },
+              "componentGroupName": "automation",
+              "codeApplicationName": "keep-best-caption-response",
+              "repeatable": true
+            }
+          }
+        ],
+        "preview": "6769dd750319340e568584b2",
+        "_id": "6769ddf220133d04dd9e06e1"
+      }
+    ],
+    "services": null
+  }
+}
