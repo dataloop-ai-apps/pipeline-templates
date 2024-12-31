@@ -20,7 +20,6 @@
   "components": {
     "pipelineTemplates": [
       {
-        "orgId": "18739a63-4393-43ea-a87e-9a284b14978f",
         "connections": [
           {
             "src": {
