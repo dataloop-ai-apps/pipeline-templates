@@ -183,7 +183,7 @@
                 "io": "output"
               }
             ],
-            "name": "Image Model 1",
+            "name": "Image Captioning Model 1",
             "type": "ml",
             "namespace": {
               "functionName": "predict"
@@ -228,7 +228,7 @@
                 "io": "output"
               }
             ],
-            "name": "Image Model 2",
+            "name": "Image Captioning Model 2",
             "type": "ml",
             "namespace": {
               "functionName": "predict"
@@ -273,7 +273,7 @@
                 "io": "output"
               }
             ],
-            "name": "Image Model 3",
+            "name": "Image Captioning Model 3",
             "type": "ml",
             "namespace": {
               "functionName": "predict"
