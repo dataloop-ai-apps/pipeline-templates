@@ -468,7 +468,7 @@
     }
   ],
   "variables": {
-    "Base CLIP Model": "clip-model-pretrained2-apps-1376-clip-adapter.models.openai-clip",
-    "Newest CLIP Model": "clip-model-pretrained2-apps-1376-clip-adapter.models.openai-clip"
+    "Base CLIP Model__model": "clip-model-pretrained2-apps-1376-clip-adapter.models.openai-clip",
+    "Newest CLIP Model__model": "clip-model-pretrained2-apps-1376-clip-adapter.models.openai-clip"
   }
 }
