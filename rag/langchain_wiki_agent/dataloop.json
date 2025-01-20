@@ -1,0 +1,184 @@
+{
+  "name": "langchain-wiki-agent-template",
+  "version": "1.0.86",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "GenAI",
+    "Provider": "Dataloop",
+    "Media Type": [
+      "Text"
+    ]
+  },
+  "displayName": "Langchain Wikipedia Agent Pipeline Template",
+  "description": "This app creates an Langchain Wikipedia Agent Pipeline template that enables natural language Wikipedia searches and information retrieval using LangChain and GPT-4o.",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.86"
+  },
+  "components": {
+    "pipelineTemplates": [
+      {
+        "connections": [
+          {
+            "src": {
+              "nodeId": "6bb83bcb-7fa0-45d3-9843-672492424235",
+              "portId": "522ee6fd-2d4f-4475-ade3-069be62e234c"
+            },
+            "tgt": {
+              "nodeId": "da4f66e4-b9f8-45fb-b832-efd358dae02a",
+              "portId": "16c3c9d3-70ce-403a-a1fc-5e5fc87ee88a"
+            },
+            "condition": "{}"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "6bb83bcb-7fa0-45d3-9843-672492424235",
+            "type": "root",
+            "id": "4150b10d-2003-4007-ac08-4d5bb866fddd"
+          }
+        ],
+        "description": "",
+        "name": "LangChain Wikipedia Agent Pipeline",
+        "templateKind": "org",
+        "nodes": [
+          {
+            "id": "6bb83bcb-7fa0-45d3-9843-672492424235",
+            "inputs": [
+              {
+                "portId": "10fffae4-2aba-4075-9675-5c6cf4af5bb3",
+                "nodeId": "10fffae4-2aba-4075-9675-5c6cf4af5bb3",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "522ee6fd-2d4f-4475-ade3-069be62e234c",
+                "nodeId": "522ee6fd-2d4f-4475-ade3-069be62e234c",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Gradio Start",
+            "type": "custom",
+            "namespace": {
+              "functionName": "start_pipe",
+              "serviceName": "gradio-service",
+              "moduleName": "gradio_module",
+              "packageName": "pipeline-trigger-gradio"
+            },
+            "appName": "Gradio Pipeline Trigger",
+            "dpkName": "pipeline-trigger-gradio",
+            "metadata": {
+              "position": {
+                "x": 10119,
+                "y": 10288,
+                "z": 0
+              },
+              "componentGroupName": "Integrations",
+              "customNodeConfig": {
+                "name": "Gradio Start",
+                "validation": {
+                  "valid": true,
+                  "errors": []
+                }
+              },
+              "repeatable": true,
+              "pipelineNodeName": "Gradio Start"
+            }
+          },
+          {
+            "id": "da4f66e4-b9f8-45fb-b832-efd358dae02a",
+            "inputs": [
+              {
+                "portId": "16c3c9d3-70ce-403a-a1fc-5e5fc87ee88a",
+                "nodeId": "16c3c9d3-70ce-403a-a1fc-5e5fc87ee88a",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "856c5bc7-3d41-4c3f-b821-f4fb05195721",
+                "nodeId": "856c5bc7-3d41-4c3f-b821-f4fb05195721",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "LangChain Agent",
+            "type": "code",
+            "namespace": {
+              "functionName": "process_prompt_item",
+              "packageName": "",
+              "serviceName": ""
+            },
+            "config": {
+              "package": {
+                "code": "import json\nimport os\nfrom typing import Any\nimport dtlpy as dl\nfrom langchain_openai import ChatOpenAI\nfrom langchain_community.tools import WikipediaQueryRun\nfrom langchain_community.utilities import WikipediaAPIWrapper\nfrom langchain_core.messages import HumanMessage\nfrom langgraph.checkpoint.memory import MemorySaver\nfrom langgraph.prebuilt import create_react_agent\nimport logging\n\nclass ServiceRunner:\n    def process_prompt_item(self, item: dl.Item) -\u003E dl.Item:\n        \"\"\"\n        Takes in a Dataloop Item with prompt content,\n        calls the LangChain agent, streams partial results,\n        and appends them to the prompt item.\n\n        :param item: dl.Item (JSON item with system.shebang.dltype='prompt')\n        :return: dl.PromptItem with updated messages\n        \"\"\"\n        def _process_agent_message(msg: Any, partial_output: str) -\u003E str:\n            \"\"\"Helper method to process agent messages and update partial output.\"\"\"\n            try:\n                # Only process tool usage info for the first message\n                if not partial_output:\n                    tool_status = _check_tool_usage(msg)\n                    partial_output = f\"`\\n{tool_status}\\n`\\n\\n\"\n\n                if isinstance(msg.content, str):\n                    logger.debug(\"Processing string content\")\n                    partial_output += msg.content\n                elif isinstance(msg.content, list):\n                    logger.debug(\"Processing list content\")\n                    for seg in msg.content:\n                        if isinstance(seg, dict) and \"text\" in seg:\n                            partial_output += seg[\"text\"]\n            except Exception as e:\n                logger.error(f\"Error processing agent message: {str(e)}\")\n                raise\n            return partial_output\n\n        def _update_prompt_item(prompt_item: dl.PromptItem, content: str) -\u003E None:\n            \"\"\"Helper method to update prompt item with new content.\"\"\"\n            try:\n                prompt_item.add(\n                    message={\n                        \"role\": \"assistant\",\n                        \"content\": [{\"mimetype\": dl.PromptType.TEXT, \"value\": content}],\n                    },\n                    model_info={\n                        \"name\": \"langchain-agent\",\n                        \"confidence\": 1.0,\n                        \"model_id\": None,\n                    },\n                )\n                logger.debug(\"Successfully updated prompt item with new content\")\n            except Exception as e:\n                logger.error(f\"Error updating prompt item: {str(e)}\")\n                raise\n\n        def _get_latest_user_text(prompt_item: dl.PromptItem) -\u003E str:\n            \"\"\"\n            Helper method: extracts text from the most recent user message\n            in the PromptItem.\n            \"\"\"\n            logger.debug(\"Extracting latest user text from prompt item\")\n            try:\n                all_messages = prompt_item.to_messages(\n                    model_name=None, include_assistant=False\n                )\n\n                if not all_messages:\n                    logger.warning(\"No messages found in prompt item\")\n                    return \"\"\n\n                latest_user_message = all_messages[-1]\n                if not latest_user_message or \"content\" not in latest_user_message:\n                    logger.warning(\"No content found in latest user message\")\n                    return \"\"\n\n                user_text_parts = []\n                for content_dict in latest_user_message[\"content\"]:\n                    if content_dict.get(\"type\") == \"text\":\n                        user_text_parts.append(content_dict.get(\"text\", \"\"))\n\n                result = \"\\n\".join(user_text_parts).strip()\n                logger.debug(f\"Extracted user text length: {len(result)} characters\")\n                return result\n\n            except Exception as e:\n                logger.error(f\"Error extracting latest user text: {str(e)}\")\n                return \"\"\n\n        def _check_tool_usage(msg: Any) -\u003E str:\n            \"\"\"Helper method to check if any tools were used in the message.\"\"\"\n            try:\n                if hasattr(msg, \"tool_calls\") and msg.tool_calls:\n                    for tool_call in msg.tool_calls:\n                        if (\n                            isinstance(tool_call, dict)\n                            and tool_call.get(\"name\") == \"wikipedia\"\n                        ):\n                            return \"Using Wikipedia search tool...\"\n                return \"No tools used...\"\n            except Exception as e:\n                logger.error(f\"Error checking tool usage: {str(e)}\")\n                return \"Tool usage check failed...\"\n\n        logger = logging.getLogger(\"[LangChainWikiAgent]\")\n        logger.info(\"Initializing LangChainWikiAgent\")\n        try:\n            OPENAI_API_KEY = os.environ.get(\"OPENAI_API_KEY\")\n\n            if not OPENAI_API_KEY:\n                logger.error(\n                    \"OPENAI_API_KEY not found in environment variables\"\n                )\n                raise ValueError(\"Missing OPENAI API key\")\n\n            logger.debug(\"Initializing MemorySaver\")\n            memory = MemorySaver()\n\n            logger.debug(\"Initializing ChatOpenAI model\")\n            model = ChatOpenAI(model_name=\"gpt-4o\", api_key=OPENAI_API_KEY)\n\n            logger.debug(\"Initializing Wikipedia search tool\")\n            wikipedia_tool = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())\n\n            tools = [wikipedia_tool]\n\n            logger.debug(\"Creating React agent\")\n            agent_executor = create_react_agent(\n                model=model, tools=tools, checkpointer=memory\n            )\n\n            logger.info(\"LangChainWikiAgent initialization completed successfully\")\n\n        except Exception as e:\n            logger.error(f\"Failed to initialize LangChainWikiAgent: {str(e)}\")\n            raise\n\n        logger.info(f\"Processing prompt item. Item ID: {item.id}\")\n\n        try:\n            # Convert item to prompt item\n            logger.debug(\"Converting to prompt item\")\n            prompt_item = dl.PromptItem.from_item(item)\n\n            # Extract the last user message text\n            logger.debug(\"Extracting latest user text\")\n            user_text = _get_latest_user_text(prompt_item)\n\n            if not user_text.strip():\n                logger.warning(\n                    f\"No user text found in prompt item {item.id}. Returning as-is.\"\n                )\n                return item\n\n            logger.debug(\n                f\"User text extracted: {user_text[:100]}...\"\n            )  # Log first 100 chars\n\n            # Configure thread for memory\n            config = {\"configurable\": {\"thread_id\": \"my-thread-abc123\"}}\n            logger.debug(f\"Using thread configuration: {json.dumps(config)}\")\n\n            # Stream from the agent\n            partial_output = \"\"\n            logger.info(\"Starting agent stream processing\")\n\n            for chunk in agent_executor.stream(\n                {\"messages\": [HumanMessage(content=user_text)]}, config\n            ):\n                # Process agent messages\n                agent_message_list = chunk.get(\"agent\", {}).get(\"messages\", [])\n                for msg in agent_message_list:\n                    partial_output = _process_agent_message(msg, partial_output)\n\n                if partial_output:\n                    logger.debug(\n                        f\"Updating prompt item with partial output: {partial_output[:100]}...\"\n                    )\n                    _update_prompt_item(prompt_item, partial_output)\n\n            logger.info(\"Completed processing prompt item\")\n            item.update()\n            return item\n\n        except Exception as e:\n            logger.error(f\"Error processing prompt item {item.id}: {str(e)}\")\n            raise",
+                "name": "run",
+                "type": "code",
+                "codebase": {
+                  "type": "item"
+                },
+                "requirements": [
+                  {
+                    "name": "langchain",
+                    "operator": "==",
+                    "version": "0.3.14"
+                  },
+                  {
+                    "name": "langchain-community",
+                    "operator": "==",
+                    "version": "0.3.14"
+                  },
+                  {
+                    "name": "langchain-openai",
+                    "operator": "==",
+                    "version": "0.2.14"
+                  },
+                  {
+                    "name": "langgraph",
+                    "operator": "==",
+                    "version": "0.2.61"
+                  },
+                  {
+                    "name": "wikipedia",
+                    "operator": "==",
+                    "version": "1.4.0"
+                  },
+                  {
+                    "name": "dtlpy"
+                  }
+                ],
+                "requirementsFilename": "requirements.txt"
+              }
+            },
+            "metadata": {
+              "position": {
+                "x": 10467,
+                "y": 10288,
+                "z": 0
+              },
+              "componentGroupName": "automation",
+              "codeApplicationName": "langchain-wiki-code",
+              "repeatable": true
+            }
+          }
+        ],
+        "preview": ""
+      }
+    ],
+    "services": null
+  }
+}
