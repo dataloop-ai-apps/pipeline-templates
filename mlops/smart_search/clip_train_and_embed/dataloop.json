@@ -464,11 +464,11 @@
   },
   "dependencies": [
     {
-      "name": "clip-model-pretrained2-apps-1376-clip-adapter"
+      "name": "clip-model-pretrained"
     }
   ],
   "variables": {
-    "Base CLIP Model__model": "clip-model-pretrained2-apps-1376-clip-adapter.models.openai-clip",
-    "Newest CLIP Model__model": "clip-model-pretrained2-apps-1376-clip-adapter.models.openai-clip"
+    "Base CLIP Model__model": "clip-model-pretrained.models.openai-clip",
+    "Newest CLIP Model__model": "clip-model-pretrained.models.openai-clip"
   }
 }
