@@ -1,5 +1,3 @@
-from secrets import token_urlsafe
-
 # *CLIP Fine-tuning* Template
 
 <img src="assets/pipeline.png" alt="Image of the pipeline">
