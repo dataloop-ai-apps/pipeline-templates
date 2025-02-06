@@ -11,7 +11,9 @@ with the fine-tuned model.
 ### Preparation
 
 To be able to train CLIP, you need to have two datasets: one for images and one for the image and text pairs in 
-prompt items. Please see the CLIP preprocessing pipeline for assistance in preparing these datasets.
+prompt items. The first one will contain all the images for the model as regular image items. The second dataset should 
+contain prompt items with the image as the user prompt, and the text annotation. See the image captioning pipeline for 
+an example of how the prompt items should be formatted.
 
 ### Installation:
 
