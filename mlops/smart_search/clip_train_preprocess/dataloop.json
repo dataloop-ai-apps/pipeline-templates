@@ -201,8 +201,7 @@
           }
         ],
         "description": "",
-        "name": "Clip finetuning pipeline template0",
-        "templateKind": "org",
+        "name": "CLIP data preprocessing pipeline",
         "nodes": [
           {
             "id": "d80343ae-a7b3-4039-bc4f-7584978ae9ca",
@@ -508,7 +507,7 @@
             }
           }
         ],
-        "preview": "6772be702762fe4dd9a0e654",
+        "preview": "XXX_FIXME_XXX",
         "_id": "6772be8b2762fefd56a0e658"
       }
     ],
