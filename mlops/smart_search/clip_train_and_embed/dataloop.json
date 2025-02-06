@@ -357,7 +357,7 @@
               "repeatable": true,
               "variableDataset": "Dataset to search",
               "triggerToPipeline": {
-                "active": true
+                "active": false
               }
             }
           },
