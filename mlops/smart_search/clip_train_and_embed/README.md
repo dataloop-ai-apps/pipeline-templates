@@ -13,8 +13,8 @@ with the fine-tuned model.
 To be able to train CLIP, you need to have two datasets: one for images and one for the image and text pairs in 
 prompt items. The first one will contain all the images for the model as regular image items. The second dataset should 
 contain prompt items with the image as the user prompt, and the text annotation. See the 
-[image captioning pipeline](image_preprocessing/image_captioning_pipeline/README.md) for 
-an example of how the prompt items should be formatted.
+[image captioning pipeline](https://github.com/dataloop-ai-apps/pipeline-templates/blob/main/image_preprocessing/image_captioning_pipeline/README.md) 
+for an example of how the prompt items should be formatted.
 
 ### Installation:
 
