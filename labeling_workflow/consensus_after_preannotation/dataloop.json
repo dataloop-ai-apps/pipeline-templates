@@ -25,8 +25,6 @@
   "components": {
     "pipelineTemplates": [
       {
-        "projectId": "a4ffb66e-7a3c-435c-aadf-b7c970da0ab6",
-        "orgId": "93203e2f-2501-4a27-b78a-c697c6d11f4b",
         "connections": [
           {
             "src": {
@@ -127,8 +125,7 @@
         ],
         "variables": [],
         "description": "",
-        "name": "Consensus After Model Pre-Annotation Task",
-        "templateKind": "org",
+        "name": "Consensus After Pre-Annotation",
         "nodes": [
           {
             "id": "8086b6b3-f10a-4c33-b8a6-a01e1107e315",
@@ -156,12 +153,10 @@
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
-              "projectName": null,
               "serviceName": "pipeline-utils",
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
                 "x": -551.417154818563,
@@ -199,7 +194,7 @@
                 "io": "output"
               }
             ],
-            "name": "Consensus Task Stage 1",
+            "name": "Consensus Task Stage",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
@@ -208,7 +203,6 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
                 "x": 182.320755004883,
@@ -251,7 +245,6 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
                 "x": 1318.58862304689,
@@ -292,7 +285,6 @@
             "type": "custom",
             "namespace": {
               "functionName": "consensus_agreement",
-              "projectName": null,
               "serviceName": "pipelines-playg-scoring-and-me-9xn",
               "moduleName": "dlm_module",
               "packageName": "scoring-and-metrics"
@@ -346,7 +338,6 @@
             "type": "custom",
             "namespace": {
               "functionName": "create_task_item_score",
-              "projectName": null,
               "serviceName": "pipelines-playg-pipelines-play-93d",
               "moduleName": "dlm_module",
               "packageName": "scoring-and-metrics"
@@ -404,7 +395,6 @@
               "moduleName": "model-mgmt-app-predict",
               "packageName": "model-mgmt-app"
             },
-            "projectId": "a4ffb66e-7a3c-435c-aadf-b7c970da0ab6",
             "metadata": {
               "position": {
                 "x": -224.450745095949,
