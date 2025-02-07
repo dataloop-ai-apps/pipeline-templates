@@ -7,8 +7,7 @@
 The Multi Consensus with Agreement Pipeline Template automates the evaluation of annotation agreement across multiple stages. It is designed to route items based on consensus results, ensuring that items meeting the agreement thresholds proceed through the pipeline, while those failing consensus are routed for further review. This template supports all media types and integrates seamlessly with Dataloop's labeling workflow and task management systems.
 
 In this pipeline:
-- Items are first cloned to storage.
-- They then pass through multiple consensus tasks where annotators provide their input.
+- The items pass through multiple consensus tasks where annotators provide their input.
 - Custom Consensus Agreement nodes calculate agreement scores using the scoring-and-metrics service based on configurable thresholds (e.g., 0.75 and 0.5 in different stages).
 - Items that pass consensus are advanced, while items that fail are sent to review tasks to ensure quality control.
 
