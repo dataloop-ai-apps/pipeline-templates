@@ -25,8 +25,6 @@
   "components": {
     "pipelineTemplates": [
       {
-        "projectId": "a4ffb66e-7a3c-435c-aadf-b7c970da0ab6",
-        "orgId": "93203e2f-2501-4a27-b78a-c697c6d11f4b",
         "connections": [
           {
             "src": {
@@ -130,7 +128,6 @@
         "variables": [],
         "description": "",
         "name": "Consensus After Labeling Task",
-        "templateKind": "org",
         "nodes": [
           {
             "id": "8086b6b3-f10a-4c33-b8a6-a01e1107e315",
@@ -158,12 +155,10 @@
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
-              "projectName": null,
               "serviceName": "pipeline-utils",
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
                 "x": -551.417154818563,
@@ -210,7 +205,6 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
                 "x": 182.320755004883,
@@ -253,7 +247,6 @@
               "moduleName": "default_module",
               "packageName": "pipeline-utils"
             },
-            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
             "metadata": {
               "position": {
                 "x": 1330.62219238282,
@@ -294,7 +287,6 @@
             "type": "custom",
             "namespace": {
               "functionName": "consensus_agreement",
-              "projectName": null,
               "serviceName": "pipelines-playg-scoring-and-me-9xn",
               "moduleName": "dlm_module",
               "packageName": "scoring-and-metrics"
@@ -348,8 +340,6 @@
             "type": "custom",
             "namespace": {
               "functionName": "create_task_item_score",
-              "projectName": null,
-              "serviceName": "pipelines-playg-pipelines-play-93d",
               "moduleName": "dlm_module",
               "packageName": "scoring-and-metrics"
             },
