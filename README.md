@@ -28,6 +28,7 @@
 
 #### RAG:
 - [RAG Pipeline Template](rag/README.md)
+- [Langchain Wikipedia Agent Pipeline Template](rag/langchain_wiki_agent/README.md)
 
 #### Tiling:
 - [Tiling Pipeline Template](tiling/README.md)
