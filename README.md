@@ -16,6 +16,8 @@
 - [Automatic Modalities Pipeline](labeling_workflow/automatic_modalities_pipeline/README.md)
 - [Consensus with Agreement Pipeline Template](labeling_workflow/consensus_with_agreement/README.md)
 - [Multi Consensus with Agreement Pipeline Template](labeling_workflow/multiconsensus_with_agreement/README.md)
+- [Consensus Pipeline After Labeling Task Template](labeling_workflow/consensus_after_labelling/README.md)
+- [Consensus Pipeline After Model Pre-Annotation Task Template](labeling_workflow/consensus_after_preannotation/README.md)
 - [Microtasks Pipeline Template](labeling_workflow/microtasks_pipeline/README.md)
 - [Model Pre-Annotation Workflow](labeling_workflow/model_pre_annotation_workflow/README.md)
 - [Preprocess Annotation Workflow Pipeline](labeling_workflow/preprocess_annotation_workflow/README.md)
