@@ -25,7 +25,6 @@
   "components": {
     "pipelineTemplates": [
       {
-        "orgId": "484edbca-1d39-4485-a8dd-ca00020e753a",
         "connections": [
           {
             "src": {
@@ -197,7 +196,7 @@
                 "io": "output"
               }
             ],
-            "name": "Data Storage",
+            "name": "Dataset",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -286,7 +285,7 @@
                 "io": "output"
               }
             ],
-            "name": "Data Storage",
+            "name": "Dataset",
             "type": "storage",
             "namespace": {
               "functionName": "clone_item",
@@ -298,8 +297,8 @@
             
             "metadata": {
               "position": {
-                "x": 2679.94165039063,
-                "y": 195.296173095703,
+                "x": 2784.07177734376,
+                "y": 252.973236083984,
                 "z": 0
               },
               "componentGroupName": "data",
@@ -453,7 +452,6 @@
               },
               "taskType": "annotation",
               "consensusTaskType": "consensus",
-              "consensusPercentage": 5,
               "componentGroupName": "labeling",
               "repeatable": true
             },
@@ -494,8 +492,8 @@
             "dpkName": "scoring-and-metrics",
             "metadata": {
               "position": {
-                "x": 1558.18265119306,
-                "y": 376.975192964792,
+                "x": 1601.08279767744,
+                "y": 376.299594820261,
                 "z": 0
               },
               "serviceConfig": {
@@ -563,8 +561,8 @@
             "dpkName": "scoring-and-metrics",
             "metadata": {
               "position": {
-                "x": 1846.19446308066,
-                "y": 377.012268175615,
+                "x": 1921.26501972129,
+                "y": 374.867370714678,
                 "z": 0
               },
               "serviceConfig": {
@@ -639,8 +637,8 @@
             },
             "metadata": {
               "position": {
-                "x": 2329.74342992071,
-                "y": 383.238242056166,
+                "x": 2404.28249242071,
+                "y": 372.136679556166,
                 "z": 0
               },
               "taskType": "qa",
