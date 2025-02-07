@@ -201,7 +201,7 @@
                 "io": "output"
               }
             ],
-            "name": "Consensus Task Stage 1",
+            "name": "Consensus Task Stage",
             "type": "task",
             "namespace": {
               "functionName": "move_to_task",
