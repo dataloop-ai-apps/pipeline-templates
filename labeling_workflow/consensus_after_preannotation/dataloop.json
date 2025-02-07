@@ -1,0 +1,423 @@
+{
+  "name": "consensus-model-preannotation",
+  "version": "1.0.87",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "Model Pre-Annotation Workflow",
+    "Provider": "Dataloop",
+    "Media Type": [
+      "All Media Types"
+    ]
+  },
+  "displayName": "Consensus Pipeline After Model Pre-Annotation Task",
+  "description": "This app creates a consensus pipeline template that evaluates annotation agreement following a model pre-annotation task and routes items based on consensus results.",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.87"
+  },
+  "dependencies": [
+    {
+      "name": "scoring-and-metrics"
+    }
+  ],
+  "components": {
+    "pipelineTemplates": [
+      {
+        "projectId": "a4ffb66e-7a3c-435c-aadf-b7c970da0ab6",
+        "orgId": "93203e2f-2501-4a27-b78a-c697c6d11f4b",
+        "connections": [
+          {
+            "src": {
+              "nodeId": "ff38b364-c064-454a-848c-82a5c8cf4ae2",
+              "portId": "7fcd6a2b-97f3-4021-b642-2b3754c1e04b"
+            },
+            "tgt": {
+              "nodeId": "99f0af0d-2752-4631-9d66-5ed2526a82d6",
+              "portId": "0f5010bc-946f-4158-93d4-bcece9300afa"
+            },
+            "condition": "{}",
+            "action": "consensus passed"
+          },
+          {
+            "src": {
+              "nodeId": "fab21d5f-7104-4a9a-9777-4a843a609ffc",
+              "portId": "b78ee420-e11a-4863-94a0-3c0a6443e8e5"
+            },
+            "tgt": {
+              "nodeId": "29382ab6-2501-470d-b3d0-9ab3c9cc36de",
+              "portId": "f906d45a-fccc-4ab5-a21d-e2252f0823d5"
+            },
+            "condition": "{}",
+            "action": "consensus_done"
+          },
+          {
+            "src": {
+              "nodeId": "29382ab6-2501-470d-b3d0-9ab3c9cc36de",
+              "portId": "af1af72b-be2c-4c19-8dbd-dc0adcc177ec"
+            },
+            "tgt": {
+              "nodeId": "ff38b364-c064-454a-848c-82a5c8cf4ae2",
+              "portId": "beed13dd-a184-47f5-a0a3-627f59b0bed8"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "8086b6b3-f10a-4c33-b8a6-a01e1107e315",
+              "portId": "75602147-feda-4387-b8f2-c2b669f6e6e8"
+            },
+            "tgt": {
+              "nodeId": "50cbf6b5-9797-4928-82fb-6ee51f337635",
+              "portId": "8dec0c1b-a02a-48e7-92eb-a9958664e31b"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "50cbf6b5-9797-4928-82fb-6ee51f337635",
+              "portId": "dfeeca42-3955-4f38-884e-eab338d612c3"
+            },
+            "tgt": {
+              "nodeId": "fab21d5f-7104-4a9a-9777-4a843a609ffc",
+              "portId": "e7894519-5566-4b05-9102-d21ecf72aa63"
+            },
+            "condition": "{\"filter\":{\"metadata.model_confidence\":{\"$lt\":0.5}}}"
+          },
+          {
+            "src": {
+              "nodeId": "50cbf6b5-9797-4928-82fb-6ee51f337635",
+              "portId": "dfeeca42-3955-4f38-884e-eab338d612c3"
+            },
+            "tgt": {
+              "nodeId": "99f0af0d-2752-4631-9d66-5ed2526a82d6",
+              "portId": "0f5010bc-946f-4158-93d4-bcece9300afa"
+            },
+            "condition": "{\"filter\":{\"metadata.model_confidence\":{\"$gte\":0.5}}}"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "8086b6b3-f10a-4c33-b8a6-a01e1107e315",
+            "type": "root",
+            "trigger": {
+              "type": "Event",
+              "spec": {
+                "actions": [
+                  "Created"
+                ],
+                "resource": "Item",
+                "executionMode": "Once",
+                "filter": {
+                  "$and": [
+                    {
+                      "hidden": false
+                    },
+                    {
+                      "type": "file"
+                    }
+                  ]
+                }
+              },
+              "name": "dataset-6786723050687546"
+            },
+            "id": "4a1b483b-3c01-4e77-b3db-857b8c886b46"
+          }
+        ],
+        "variables": [],
+        "description": "",
+        "name": "Consensus After Model Pre-Annotation Task",
+        "templateKind": "org",
+        "nodes": [
+          {
+            "id": "8086b6b3-f10a-4c33-b8a6-a01e1107e315",
+            "inputs": [
+              {
+                "portId": "3623b37e-5c1a-40f0-bdca-c2ffc1066b50",
+                "nodeId": "3623b37e-5c1a-40f0-bdca-c2ffc1066b50",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "75602147-feda-4387-b8f2-c2b669f6e6e8",
+                "nodeId": "75602147-feda-4387-b8f2-c2b669f6e6e8",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "clone_item",
+              "projectName": null,
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "metadata": {
+              "position": {
+                "x": -551.417154818563,
+                "y": 336.830542055963,
+                "z": 0
+              },
+              "componentGroupName": "data",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "fab21d5f-7104-4a9a-9777-4a843a609ffc",
+            "inputs": [
+              {
+                "portId": "e7894519-5566-4b05-9102-d21ecf72aa63",
+                "nodeId": "e7894519-5566-4b05-9102-d21ecf72aa63",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "b78ee420-e11a-4863-94a0-3c0a6443e8e5",
+                "nodeId": "b78ee420-e11a-4863-94a0-3c0a6443e8e5",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Complete",
+                "actions": [
+                  "discard",
+                  "completed",
+                  "consensus_done"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Consensus Task Stage 1",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "metadata": {
+              "position": {
+                "x": 182.320755004883,
+                "y": 437.350250244141,
+                "z": 0
+              },
+              "taskType": "annotation",
+              "consensusTaskType": "consensus",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "99f0af0d-2752-4631-9d66-5ed2526a82d6",
+            "inputs": [
+              {
+                "portId": "0f5010bc-946f-4158-93d4-bcece9300afa",
+                "nodeId": "0f5010bc-946f-4158-93d4-bcece9300afa",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "166eb1d1-d7b8-4ffc-a4b4-88bc816060b1",
+                "nodeId": "166eb1d1-d7b8-4ffc-a4b4-88bc816060b1",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "clone_item",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "metadata": {
+              "position": {
+                "x": 1318.58862304689,
+                "y": 339.376770019531,
+                "z": 0
+              },
+              "componentGroupName": "data",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "ff38b364-c064-454a-848c-82a5c8cf4ae2",
+            "inputs": [
+              {
+                "portId": "beed13dd-a184-47f5-a0a3-627f59b0bed8",
+                "nodeId": "beed13dd-a184-47f5-a0a3-627f59b0bed8",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "7fcd6a2b-97f3-4021-b642-2b3754c1e04b",
+                "nodeId": "7fcd6a2b-97f3-4021-b642-2b3754c1e04b",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "actions": [
+                  "consensus passed",
+                  "consensus failed"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Consensus Agreement",
+            "type": "custom",
+            "namespace": {
+              "functionName": "consensus_agreement",
+              "projectName": null,
+              "serviceName": "pipelines-playg-scoring-and-me-9xn",
+              "moduleName": "dlm_module",
+              "packageName": "scoring-and-metrics"
+            },
+            "appName": "scoring-and-metrics",
+            "dpkName": "scoring-and-metrics",
+            "metadata": {
+              "position": {
+                "x": 926.320739746094,
+                "y": 436.350246429444,
+                "z": 0
+              },
+              "componentGroupName": "data",
+              "customNodeConfig": {
+                "agreement_threshold": 0.75,
+                "consensus_pass_keep_best": false,
+                "consensus_fail_keep_all": true,
+                "validation": {
+                  "valid": true,
+                  "errors": []
+                }
+              },
+              "repeatable": true,
+              "pipelineNodeName": "consensus_agreement"
+            },
+            "projectId": null
+          },
+          {
+            "id": "29382ab6-2501-470d-b3d0-9ab3c9cc36de",
+            "inputs": [
+              {
+                "portId": "f906d45a-fccc-4ab5-a21d-e2252f0823d5",
+                "nodeId": "f906d45a-fccc-4ab5-a21d-e2252f0823d5",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "af1af72b-be2c-4c19-8dbd-dc0adcc177ec",
+                "nodeId": "af1af72b-be2c-4c19-8dbd-dc0adcc177ec",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Create Consensus Score",
+            "type": "custom",
+            "namespace": {
+              "functionName": "create_task_item_score",
+              "projectName": null,
+              "serviceName": "pipelines-playg-pipelines-play-93d",
+              "moduleName": "dlm_module",
+              "packageName": "scoring-and-metrics"
+            },
+            "appName": "scoring-and-metrics",
+            "dpkName": "scoring-and-metrics",
+            "metadata": {
+              "position": {
+                "x": 617.320739746094,
+                "y": 436.350246429444,
+                "z": 0
+              },
+              "componentGroupName": "data",
+              "repeatable": true,
+              "pipelineNodeName": "create_task_item_score"
+            },
+            "projectId": null
+          },
+          {
+            "id": "50cbf6b5-9797-4928-82fb-6ee51f337635",
+            "inputs": [
+              {
+                "portId": "8dec0c1b-a02a-48e7-92eb-a9958664e31b",
+                "nodeId": "8dec0c1b-a02a-48e7-92eb-a9958664e31b",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "dfeeca42-3955-4f38-884e-eab338d612c3",
+                "nodeId": "dfeeca42-3955-4f38-884e-eab338d612c3",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              },
+              {
+                "portId": "c6085d51-a1b6-4c5f-93c0-fa83f7461730",
+                "nodeId": "c6085d51-a1b6-4c5f-93c0-fa83f7461730",
+                "type": "Annotation[]",
+                "name": "annotations",
+                "displayName": "annotations",
+                "io": "output"
+              }
+            ],
+            "name": "Predict",
+            "type": "ml",
+            "namespace": {
+              "functionName": "predict",
+              "projectName": "pipelines-playground-aaronp",
+              "serviceName": "model-mgmt-app-predict",
+              "moduleName": "model-mgmt-app-predict",
+              "packageName": "model-mgmt-app"
+            },
+            "projectId": "a4ffb66e-7a3c-435c-aadf-b7c970da0ab6",
+            "metadata": {
+              "position": {
+                "x": -224.450745095949,
+                "y": 337.427048784274,
+                "z": 0
+              },
+              "componentGroupName": "models",
+              "repeatable": true
+            }
+          }
+        ],
+        "preview": ""
+      }
+    ]
+  }
+}
