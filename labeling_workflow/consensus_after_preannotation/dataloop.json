@@ -3,13 +3,13 @@
   "version": "1.0.87",
   "attributes": {
     "Category": "Pipeline",
-    "Pipeline Type": "Model Pre-Annotation Workflow",
+    "Pipeline Type": "Labeling Workflow",
     "Provider": "Dataloop",
     "Media Type": [
       "All Media Types"
     ]
   },
-  "displayName": "Consensus Pipeline After Model Pre-Annotation Task",
+  "displayName": "Consensus Pipeline After Pre-Annotation",
   "description": "This app creates a consensus pipeline template that evaluates annotation agreement following a model pre-annotation task and routes items based on consensus results.",
   "scope": "public",
   "codebase": {
