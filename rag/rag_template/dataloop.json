@@ -19,9 +19,6 @@
   },
   "dependencies": [
     {
-      "name": "pipeline-trigger-gradio"
-    },
-    {
       "name": "llm-tools-retriever"
     }
   ],
@@ -31,8 +28,8 @@
         "connections": [
           {
             "src": {
-              "nodeId": "59747585-5266-4363-9869-a12963ee743a",
-              "portId": "b0e7faef-dea3-43a1-9aa7-7dd014c88a39"
+              "nodeId": "9825f863-0f07-4ac1-9fae-de2c52627511",
+              "portId": "7657d52d-fe36-4279-8e68-6b5cec2e07f6"
             },
             "tgt": {
               "nodeId": "ec0104df-c8a8-43e9-8d45-5433ff2d1326",
@@ -76,7 +73,7 @@
         ],
         "startNodes": [
           {
-            "nodeId": "59747585-5266-4363-9869-a12963ee743a",
+            "nodeId": "9825f863-0f07-4ac1-9fae-de2c52627511",
             "type": "root"
           }
         ],
@@ -84,11 +81,11 @@
         "name": "rag-template",
         "nodes": [
           {
-            "id": "59747585-5266-4363-9869-a12963ee743a",
+            "id": "9825f863-0f07-4ac1-9fae-de2c52627511",
             "inputs": [
               {
-                "portId": "08c4cdd0-0640-48cf-a215-823996d53489",
-                "nodeId": "08c4cdd0-0640-48cf-a215-823996d53489",
+                "portId": "99da3284-cd0d-494d-bd8c-6c2764f15101",
+                "nodeId": "99da3284-cd0d-494d-bd8c-6c2764f15101",
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
@@ -97,59 +94,40 @@
             ],
             "outputs": [
               {
-                "portId": "b0e7faef-dea3-43a1-9aa7-7dd014c88a39",
-                "nodeId": "b0e7faef-dea3-43a1-9aa7-7dd014c88a39",
+                "portId": "7657d52d-fe36-4279-8e68-6b5cec2e07f6",
+                "nodeId": "7657d52d-fe36-4279-8e68-6b5cec2e07f6",
                 "type": "Item",
                 "name": "item",
                 "displayName": "item",
                 "io": "output"
               }
             ],
-            "name": "Gradio Start",
+            "name": "AI Chat Start",
             "type": "custom",
             "namespace": {
               "functionName": "start_pipe",
-              "serviceName": "gradio-service",
-              "moduleName": "gradio_module",
-              "packageName": "pipeline-trigger-gradio"
+              "serviceName": "ai-chat-service",
+              "moduleName": "ai_chat_module",
+              "packageName": "pipeline-trigger-ai-chat"
             },
-            "appName": "Gradio Pipeline Trigger",
-            "dpkName": "pipeline-trigger-gradio",
+            "appName": "AI Chat Pipeline Trigger",
+            "dpkName": "pipeline-trigger-ai-chat",
             "metadata": {
               "position": {
                 "x": 9717.836776733398,
                 "y": 10014.22741317749,
                 "z": 0
               },
-              "serviceConfig": {
-                "initParams": {},
-                "name": "gradio-service",
-                "moduleName": "gradio_module",
-                "panelNames": [
-                  "gradio"
-                ],
-                "runtime": {
-                  "runnerImage": "gcr.io/viewo-g/piper/agent/apps/ingest-gradio:0.1.14",
-                  "podType": "regular-xs",
-                  "concurrency": 10,
-                  "autoscaler": {
-                    "minReplicas": 1,
-                    "maxReplicas": 2,
-                    "queueLength": 10
-                  }
-                }
-              },
-              "taskType": "annotation",
               "componentGroupName": "Integrations",
               "customNodeConfig": {
-                "name": "Gradio",
+                "name": "AI Chat Start",
                 "validation": {
                   "valid": true,
                   "errors": []
                 }
               },
               "repeatable": true,
-              "pipelineNodeName": "Gradio Start"
+              "pipelineNodeName": "AI Chat Start"
             }
           },
           {
