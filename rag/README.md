@@ -1,6 +1,6 @@
 # *RAG Pipeline* Template
 
-<img src="assets/template.png" alt="Image of the pipeline">
+<img src="assets/rag_template.png" alt="Image of the pipeline">
 
 ### Introduction:
 
@@ -8,7 +8,6 @@ This app provides a customizable **Retrieval-Augmented Generation (RAG)** pipeli
 query processing and response generation.
 
 ## Key Features:
-- **Gradio App**: For seamless user interaction.
 - **Embedder**: Embed user queries.
 - **Retriever**: Supports retrieving relevant documents.
 - **Generative Model**: Generates detailed, context-based responses.
@@ -22,23 +21,15 @@ Source datasets must be pre-embedded during the preprocessing stage for optimal 
 
 ## Components
 
-### 1. Gradio App
+### 1. AI Playground
 
-The Gradio interface serves as the user-facing part of the pipeline. It allows users to communicate by inputting
-free-text questions, to which the model will provide detailed responses. The app is designed for ease of use and
-interaction.
+Use Dataloop's **AI Playground** to communicate with the pipeline:
 
-#### To reach the gradio:
+<img src="assets/dropdown.png" alt="Ai playground">
 
-- Open the RAG Pipeline and click on `Start`.
-- Select the `Gradio Start` node, then in the left panel, click `Open Gradio App`.
+Choose the pipeline you want to use from the dropdown menu, and start chatting with the model inside the pipeline:
 
-<img src="assets/open_gradio_pipeline.png" alt="set_up_parameters.png">
-
-- A new window will appear. In the `Textbox`, enter your question. You will receive the answer in the same interface.
-
-
-  <img src="assets/gradio__app.png" alt="set_up_parameters.png">
+<img src="assets/app.png" alt="pipeline_dropdown">
 
 ### 2. Embedder
 
@@ -53,9 +44,10 @@ Choose an Embedder form Marketplace and assign the model in the embeddings node.
 The retriever is responsible for finding the most relevant items from a predefined dataset. It takes the following
 inputs:
 
-- **Embeddings**: Generated from the OpenAI model based on the user question.
+- **Prompt**: The prompt item of the conversion.
+- **Embeddings**: Generated from the model based on the user question.
 - **Dataset ID**: The dataset from which the retriever will look for information.
-- **Feature Set ID**: The specific feature set within the dataset.
+- **Embedder Retriver**: The embedder used to embed the source dataset.
 - **Query Filter**: Optional filtering DQL to refine the search results.
 - **K Nearest Items**: Defines how many of the closest items to return based on the similarity of embeddings.
 
@@ -65,9 +57,13 @@ inputs:
 
 <img src="assets/set_up_parameters.png" alt="set_up_parameters.png">
 
-2. Insert the values of the `dataset_id`, `featureset_id`, `k nearest items` and save changes.
+2. Insert the values of the `dataset_id`, `embedder_retriver`, `k nearest items`, `genModel`, `embedder` and save changes.
 
 <img src="assets/pipeline_variables.png" alt="pipeline_variables.png">
+
+Further parameters:
+- **GenModel**: The generative model to use to generate the response.
+- **Embedder**: The embedder to use to embed the user query.
 
 to get your `feature_set_id` use the SDK:
 
