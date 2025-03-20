@@ -3,6 +3,7 @@
 ### Table of Contents:
 
 #### Document Preprocessing:
+- [PDF to Clip Pipeline Template](document_preprocessing/pdf/pdf_to_clip/README.md)
 - [PDF to Image Pipeline Template](document_preprocessing/pdf/pdf_to_image/README.md)
 - [PDF to Text Pipeline Template](document_preprocessing/pdf/pdf_to_text/README.md)
 - [RAG Preprocessing Pipeline Template](document_preprocessing/preprocessing_for_rag/README.md)
