@@ -64,7 +64,7 @@
               "nodeId": "96cd8e8d-bd73-45df-bbbf-0e4f7de37fbb",
               "portId": "88bc544d-eb18-4e24-a8d2-88b50a48943e"
             },
-            "condition": "{\"metadata.system.mimetype\":\"*image*\"}"
+            "condition": "{\"metadata.system.mimetype\":\"image/*\"}"
           },
           {
             "src": {
@@ -82,7 +82,31 @@
           {
             "nodeId": "f9e061ae-9e74-40d5-84de-b2c82d850cd6",
             "type": "root",
-            "id": "1e6ffa15-09a9-4a51-9c3b-3ca5a4a3e9f6"
+            "id": "1e6ffa15-09a9-4a51-9c3b-3ca5a4a3e9f6",
+            "trigger": {
+              "type": "Event",
+              "spec": {
+                "actions": [
+                  "Created"
+                ],
+                "resource": "Item",
+                "executionMode": "Once",
+                "filter": {
+                  "$and": [
+                    {
+                      "hidden": false
+                    },
+                    {
+                      "type": "file"
+                    },
+                    {
+                      "metadata.system.mimetype": "*/pdf"
+                    }
+                  ]
+                }
+              },
+              "name": "pdf-trigger"
+            }
           }
         ],
         "variables": [
