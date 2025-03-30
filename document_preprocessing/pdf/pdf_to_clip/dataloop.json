@@ -12,12 +12,7 @@
   },
   "displayName": "PDF to Multimodal Preprocessing",
   "description": "Automate the process of preprocess pdf files by extracting to text and images for Multimodal processing.",
-  "scope": "public",
-  "codebase": {
-    "type": "git",
-    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
-    "gitTag": "1.0.90"
-  },
+  "scope": "project",
   "components": {
     "pipelineTemplates": [
       {
