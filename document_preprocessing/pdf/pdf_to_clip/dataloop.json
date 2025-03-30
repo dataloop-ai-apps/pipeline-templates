@@ -1,5 +1,5 @@
 {
-  "name": "pdf-to-clip-semantic-search",
+  "name": "pdf-to-multimodal",
   "version": "1.0.90",
   "attributes": {
     "Category": "Pipeline",
@@ -10,8 +10,8 @@
       "Image"
     ]
   },
-  "displayName": "PDF to Clip Preprocessing Template",
-  "description": "Automate the process of preprocess pdf files by extracting to text and images for for CLIP semantic search.",
+  "displayName": "PDF to Multimodal Preprocessing",
+  "description": "Automate the process of preprocess pdf files by extracting to text and images for Multimodal processing.",
   "scope": "public",
   "codebase": {
     "type": "git",
@@ -185,7 +185,6 @@
             "type": "custom",
             "namespace": {
               "functionName": "pdf_extraction",
-              "projectName": null,
               "serviceName": "pdf-to-txt-v2",
               "moduleName": "pdf_to_txt_v2",
               "packageName": "pdf_to_txt"
@@ -240,7 +239,6 @@
             "type": "custom",
             "namespace": {
               "functionName": "create_chunks",
-              "projectName": null,
               "serviceName": "chunks-v2-service",
               "moduleName": "chunks-v2-module",
               "packageName": "txt_to_chunks"
@@ -297,7 +295,6 @@
             "type": "custom",
             "namespace": {
               "functionName": "clean_multiple_chunks",
-              "projectName": null,
               "serviceName": "chunks-v2-service",
               "moduleName": "chunks-v2-module",
               "packageName": "txt_to_chunks"
@@ -378,9 +375,6 @@
     },
     {
       "name": "txt_to_chunks"
-    },
-    {
-      "name": "clip-image-search"
     }
   ]
 }

@@ -1,4 +1,4 @@
-# PDF to CLIP Preprocessing Template
+# PDF to Multimodal Preprocessing Template
 
 <img src="assets/pipeline.png" alt="Image of the pipeline">
 
@@ -8,7 +8,8 @@ This template creates the process of converting pdf items to text and image file
 Each file is generated for a specific chunk of data. 
 The text files undergo preprocessing using cleaning functions provided by the `UnstructuredIO` library.
 
-All extracted items are transferred to the target dataset, where CLIP can be applied to extract embeddings on both the text and image files.
+The processed text and image files are then stored in the target dataset, 
+making them suitable for multimodal workflows involving language models, vision models, or hybrid systems that operate on both text and visual inputs.
 
 ### Installation:
 
@@ -23,7 +24,7 @@ There are two options for installing and using the template:
 
 2. Marketplace
 
-* In the search bar, type `PDF to Clip Preprocessing Template`, select the template and click install.
+* In the search bar, type `PDF to Multimodal Preprocessing`, select the template and click install.
 * Once the template is installed, click on *Create Pipeline*.
 
 <img src="assets/marketplace.png" alt="Image of the pipeline">
