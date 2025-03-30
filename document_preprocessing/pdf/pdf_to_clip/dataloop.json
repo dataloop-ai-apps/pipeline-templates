@@ -378,6 +378,9 @@
     },
     {
       "name": "txt_to_chunks"
+    },
+    {
+      "name": "clip-image-search"
     }
   ]
 }

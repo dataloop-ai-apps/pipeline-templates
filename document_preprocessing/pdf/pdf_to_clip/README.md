@@ -7,7 +7,8 @@
 This template creates the process of converting pdf items to text and image files. 
 Each file is generated for a specific chunk of data. 
 The text files undergo preprocessing using cleaning functions provided by the `UnstructuredIO` library.
-Then it is possible to run CLIP on the dataset with the extracted items.
+
+All extracted items are transferred to the target dataset, where CLIP can be applied to extract embeddings on both the text and image files.
 
 ### Installation:
 
