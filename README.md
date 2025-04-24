@@ -3,9 +3,9 @@
 ### Table of Contents:
 
 #### Document Preprocessing:
-- [PDF to Clip Pipeline Template](document_preprocessing/pdf/pdf_to_clip/README.md)
 - [PDF to Image Pipeline Template](document_preprocessing/pdf/pdf_to_image/README.md)
 - [PDF to Text Pipeline Template](document_preprocessing/pdf/pdf_to_text/README.md)
+- [PDF to Multimodal Pipeline Template](document_preprocessing/pdf/pdf_to_multimodal/README.md) 
 - [RAG Preprocessing Pipeline Template](document_preprocessing/preprocessing_for_rag/README.md)
 - [RAG Contextual Preprocessing Pipeline Template](document_preprocessing/contextual_preprocessing_for_rag/README.md)
 
