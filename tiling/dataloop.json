@@ -1,6 +1,6 @@
 {
   "name": "smart-tiling-template",
-  "version": "1.0.95",
+  "version": "1.0.96",
   "description": "Smart Tiling pipeline template to tile image to tiles and merge. Used for high-resolution images",
   "attributes": {
     "Category": "Pipeline",
