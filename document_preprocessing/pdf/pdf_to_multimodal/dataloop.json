@@ -113,7 +113,7 @@
 
         ],
         "description": "",
-        "name": "PDF to Clip Processing Template",
+        "name": "PDF to Multimodal Processing Template",
         "templateKind": "org",
         "nodes": [
           {
