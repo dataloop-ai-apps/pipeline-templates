@@ -1,0 +1,272 @@
+{
+  "name": "compare-with-model-template",
+  "version": "1.0.97",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "Labeling Workflow",
+    "Provider": "Dataloop",
+    "Media Type": [
+      "All Media Types"
+    ]
+  },
+  "displayName": "Compare with Model",
+  "description": "This app creates a compare with model pipeline template that evaluates annotation agreement between GT annotations and AI model predicted annotations.",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.97"
+  },
+  "dependencies": [
+    {
+      "name": "scoring-and-metrics"
+    }
+  ],
+  "components": {
+    "pipelineTemplates": [
+      {
+        "projectId": "ae146f8c-5aee-438e-a8aa-1bcd6ad8726b",
+        "orgId": "d25cecad-34f7-4e38-9750-bd9a1d387bfd",
+        "connections": [
+          {
+            "src": {
+              "nodeId": "4f5fd0ae-63ed-4d05-aaf8-6bf2e4b6c31c",
+              "portId": "678191f0-932b-4fa9-910f-e395c6d0528f"
+            },
+            "tgt": {
+              "nodeId": "553465f7-e73a-4f9d-aea6-0f73da8f5c69",
+              "portId": "82cb24a2-9358-4185-8839-951a41e66172"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "553465f7-e73a-4f9d-aea6-0f73da8f5c69",
+              "portId": "8ad34f1a-322d-41e9-ae69-69c0f890780a"
+            },
+            "tgt": {
+              "nodeId": "d2ebc4ca-b38b-48c0-9e88-01ca9a221207",
+              "portId": "5f567eb8-76f9-439e-90a2-6e6dadb2802d"
+            },
+            "condition": "{}"
+          },
+          {
+            "src": {
+              "nodeId": "d2ebc4ca-b38b-48c0-9e88-01ca9a221207",
+              "portId": "885abc79-7ad2-4ccf-b850-5daa8655dbcb"
+            },
+            "tgt": {
+              "nodeId": "bd4e322b-b046-4f5f-938d-138ce60a2847",
+              "portId": "336915f3-625a-4e19-9817-0c132bf7bce4"
+            },
+            "condition": "{}"
+          }
+        ],
+        "startNodes": [
+          {
+            "nodeId": "4f5fd0ae-63ed-4d05-aaf8-6bf2e4b6c31c",
+            "type": "root",
+            "id": "3657e70e-8059-4fb2-926c-663fda5ba7d7"
+          }
+        ],
+        "variables": [
+        ],
+        "description": "",
+        "name": "compare with model",
+        "templateKind": "org",
+        "nodes": [
+          {
+            "id": "4f5fd0ae-63ed-4d05-aaf8-6bf2e4b6c31c",
+            "inputs": [
+              {
+                "portId": "b6e776d4-3f96-413a-b7ce-d09e606e14e2",
+                "nodeId": "b6e776d4-3f96-413a-b7ce-d09e606e14e2",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "678191f0-932b-4fa9-910f-e395c6d0528f",
+                "nodeId": "678191f0-932b-4fa9-910f-e395c6d0528f",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "Dataset",
+            "type": "storage",
+            "namespace": {
+              "functionName": "clone_item",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "metadata": {
+              "position": {
+                "x": 9972,
+                "y": 10186,
+                "z": 0
+              },
+              "componentGroupName": "data",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "553465f7-e73a-4f9d-aea6-0f73da8f5c69",
+            "inputs": [
+              {
+                "portId": "82cb24a2-9358-4185-8839-951a41e66172",
+                "nodeId": "82cb24a2-9358-4185-8839-951a41e66172",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "8ad34f1a-322d-41e9-ae69-69c0f890780a",
+                "nodeId": "8ad34f1a-322d-41e9-ae69-69c0f890780a",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              },
+              {
+                "portId": "f785ee69-91b5-4ced-b3aa-ae16e97749f5",
+                "nodeId": "f785ee69-91b5-4ced-b3aa-ae16e97749f5",
+                "type": "Annotation[]",
+                "name": "annotations",
+                "displayName": "annotations",
+                "io": "output"
+              }
+            ],
+            "name": "Predict",
+            "type": "ml",
+            "namespace": {
+              "functionName": "predict",
+              "projectName": null,
+              "serviceName": "model-mgmt-app-predict",
+              "moduleName": "model-mgmt-app-predict",
+              "packageName": "model-mgmt-app"
+            },
+            "projectId": null,
+            "metadata": {
+              "position": {
+                "x": 10257,
+                "y": 10186,
+                "z": 0
+              },
+              "componentGroupName": "models",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "d2ebc4ca-b38b-48c0-9e88-01ca9a221207",
+            "inputs": [
+              {
+                "portId": "5f567eb8-76f9-439e-90a2-6e6dadb2802d",
+                "nodeId": "5f567eb8-76f9-439e-90a2-6e6dadb2802d",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "885abc79-7ad2-4ccf-b850-5daa8655dbcb",
+                "nodeId": "885abc79-7ad2-4ccf-b850-5daa8655dbcb",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "output"
+              }
+            ],
+            "name": "code",
+            "type": "code",
+            "namespace": {
+              "functionName": "run",
+              "packageName": "",
+              "serviceName": ""
+            },
+            "projectId": null,
+            "config": {
+              "package": {
+                "code": "import dtlpy as dl\n\nclass ServiceRunner:\n\n    def run(self, item):\n        return item\n",
+                "name": "run",
+                "type": "code",
+                "codebase": {
+                  "type": "item"
+                }
+              }
+            },
+            "metadata": {
+              "position": {
+                "x": 10547,
+                "y": 10185,
+                "z": 0
+              },
+              "componentGroupName": "automation",
+              "repeatable": true
+            }
+          },
+          {
+            "id": "bd4e322b-b046-4f5f-938d-138ce60a2847",
+            "inputs": [
+              {
+                "portId": "336915f3-625a-4e19-9817-0c132bf7bce4",
+                "nodeId": "336915f3-625a-4e19-9817-0c132bf7bce4",
+                "type": "Item",
+                "name": "item",
+                "displayName": "item",
+                "io": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "portId": "5a077967-2b18-42a7-bd2c-57eba1f979c1",
+                "nodeId": "5a077967-2b18-42a7-bd2c-57eba1f979c1",
+                "type": "Item",
+                "name": "item",
+                "displayName": "Approve",
+                "actions": [
+                  "approved",
+                  "discard"
+                ],
+                "io": "output"
+              }
+            ],
+            "name": "Review Task",
+            "type": "task",
+            "namespace": {
+              "functionName": "move_to_task",
+              "projectName": "DataloopTasks",
+              "serviceName": "pipeline-utils",
+              "moduleName": "default_module",
+              "packageName": "pipeline-utils"
+            },
+            "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+            "metadata": {
+              "position": {
+                "x": 10826,
+                "y": 10185,
+                "z": 0
+              },
+              "taskType": "qa",
+              "componentGroupName": "labeling",
+              "repeatable": true
+            }
+          }
+        ],
+        "preview": "TODO"
+      }
+    ]
+  }
+}
