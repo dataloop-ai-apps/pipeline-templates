@@ -1,5 +1,5 @@
 {
-  "name": "compare-with-model-template",
+  "name": "model-agreement-template",
   "version": "1.0.97",
   "attributes": {
     "Category": "Pipeline",
@@ -9,7 +9,7 @@
       "All Media Types"
     ]
   },
-  "displayName": "Compare with Model",
+  "displayName": "Model Agreement",
   "description": "This app creates a compare with model pipeline template that evaluates annotation agreement between GT annotations and AI model predicted annotations.",
   "scope": "public",
   "codebase": {

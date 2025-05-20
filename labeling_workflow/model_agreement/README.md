@@ -1,10 +1,10 @@
-# *Compare with Model Pipeline* Template
+# *Model Agreement Pipeline* Template
 
 <img src="assets/pipeline.png" alt="Image of the pipeline">
 
 ### Introduction:
 
-The Compare with Model Pipeline automates the process of evaluating annotation agreement between GT annotations and AI model predicted annotations. 
+The Model Agreement Pipeline automates the process of evaluating annotation agreement between GT annotations and AI model predicted annotations. 
 The workflow includes: model prediction node, consensus node for comparing GT and model annotations, and a labeling task for reviewing the results.
 
 ### Installation:
