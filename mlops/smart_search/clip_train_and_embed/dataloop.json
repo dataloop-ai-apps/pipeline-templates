@@ -262,7 +262,7 @@
               "componentGroupName": "models",
               "customNodeConfig": {
                 "createModel": "Create New Model",
-                "modelName": "{model.name}_{datetime.datetime.now().strftime('%Y_%m_%d-T%H_%M_%S')}",
+                "modelName": "{base_model.name}_{datetime.datetime.now().strftime('%Y_%m_%d-T%H_%M_%S')}",
                 "validation": {
                   "valid": true,
                   "errors": [
