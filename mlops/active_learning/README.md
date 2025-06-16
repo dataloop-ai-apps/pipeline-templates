@@ -20,8 +20,6 @@ To use the template, follow these steps:
 * Once the template is installed, click on _**Use Template**_ at the top or _**Create Pipeline**_ at the bottom.
 * Under the pipeline variables icon [*X*], enter entity IDs for each variable listed.
 
-To allow for optimal use of the pipeline, it's recommended to use variables rather than fixed entities or input values. 
-
 <img src="assets/marketplace_create_pipeline.png" alt="Image of the pipeline">
 
 ### Usage:
