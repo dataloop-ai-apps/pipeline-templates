@@ -23,7 +23,6 @@ To use the template, follow these steps:
 <img src="assets/marketplace_create_pipeline.png" alt="Image of the pipeline">
 
 ### Usage:
-It's recommended to use pipeline variables and enter the necessary IDs for each variable for optimal use.
 
 #### Pipeline Structure
 The template consists of two main pipelines:
@@ -40,6 +39,8 @@ The template consists of two main pipelines:
 
 
 #### Pipeline Variables
+It's recommended to use pipeline variables and enter the necessary IDs for each variable for optimal use.
+
 The pipeline uses variables that need to be configured:
 - `Raw Dataset` - the unannotated dataset with images
 - `Best Model` - the model ID for the current best model
