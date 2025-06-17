@@ -21,6 +21,7 @@
 - [Preprocess Annotation Workflow Pipeline](labeling_workflow/preprocess_annotation_workflow/README.md)
 - [Text Annotation Workflow Pipeline](labeling_workflow/text_annotation_workflow/README.md)
 - [QA Sampling Workflow Pipeline](labeling_workflow/qa_sampling_workflow/README.md)
+- [Model Agreement Pipeline](labeling_workflow/model_agreement/README.md)
 
 #### MLOPS:
 - [Active Learning Pipeline Template](mlops/active_learning/README.md)
