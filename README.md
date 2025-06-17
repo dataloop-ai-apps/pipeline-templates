@@ -27,6 +27,7 @@
 - [Active Learning Pipeline Template](mlops/active_learning/README.md)
 - [RLHF Pipeline Template](mlops/rlhf/README.md)
 - [RLAIF Pipeline Template](mlops/rlaif/README.md)
+- [CLIP Fine-tuning Template](mlops/smart_search/clip_train_and_embed/README.md)
 
 #### RAG:
 - [RAG Pipeline Template](rag/README.md)
