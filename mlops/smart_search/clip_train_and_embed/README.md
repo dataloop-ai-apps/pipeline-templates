@@ -51,7 +51,9 @@ The template consists of two main components:
    - Uses the newly trained CLIP model to generate embeddings for images and text
    - Saves the embeddings for future use or semantic search
 
-### Pipeline Variables
+### Pipeline Setup 
+
+#### Pipeline Variables
 The following variables should be configured:
 - **Dataset with captions**: Dataset containing images with captions as item descriptions.This can also be a prompt item dataset, with image as the prompt and caption as the assistant response (free-text annotation).
 - **Base CLIP model**: The base CLIP model to clone and train from. This can be a pre-trained foundational model or a previously fine-tuned model.
@@ -70,6 +72,11 @@ The following variables should be configured:
     "weight_decay": 0.01
   }
   ```
+
+#### Pipeline Nodes
+
+In addition to the Pipeline Variables, the Train node (named "OpenAI CLIP" in this template) requires the correct Model Application to run successfully. In this case, select "OpenAI CLIP" from the dropdown, or if it doesn't appear as an option, install it from the Marketplace by selecting "Install Foundation Model" at the bottom.
+
 
 ### Manual Pipeline Execution
 

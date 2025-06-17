@@ -416,7 +416,7 @@
             "namespace": {
               "functionName": "train",
               "serviceName": "model-mgmt-app-train",
-              "moduleName": "clip-module",
+              "moduleName": "",
               "packageName": "model-mgmt-app"
             },
             "metadata": {
