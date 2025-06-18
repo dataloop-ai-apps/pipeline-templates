@@ -1,26 +1,34 @@
 {
-    "id": "6852e8bc2abe0341142281b6",
-    "url": "https://rc-gate.dataloop.ai/api/v1/app-registry/6852e8bc2abe0341142281b6",
-    "name": "video_utils_template_2",
+    "name": "video-utils-template",
     "version": "1.0.0",
+    "description": "Pipeline Template for Video Split and Stitch Operations, providing workflow for video processing with splitting, frame extraction, prediction and merging",
     "attributes": {
-        "Category": "Pipeline"
+        "Category": "Pipeline",
+        "Pipeline Type": "Labeling Workflow",
+        "Provider": "Dataloop",
+        "Media Type": [
+            "Video"
+        ]
     },
-    "updatedAt": "2025-06-18T16:26:36.905Z",
-    "createdAt": "2025-06-18T16:26:36.905Z",
-    "creator": "husam.m@dataloop.ai",
-    "displayName": "video_utils_template_2",
-    "description": "",
-    "icon": null,
-    "tags": null,
-    "codebase": null,
-    "scope": "organization",
-    "latest": true,
+    "displayName": "Video Utils Template",
+    "scope": "public",
+    "dependencies": [
+        {
+            "name": "video-to-frames"
+        },
+        {
+            "name": "video-to-videos"
+        },
+        {
+            "name": "frames-to-video"
+        },
+        {
+            "name": "wait-node"
+        }
+    ],
     "components": {
         "pipelineTemplates": [
             {
-                "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
-                "orgId": "d25cecad-34f7-4e38-9750-bd9a1d387bfd",
                 "connections": [
                     {
                         "src": {
@@ -87,8 +95,7 @@
                 ],
                 "variables": [],
                 "description": "",
-                "name": "video_utils_template_2",
-                "templateKind": "org",
+                "name": "Video Utils Template",
                 "nodes": [
                     {
                         "id": "dcd8dcfe-b6b4-44dc-841f-a57c3e7a53a7",
@@ -116,7 +123,6 @@
                         "type": "storage",
                         "namespace": {
                             "functionName": "dataset_handler",
-                            "projectName": "DataloopTasks",
                             "serviceName": "pipeline-utils",
                             "moduleName": null,
                             "packageName": null
@@ -129,8 +135,7 @@
                             },
                             "componentGroupName": "data",
                             "repeatable": true
-                        },
-                        "projectId": null
+                        }
                     },
                     {
                         "id": "cf4ca05b-2f7e-41c7-8255-1aa04622e284",
@@ -158,12 +163,10 @@
                         "type": "custom",
                         "namespace": {
                             "functionName": "video_to_frames",
-                            "projectName": "Husam Testing",
                             "serviceName": "video-to-frames",
                             "moduleName": "video-to-frames",
                             "packageName": "video-utils-splitting"
                         },
-                        "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
                         "appName": "[Video Utils] - Splitting",
                         "dpkName": "video-utils-splitting",
                         "metadata": {
@@ -220,12 +223,10 @@
                         "type": "ml",
                         "namespace": {
                             "functionName": "predict",
-                            "projectName": "Husam Testing",
                             "serviceName": "model-mgmt-app-predict",
                             "moduleName": "model-mgmt-app-predict",
                             "packageName": "model-mgmt-app"
                         },
-                        "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
                         "metadata": {
                             "position": {
                                 "x": 10837,
@@ -266,12 +267,10 @@
                         "type": "custom",
                         "namespace": {
                             "functionName": "wait_for_cycle",
-                            "projectName": "Husam Testing",
                             "serviceName": "wait-node",
                             "moduleName": "wait-node",
                             "packageName": "wait-node"
                         },
-                        "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
                         "appName": "Wait Node",
                         "dpkName": "wait-node",
                         "metadata": {
@@ -319,12 +318,10 @@
                         "type": "custom",
                         "namespace": {
                             "functionName": "frames_to_vid",
-                            "projectName": "Husam Testing",
                             "serviceName": "frames-to-video",
                             "moduleName": "frames-to-video",
                             "packageName": "video-utils-stitching"
                         },
-                        "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
                         "appName": "[Video Utils] - Stitching",
                         "dpkName": "video-utils-stitching",
                         "metadata": {
@@ -379,12 +376,10 @@
                         "type": "custom",
                         "namespace": {
                             "functionName": "video_to_videos",
-                            "projectName": "Husam Testing",
                             "serviceName": "video-to-videos",
                             "moduleName": "video-to-videos",
                             "packageName": "video-utils-splitting"
                         },
-                        "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
                         "appName": "[Video Utils] - Splitting",
                         "dpkName": "video-utils-splitting",
                         "metadata": {
@@ -414,15 +409,5 @@
             }
         ],
         "services": null
-    },
-    "trusted": null,
-    "context": {
-        "project": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
-        "org": "d25cecad-34f7-4e38-9750-bd9a1d387bfd"
-    },
-    "baseId": "6852e8bc2abe0341142281b6",
-    "initialContext": {
-        "creator": "husam.m@dataloop.ai",
-        "createdAt": "2025-06-18T16:26:36.905Z"
     }
 }
