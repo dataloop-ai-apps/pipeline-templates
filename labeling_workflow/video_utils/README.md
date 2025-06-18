@@ -2,7 +2,7 @@
 
 Pipeline Template for **Video Split and Stitch Operations**, providing a streamlined workflow for video processing
 
-<img src="./assets/video_utils_pipeline.png">
+<img src="assets\video_utils_pipeline.png">
 
 ### Pipeline Flow Details:
 
