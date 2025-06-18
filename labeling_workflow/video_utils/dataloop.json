@@ -14,13 +14,10 @@
     "scope": "public",
     "dependencies": [
         {
-            "name": "video-to-frames"
+            "name": "video-utils-splitting"
         },
         {
-            "name": "video-to-videos"
-        },
-        {
-            "name": "frames-to-video"
+            "name": "video-utils-stitching"
         },
         {
             "name": "wait-node"
