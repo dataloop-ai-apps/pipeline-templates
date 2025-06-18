@@ -1,0 +1,417 @@
+{
+    "id": "6852cecc6cfb66052c2f7eb1",
+    "url": "https://rc-gate.dataloop.ai/api/v1/app-registry/6852cecc6cfb66052c2f7eb1",
+    "name": "video_utils_temp",
+    "version": "1.0.0",
+    "attributes": {
+        "Category": "Pipeline"
+    },
+    "updatedAt": "2025-06-18T14:35:56.120Z",
+    "createdAt": "2025-06-18T14:35:56.120Z",
+    "creator": "husam.m@dataloop.ai",
+    "displayName": "video_utils_temp",
+    "description": "",
+    "icon": null,
+    "tags": null,
+    "codebase": null,
+    "scope": "organization",
+    "latest": true,
+    "components": {
+        "pipelineTemplates": [
+            {
+                "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
+                "orgId": "d25cecad-34f7-4e38-9750-bd9a1d387bfd",
+                "connections": [
+                    {
+                        "src": {
+                            "nodeId": "eabd9e2f-8dd3-4295-b7bb-58cc545969a6",
+                            "portId": "79f6161e-3e26-4736-b53c-36df2177c570"
+                        },
+                        "tgt": {
+                            "nodeId": "41d8ed25-01b7-4502-b165-e7fc372b0537",
+                            "portId": "422267d7-307a-4aa2-bf52-bc6220ab5182"
+                        },
+                        "condition": "{}"
+                    },
+                    {
+                        "src": {
+                            "nodeId": "41d8ed25-01b7-4502-b165-e7fc372b0537",
+                            "portId": "73b4c55b-cfb8-4d33-96fe-0c1d7138323c"
+                        },
+                        "tgt": {
+                            "nodeId": "12971489-0149-4f4d-9cfa-6359d84c192e",
+                            "portId": "5f47e23b-f2d7-4d3e-9474-7cb08ff4ed0e"
+                        },
+                        "condition": "{}"
+                    },
+                    {
+                        "src": {
+                            "nodeId": "4a36efaf-de8b-46af-9351-d2aeeaa05943",
+                            "portId": "dbda8cd9-fdc4-4487-a4f7-9426efc3e140"
+                        },
+                        "tgt": {
+                            "nodeId": "904d765c-0b39-4483-bdb6-fafdf0935395",
+                            "portId": "200d06b7-9ed6-43cd-b263-472384fc00ea"
+                        },
+                        "condition": "{}"
+                    },
+                    {
+                        "src": {
+                            "nodeId": "904d765c-0b39-4483-bdb6-fafdf0935395",
+                            "portId": "3d864a70-1647-4726-8751-761b03deee75"
+                        },
+                        "tgt": {
+                            "nodeId": "66af69f0-5276-4588-9c96-0b5a278b61cc",
+                            "portId": "db68987b-3da5-4b31-8980-ea738d185937"
+                        },
+                        "condition": "{}",
+                        "action": "continue"
+                    }
+                ],
+                "startNodes": [
+                    {
+                        "nodeId": "eabd9e2f-8dd3-4295-b7bb-58cc545969a6",
+                        "type": "root",
+                        "id": "930d81c8-fe95-449c-8db5-c26f0a333f34"
+                    }
+                ],
+                "variables": [],
+                "description": "",
+                "name": "video_utils_temp",
+                "templateKind": "org",
+                "nodes": [
+                    {
+                        "id": "eabd9e2f-8dd3-4295-b7bb-58cc545969a6",
+                        "inputs": [
+                            {
+                                "portId": "8efe876a-d358-4da5-8a57-a25eeb7f7d57",
+                                "nodeId": "8efe876a-d358-4da5-8a57-a25eeb7f7d57",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "input"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "portId": "79f6161e-3e26-4736-b53c-36df2177c570",
+                                "nodeId": "79f6161e-3e26-4736-b53c-36df2177c570",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "output"
+                            }
+                        ],
+                        "name": "Dataset",
+                        "type": "storage",
+                        "namespace": {
+                            "functionName": "clone_item",
+                            "projectName": "DataloopTasks",
+                            "serviceName": "pipeline-utils",
+                            "moduleName": "default_module",
+                            "packageName": "pipeline-utils"
+                        },
+                        "projectId": "f8a4b8ce-5ff3-4386-84dc-1bda3a5bc92a",
+                        "metadata": {
+                            "position": {
+                                "x": 9971,
+                                "y": 10169,
+                                "z": 0
+                            },
+                            "componentGroupName": "data",
+                            "repeatable": true
+                        }
+                    },
+                    {
+                        "id": "41d8ed25-01b7-4502-b165-e7fc372b0537",
+                        "inputs": [
+                            {
+                                "portId": "422267d7-307a-4aa2-bf52-bc6220ab5182",
+                                "nodeId": "422267d7-307a-4aa2-bf52-bc6220ab5182",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "input"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "portId": "73b4c55b-cfb8-4d33-96fe-0c1d7138323c",
+                                "nodeId": "73b4c55b-cfb8-4d33-96fe-0c1d7138323c",
+                                "type": "Item[]",
+                                "name": "items",
+                                "displayName": "items",
+                                "io": "output"
+                            }
+                        ],
+                        "name": "Video to Videos",
+                        "type": "custom",
+                        "namespace": {
+                            "functionName": "video_to_videos",
+                            "projectName": "Husam Testing",
+                            "serviceName": "husam-testing-video-to-videos-r657",
+                            "moduleName": "video-to-videos",
+                            "packageName": "video-utils-splitting-HUSAM"
+                        },
+                        "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
+                        "appName": "[Video Utils] - Splitting -HUSAM",
+                        "dpkName": "video-utils-splitting-HUSAM",
+                        "metadata": {
+                            "position": {
+                                "x": 10233,
+                                "y": 10167.9912109375,
+                                "z": 0
+                            },
+                            "componentGroupName": "video-utils",
+                            "customNodeConfig": {
+                                "split_type": "num_frames",
+                                "output_dir": "sub_videos_dir",
+                                "splitter_arg": 500,
+                                "validation": {
+                                    "valid": true,
+                                    "errors": []
+                                }
+                            },
+                            "repeatable": true,
+                            "pipelineNodeName": "video-to-videos"
+                        }
+                    },
+                    {
+                        "id": "12971489-0149-4f4d-9cfa-6359d84c192e",
+                        "inputs": [
+                            {
+                                "portId": "5f47e23b-f2d7-4d3e-9474-7cb08ff4ed0e",
+                                "nodeId": "5f47e23b-f2d7-4d3e-9474-7cb08ff4ed0e",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "input"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "portId": "b16922ab-59c7-42dd-80df-5119e8cf5dec",
+                                "nodeId": "b16922ab-59c7-42dd-80df-5119e8cf5dec",
+                                "type": "Item[]",
+                                "name": "items",
+                                "displayName": "items",
+                                "io": "output"
+                            }
+                        ],
+                        "name": "Video to Frames",
+                        "type": "custom",
+                        "namespace": {
+                            "functionName": "video_to_frames",
+                            "projectName": "Husam Testing",
+                            "serviceName": "husam-testing-video-to-frames-899d",
+                            "moduleName": "video-to-frames",
+                            "packageName": "video-utils-splitting-HUSAM"
+                        },
+                        "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
+                        "appName": "[Video Utils] - Splitting -HUSAM",
+                        "dpkName": "video-utils-splitting-HUSAM",
+                        "metadata": {
+                            "position": {
+                                "x": 10500,
+                                "y": 10167.9912109375,
+                                "z": 0
+                            },
+                            "componentGroupName": "video-utils",
+                            "customNodeConfig": {
+                                "split_type": "frames_interval",
+                                "output_dir": "frames_dir",
+                                "splitter_arg": 1,
+                                "validation": {
+                                    "valid": true,
+                                    "errors": []
+                                }
+                            },
+                            "repeatable": true,
+                            "pipelineNodeName": "video-to-frames"
+                        }
+                    },
+                    {
+                        "id": "4a36efaf-de8b-46af-9351-d2aeeaa05943",
+                        "inputs": [
+                            {
+                                "portId": "54bc0c34-2cca-42db-88de-1b9e909252a6",
+                                "nodeId": "54bc0c34-2cca-42db-88de-1b9e909252a6",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "input"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "portId": "dbda8cd9-fdc4-4487-a4f7-9426efc3e140",
+                                "nodeId": "dbda8cd9-fdc4-4487-a4f7-9426efc3e140",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "output"
+                            },
+                            {
+                                "portId": "e7bde1a3-8b6c-4bd3-94b1-ea5ea8fb1ce8",
+                                "nodeId": "e7bde1a3-8b6c-4bd3-94b1-ea5ea8fb1ce8",
+                                "type": "Annotation[]",
+                                "name": "annotations",
+                                "displayName": "annotations",
+                                "io": "output"
+                            }
+                        ],
+                        "name": "Predict",
+                        "type": "ml",
+                        "namespace": {
+                            "functionName": "predict",
+                            "projectName": "Husam Testing",
+                            "serviceName": "model-mgmt-app-predict",
+                            "moduleName": "model-mgmt-app-predict",
+                            "packageName": "model-mgmt-app"
+                        },
+                        "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
+                        "metadata": {
+                            "position": {
+                                "x": 10764,
+                                "y": 10169,
+                                "z": 0
+                            },
+                            "componentGroupName": "models",
+                            "repeatable": true
+                        }
+                    },
+                    {
+                        "id": "904d765c-0b39-4483-bdb6-fafdf0935395",
+                        "inputs": [
+                            {
+                                "portId": "200d06b7-9ed6-43cd-b263-472384fc00ea",
+                                "nodeId": "200d06b7-9ed6-43cd-b263-472384fc00ea",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "input"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "portId": "3d864a70-1647-4726-8751-761b03deee75",
+                                "nodeId": "3d864a70-1647-4726-8751-761b03deee75",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "actions": [
+                                    "continue",
+                                    "wait"
+                                ],
+                                "io": "output"
+                            }
+                        ],
+                        "name": "Wait",
+                        "type": "custom",
+                        "namespace": {
+                            "functionName": "wait_for_cycle",
+                            "projectName": "Husam Testing",
+                            "serviceName": "wait-node",
+                            "moduleName": "wait-node",
+                            "packageName": "wait-node"
+                        },
+                        "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
+                        "appName": "Wait Node",
+                        "dpkName": "wait-node",
+                        "metadata": {
+                            "position": {
+                                "x": 11039,
+                                "y": 10170,
+                                "z": 0
+                            },
+                            "componentGroupName": "data",
+                            "customNodeConfig": {
+                                "name": "Wait",
+                                "returnParent": false,
+                                "validation": {
+                                    "valid": true,
+                                    "errors": []
+                                }
+                            },
+                            "repeatable": true,
+                            "pipelineNodeName": "Wait Node"
+                        }
+                    },
+                    {
+                        "id": "66af69f0-5276-4588-9c96-0b5a278b61cc",
+                        "inputs": [
+                            {
+                                "portId": "db68987b-3da5-4b31-8980-ea738d185937",
+                                "nodeId": "db68987b-3da5-4b31-8980-ea738d185937",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "input"
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "portId": "c20cac41-7cb8-4dd8-b404-49b17102cadb",
+                                "nodeId": "c20cac41-7cb8-4dd8-b404-49b17102cadb",
+                                "type": "Item",
+                                "name": "item",
+                                "displayName": "item",
+                                "io": "output"
+                            }
+                        ],
+                        "name": "Frames to Video Merge",
+                        "type": "custom",
+                        "namespace": {
+                            "functionName": "frames_to_vid",
+                            "projectName": "Husam Testing",
+                            "serviceName": "frames-to-video",
+                            "moduleName": "frames-to-video",
+                            "packageName": "video-utils-stitching"
+                        },
+                        "projectId": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
+                        "appName": "[Video Utils] - Stitching",
+                        "dpkName": "video-utils-stitching",
+                        "metadata": {
+                            "position": {
+                                "x": 11389.094343316307,
+                                "y": 10170.603201649239,
+                                "z": 0
+                            },
+                            "componentGroupName": "video-utils",
+                            "customNodeConfig": {
+                                "input_dir": "frames_dir",
+                                "output_dir": "res_dir",
+                                "output_video_type": "webm",
+                                "tracker": "ByteTrack",
+                                "fps": 20,
+                                "min_box_area": 10,
+                                "track_thresh": 0.5,
+                                "track_buffer": 30,
+                                "match_thresh": 0.8,
+                                "validation": {
+                                    "valid": true,
+                                    "errors": []
+                                }
+                            },
+                            "repeatable": true,
+                            "pipelineNodeName": "frames-to-video"
+                        }
+                    }
+                ],
+                "preview": "6852cecc6cfb6647182f7eb2",
+                "_id": "6852cf25057a2968d2fee5a1"
+            }
+        ],
+        "services": null
+    },
+    "trusted": null,
+    "context": {
+        "project": "c28721df-bd4d-44ae-90f2-5e5a41d6dec4",
+        "org": "d25cecad-34f7-4e38-9750-bd9a1d387bfd"
+    },
+    "baseId": "6852cecc6cfb66052c2f7eb1",
+    "initialContext": {
+        "creator": "husam.m@dataloop.ai",
+        "createdAt": "2025-06-18T14:35:56.120Z"
+    }
+}
