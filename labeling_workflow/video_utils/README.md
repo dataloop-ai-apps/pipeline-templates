@@ -2,6 +2,9 @@
 
 Pipeline Template for **Video Split and Stitch Operations**, providing a streamlined workflow for video processing
 
+This pipeline is designed to streamline the process of video annotation by breaking down videos into individual frames, applying automated predictions, and reconstructing annotated videos with object tracking. The workflow splits videos into manageable segments, extracts frames for frame-by-frame analysis, runs prediction models to generate annotations, allows for human review and correction, and finally stitches the frames back together while maintaining object identity through tracking algorithms. This approach enables efficient handling of long videos while ensuring high-quality annotations and consistent object tracking throughout the video sequence.
+
+
 <img src="assets\video_utils_pipeline.png">
 
 ### Pipeline Flow Details:
