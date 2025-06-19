@@ -1,6 +1,6 @@
 {
   "name": "model-agreement-template",
-  "version": "1.0.100",
+  "version": "1.0.101",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Labeling Workflow",
