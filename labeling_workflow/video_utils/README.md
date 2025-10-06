@@ -37,10 +37,10 @@ This pipeline is designed to streamline the process of video annotation by break
    - Dataset Input Directory: Must match Split Node output directory
    - FPS: Set to match original video's FPS
    - Tracker Configuration:
-     - Select either ByteTrack or DeepSORT
+     - Uses ByteTrack tracker
      - Adjust tracking parameters as needed:
        - min_box_area: Minimum bounding box area (in pixels) to track. Smaller boxes are filtered out. Higher values reduce false positives but may miss small objects.
-       - track_thresh (ByteTrack only): Detection confidence threshold for creating new tracks. Higher values (>0.5) mean more conservative tracking with fewer false tracks.
+       - track_thresh: Detection confidence threshold for creating new tracks. Higher values (>0.5) mean more conservative tracking with fewer false tracks.
        - track_buffer: Number of frames to keep track history. Larger buffers help maintain identity through occlusions but increase memory usage.
        - match_thresh: IoU threshold for matching detections to existing tracks. Higher values (>0.8) require more precise matches, lower values allow more flexible matching but may cause ID switches.
 
