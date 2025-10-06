@@ -332,7 +332,6 @@
                                 "input_dir": "frames_dir",
                                 "output_dir": "pipeline_res",
                                 "output_video_type": "webm",
-                                "tracker": "ByteTrack",
                                 "fps": 30,
                                 "min_box_area": 10,
                                 "track_thresh": 0.5,
