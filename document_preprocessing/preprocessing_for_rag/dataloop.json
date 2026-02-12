@@ -81,7 +81,7 @@
                 "name": "target_dataset",
                 "displayName": "target_dataset",
                 "io": "input",
-                "value": "$var(chunks-dataset)"
+                "variableName": "chunks-dataset"
               }
             ],
             "outputs": [
@@ -148,7 +148,7 @@
                 "name": "target_dataset",
                 "displayName": "target_dataset",
                 "io": "input",
-                "value": "$var(chunks-dataset)"
+                "variableName": "chunks-dataset"
               }
             ],
             "outputs": [
