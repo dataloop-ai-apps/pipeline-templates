@@ -79,6 +79,7 @@
           ],
           "name": "Dataset",
           "type": "storage",
+          "variableName": "dataset",
           "namespace": {
             "functionName": "clone_item",
             "projectName": "DataloopTasks",
@@ -186,6 +187,14 @@
       },
       {
         "name": "exif-extractor"
+      }
+    ],
+    "variables": [
+      {
+        "name": "dataset",
+        "type": "Dataset",
+        "description": "Insert Dataset ID.",
+        "value": "$var(Dataset__dataset)"
       }
     ]
   }
