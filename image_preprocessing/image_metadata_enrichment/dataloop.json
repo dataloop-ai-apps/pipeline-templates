@@ -160,21 +160,23 @@
             }
           ],
           "outputs": [],
-          "name": "App Function",
-          "type": "function",
-          "namespace": {
-            "functionName": "calculate_quality_scores",
-            "serviceName": "quality-scores-generator",
-            "moduleName": "quality_scores_generator",
-            "packageName": "quality-score-generator-app"
-          },
+            "name": "Calculate Quality Scores",
+            "type": "custom",
+            "namespace": {
+              "functionName": "calculate_quality_scores",
+              "serviceName": "quality-scores-generator",
+              "moduleName": "quality_scores_generator",
+              "packageName": "quality-score-generator-app"
+            },
+            "appName": "Quality Scores Generator",
+            "dpkName": "quality-score-generator",
           "metadata": {
             "position": {
               "x": 10453.8228199908,
               "y": 10144.2422810354,
               "z": 0
             },
-            "componentGroupName": "automation",
+           "componentGroupName": "image-utils",
             "repeatable": true
           }
         }],
