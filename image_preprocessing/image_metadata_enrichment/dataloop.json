@@ -176,7 +176,7 @@
               "packageName": "quality-score-generator-app"
             },
             "appName": "Quality Scores Generator",
-            "dpkName": "quality-score-generator",
+            "dpkName": "quality-score-generator-app",
           "metadata": {
             "position": {
               "x": 10453.8228199908,
