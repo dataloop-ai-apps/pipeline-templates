@@ -1,6 +1,6 @@
 {
     "name": "video-utils-template",
-    "version": "1.0.103",
+    "version": "1.0.104",
     "description": "Pipeline Template for Video Split and Stitch Operations, providing workflow for video processing with splitting, frame extraction, prediction and merging",
     "attributes": {
         "Category": "Pipeline",
