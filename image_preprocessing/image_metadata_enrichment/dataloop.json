@@ -1,6 +1,6 @@
 {
   "name": "image-metadata-enrichment-template",
-  "version": "1.0.105",
+  "version": "1.0.106",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Data Engineering",
@@ -15,7 +15,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
-    "gitTag": "1.0.105"
+    "gitTag": "1.0.106"
   },
   "components": {
     "pipelineTemplates": [
