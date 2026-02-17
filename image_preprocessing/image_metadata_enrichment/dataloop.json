@@ -171,7 +171,7 @@
             "type": "custom",
             "namespace": {
               "functionName": "calculate_quality_scores",
-              "serviceName": "quality-scores-generator",
+              "serviceName": "quality-scores-generator-item",
               "moduleName": "quality_scores_generator",
               "packageName": "quality-score-generator-app"
             },
