@@ -287,7 +287,8 @@
               "modelConfig": {},
               "componentGroupName": "models",
               "repeatable": true,
-              "mlType": "embeddings"
+              "mlType": "embeddings",
+              "variableModel": "embedder-model"
             }
           }
         ],
