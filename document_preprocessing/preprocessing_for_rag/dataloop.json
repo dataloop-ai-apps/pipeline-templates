@@ -32,6 +32,15 @@
                 "name": "item",
                 "displayName": "item",
                 "io": "input"
+              },
+              {
+                "portId": "cd0a8dbb-6392-424b-87d0-e63ae7e5428d",
+                "nodeId": "cd0a8dbb-6392-424b-87d0-e63ae7e5428d",
+                "type": "Dataset",
+                "name": "source_dataset",
+                "displayName": "source_dataset",
+                "io": "input",
+                "variableName": "source-dataset"
               }
             ],
             "outputs": [
@@ -359,9 +368,22 @@
         "preview": "",
         "variables": [
           {
+            "name": "source-dataset",
+            "type": "Dataset",
+            "description": "Dataset where text chunks will be stored. Used by both the document-to-chunks processors and the intermediate storage node.",
+            "value": "$var(sourceDataset__dataset)"
+          },
+          {
             "name": "chunks-dataset",
             "type": "Dataset",
-            "description": "Dataset where text chunks will be stored. Used by both the document-to-chunks processors and the intermediate storage node."
+            "description": "Dataset where text chunks will be stored. Used by both the document-to-chunks processors and the intermediate storage node.",
+            "value": "$var(chunksDataset__dataset)"
+          },
+          {
+            "name": "embedder-model",
+            "type": "Model",
+            "description": "Embedder model to use for embedding the chunks.",
+            "value": "$var(embedder__model)"
           }
         ]
       }
