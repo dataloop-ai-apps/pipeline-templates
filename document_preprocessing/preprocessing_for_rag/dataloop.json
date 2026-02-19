@@ -370,7 +370,7 @@
           {
             "name": "source-dataset",
             "type": "Dataset",
-            "description": "Dataset where text chunks will be stored. Used by both the document-to-chunks processors and the intermediate storage node.",
+            "description": "Dataset where raw files will be uploaded to.",
             "value": "$var(sourceDataset__dataset)"
           },
           {
