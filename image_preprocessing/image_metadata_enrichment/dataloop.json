@@ -56,7 +56,7 @@
             "name": "dataset",
             "type": "Dataset",
             "description": "Insert Dataset ID.",
-            "value": "$var(Dataset__dataset)"
+            "value": "$var(dataset__dataset)"
           }
         ],
         "description": "",
@@ -86,7 +86,6 @@
           ],
           "name": "Dataset",
           "type": "storage",
-          "variableDataset": "dataset",
           "namespace": {
             "functionName": "clone_item",
             "projectName": "DataloopTasks",
@@ -101,7 +100,8 @@
               "z": 0
             },
             "componentGroupName": "data",
-            "repeatable": true
+            "repeatable": true,
+            "variableDataset": "dataset"
           }
         },
         {
