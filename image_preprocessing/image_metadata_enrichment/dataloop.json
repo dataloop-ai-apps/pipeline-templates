@@ -86,7 +86,7 @@
           ],
           "name": "Dataset",
           "type": "storage",
-          "variableName": "dataset",
+          "variableDataset": "dataset",
           "namespace": {
             "functionName": "clone_item",
             "projectName": "DataloopTasks",
