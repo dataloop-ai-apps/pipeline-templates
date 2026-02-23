@@ -142,7 +142,7 @@
               "y": 9994,
               "z": 0
             },
-            "componentGroupName": "Dell",
+            "componentGroupName": "image-utils",
             "customNodeConfig": {
               "name": "Exif Extractor",
               "validation": {
