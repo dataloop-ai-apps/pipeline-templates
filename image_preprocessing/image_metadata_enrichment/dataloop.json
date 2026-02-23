@@ -206,5 +206,7 @@
     {
       "name": "exif-extractor"
     }
-  ]
+  ],
+  "variables": {
+}
 }
