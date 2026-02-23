@@ -1,6 +1,6 @@
 {
   "name": "active-learning-template",
-  "version": "1.0.112",
+  "version": "1.0.113",
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "MLOps",
@@ -13,7 +13,7 @@
   "codebase": {
     "type": "git",
     "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
-    "gitTag": "1.0.112"
+    "gitTag": "1.0.113"
   },
   "components": {
     "pipelineTemplates": [
