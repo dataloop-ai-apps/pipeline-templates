@@ -111,6 +111,22 @@
                 "y": 10000,
                 "z": 0
               },
+              "serviceConfig": {
+                "name": "pdf-processor-service",
+                "runtime": {
+                  "podType": "regular-m",
+                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/apps/rag-multimodal-processors/pdf-processor:0.0.3",
+                  "concurrency": 25,
+                  "autoscaler": {
+                    "minReplicas": 1,
+                    "maxReplicas": 1,
+                    "queueLength": 100,
+                    "type": "rabbitmq"
+                  },
+                  "preemptible": true,
+                  "dynamicConcurrency": true
+                }
+              },
               "componentGroupName": "document-processing",
               "customNodeConfig": {
                 "name": "PDF-to-Chunks",
@@ -177,6 +193,22 @@
                 "x": 10400,
                 "y": 10200,
                 "z": 0
+              },
+              "serviceConfig": {
+                "name": "doc-processor-service",
+                "runtime": {
+                  "podType": "regular-m",
+                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/apps/rag-multimodal-processors/doc-processor:0.0.3",
+                  "concurrency": 25,
+                  "autoscaler": {
+                    "minReplicas": 1,
+                    "maxReplicas": 1,
+                    "queueLength": 100,
+                    "type": "rabbitmq"
+                  },
+                  "preemptible": true,
+                  "dynamicConcurrency": true
+                }
               },
               "componentGroupName": "document-processing",
               "customNodeConfig": {
@@ -283,6 +315,22 @@
                 "x": 11200,
                 "y": 10100,
                 "z": 0
+              },
+              "serviceConfig": {
+                "name": "clip-cpu-long",
+                "runtime": {
+                  "podType": "regular-s",
+                  "concurrency": 10,
+                  "runnerImage": "gcr.io/viewo-g/piper/agent/runner/apps/clip-model-adapter:0.1.2",
+                  "autoscaler": {
+                    "type": "rabbitmq",
+                    "minReplicas": 1,
+                    "maxReplicas": 1,
+                    "queueLength": 10
+                  },
+                  "preemptible": true,
+                  "dynamicConcurrency": true
+                }
               },
               "modelConfig": {},
               "componentGroupName": "models",
