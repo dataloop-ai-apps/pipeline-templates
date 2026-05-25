@@ -112,7 +112,7 @@
                 "moduleName": "image_utils_img_aug",
                 "runtime": {
                   "podType": "regular-xs",
-                  "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
+                  "runnerImage": "hub.dataloop.ai/dtlpy-runner-images/cpu:python3.12_opencv",
                   "concurrency": 10,
                   "singleAgent": false,
                   "autoscaler": {
@@ -192,7 +192,7 @@
                 "moduleName": "image_utils_img_aug",
                 "runtime": {
                   "podType": "regular-xs",
-                  "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
+                  "runnerImage": "hub.dataloop.ai/dtlpy-runner-images/cpu:python3.12_opencv",
                   "concurrency": 10,
                   "singleAgent": false,
                   "autoscaler": {
@@ -274,7 +274,7 @@
                 "moduleName": "image_utils_img_aug",
                 "runtime": {
                   "podType": "regular-xs",
-                  "runnerImage": "dataloopai/dtlpy-agent:cpu.py3.8.opencv4.7",
+                  "runnerImage": "hub.dataloop.ai/dtlpy-runner-images/cpu:python3.12_opencv",
                   "concurrency": 10,
                   "singleAgent": false,
                   "autoscaler": {
