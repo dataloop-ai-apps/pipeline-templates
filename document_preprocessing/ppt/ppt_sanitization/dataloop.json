@@ -1,0 +1,264 @@
+{
+  "name": "ppt-sanitization-template-test",
+  "version": "1.0.6",
+  "attributes": {
+    "Category": "Pipeline",
+    "Pipeline Type": "Template",
+    "Provider": "Dataloop",
+    "Media Type": [
+      "Text",
+      "Image"
+    ]
+  },
+  "displayName": "PPT Sanitization Test",
+  "description": "Automate the sanitization of PPT files by removing named entities and visual identifiers.",
+  "scope": "public",
+  "codebase": {
+    "type": "git",
+    "gitUrl": "https://github.com/dataloop-ai-apps/pipeline-templates.git",
+    "gitTag": "1.0.4"
+  },
+  "components": {
+    "pipelineTemplates": [
+      {
+        "nodes": [
+          {
+              "id": "ee28023f-7d3b-4a69-93e0-bd47a9bb3e7f",
+              "inputs": [
+                  {
+                      "portId": "d0464b66-323a-46bc-b382-f5654ac92ee1",
+                      "nodeId": "d0464b66-323a-46bc-b382-f5654ac92ee1",
+                      "type": "Item",
+                      "name": "item",
+                      "displayName": "item",
+                      "io": "input"
+                  }
+              ],
+              "outputs": [
+                  {
+                      "portId": "c3630189-34a1-48cf-83f6-188b581bf5c2",
+                      "nodeId": "c3630189-34a1-48cf-83f6-188b581bf5c2",
+                      "type": "Item",
+                      "name": "item",
+                      "displayName": "item",
+                      "io": "output"
+                  }
+              ],
+              "name": "Sanitize PPT - NER",
+              "type": "custom",
+              "namespace": {
+                  "functionName": "sanitize_text",
+                  "moduleName": "sanitize_ppt_module",
+                  "packageName": "sanitize-ppt-app"
+              },
+              "projectId": null,
+              "appName":  "Sanitize PPT",
+              "dpkName": "sanitize-ppt-app",
+              "metadata": {
+                  "position": {
+                      "x": 9805.275009155273,
+                      "y": 10125.5,
+                      "z": 0
+                  },
+                  "componentGroupName": "Text-Preprocessing",
+                  "customNodeConfig": {
+                      "name": "Sanitize PPT - NER",
+                      "validation": {
+                          "valid": true,
+                          "errors": []
+                      }
+                  },
+                  "codeApplicationName": "sanitize-text-ppt",
+                  "repeatable": true,
+                  "pipelineNodeName": "sanitize-text-ppt"
+              }
+          },
+          {
+              "id": "3e97e05b-cd76-4708-95d2-a36cd480034b",
+              "inputs": [
+                  {
+                      "portId": "0a508488-4dc4-40e9-9e7c-6f2cf3de25f0",
+                      "nodeId": "0a508488-4dc4-40e9-9e7c-6f2cf3de25f0",
+                      "type": "Item",
+                      "name": "item",
+                      "displayName": "item",
+                      "io": "input"
+                  }
+              ],
+              "outputs": [
+                  {
+                      "portId": "b348940a-a5a7-45b3-afe4-8f46227933f9",
+                      "nodeId": "b348940a-a5a7-45b3-afe4-8f46227933f9",
+                      "type": "Item",
+                      "name": "item",
+                      "displayName": "item",
+                      "io": "output"
+                  }
+              ],
+              "name": "Sanitize PPT - Visual Identity",
+              "type": "custom",
+              "namespace": {
+                  "functionName": "sanitize_visual_identity",
+                  "moduleName": "sanitize_ppt_module",
+                  "packageName": "sanitize-ppt-app"
+              },
+              "projectId": null,
+              "appName":  "Sanitize PPT",
+              "dpkName": "sanitize-ppt-app",
+              "metadata": {
+                  "position": {
+                      "x": 10121.275009155272,
+                      "y": 10125.5,
+                      "z": 0
+                  },
+                  "componentGroupName": "Text-Preprocessing",
+                  "customNodeConfig": {
+                      "name": "Sanitize PPT - Visual Identity",
+                      "validation": {
+                          "valid": true,
+                          "errors": []
+                      }
+                  },
+                  "repeatable": true,
+                  "pipelineNodeName": "sanitize-visual-identity-ppt",
+                  "codeApplicationName": "nlp-experiments-sanitize-ppt-s-0nl"
+              }
+          },
+          {
+              "id": "2489e723-3e58-43c6-925e-9fae3aee3172",
+              "inputs": [
+                  {
+                      "portId": "79287d02-6aae-4616-91ee-9fd67c599f1b",
+                      "type": "Item",
+                      "name": "item",
+                      "color": null,
+                      "displayName": "item",
+                      "variableName": null,
+                      "portPercentage": null
+                  }
+              ],
+              "outputs": [
+                  {
+                      "portId": "6ec411cf-1d2c-4a11-8c93-a845e4f732cf",
+                      "type": "Item",
+                      "name": "item",
+                      "color": null,
+                      "displayName": "item",
+                      "variableName": null,
+                      "portPercentage": null
+                  }
+              ],
+              "name": "dataset",
+              "type": "storage",
+              "namespace": {
+                  "functionName": "clone_item",
+                  "projectName": "DataloopTasks",
+                  "moduleName": "default_module",
+                  "serviceName": "pipeline-utils",
+                  "packageName": "pipeline-utils"
+              },
+              "projectId": null,
+              "metadata": {
+                  "position": {
+                      "x": 9516.525356564674,
+                      "y": 10125.58173201124,
+                      "z": 0
+                  },
+                  "repeatable": true
+              }
+          },
+          {
+              "id": "67207725-2996-4464-869a-92dd7944eb73",
+              "inputs": [
+                  {
+                      "portId": "92c56948-97c6-4412-868a-02bc2ad5330a",
+                      "type": "Item",
+                      "name": "item",
+                      "color": null,
+                      "displayName": "item",
+                      "variableName": null,
+                      "portPercentage": null
+                  }
+              ],
+              "outputs": [
+                  {
+                      "portId": "92e4c653-f2dd-4981-a0d4-627a6e6b898e",
+                      "type": "Item",
+                      "name": "item",
+                      "color": null,
+                      "displayName": "item",
+                      "variableName": null,
+                      "portPercentage": null
+                  }
+              ],
+              "name": "dataset",
+              "type": "storage",
+              "metadata": {
+                  "position": {
+                      "x": 10443.525356564674,
+                      "y": 10125.58173201124,
+                      "z": 0
+                  },
+                  "repeatable": true
+              },
+              "projectId": null,
+              "namespace": {
+                  "functionName": "clone_item",
+                  "projectName": "DataloopTasks",
+                  "moduleName": "default_module",
+                  "serviceName": "pipeline-utils",
+                  "packageName": "pipeline-utils"
+              }
+          }
+        ],
+        "connections": [
+            {
+                "src": {
+                    "nodeId": "ee28023f-7d3b-4a69-93e0-bd47a9bb3e7f",
+                    "portId": "c3630189-34a1-48cf-83f6-188b581bf5c2"
+                },
+                "tgt": {
+                    "nodeId": "3e97e05b-cd76-4708-95d2-a36cd480034b",
+                    "portId": "0a508488-4dc4-40e9-9e7c-6f2cf3de25f0"
+                }
+            },
+            {
+                "src": {
+                    "nodeId": "2489e723-3e58-43c6-925e-9fae3aee3172",
+                    "portId": "6ec411cf-1d2c-4a11-8c93-a845e4f732cf"
+                },
+                "tgt": {
+                    "nodeId": "ee28023f-7d3b-4a69-93e0-bd47a9bb3e7f",
+                    "portId": "d0464b66-323a-46bc-b382-f5654ac92ee1"
+                }
+            },
+            {
+                "src": {
+                    "nodeId": "3e97e05b-cd76-4708-95d2-a36cd480034b",
+                    "portId": "b348940a-a5a7-45b3-afe4-8f46227933f9"
+                },
+                "tgt": {
+                    "nodeId": "67207725-2996-4464-869a-92dd7944eb73",
+                    "portId": "92c56948-97c6-4412-868a-02bc2ad5330a"
+                }
+            }
+        ],
+        "startNodes": [
+            {
+                "nodeId": "2489e723-3e58-43c6-925e-9fae3aee3172",
+                "type": "root",
+                "id": "dc334d0a-7b14-4d64-8c95-26cc9eefe2ed"
+            }
+        ],
+        "name": "PPT Sanitization Pipeline",
+        "description": "Automate the sanitization of PPT files by removing named entities and visual identifiers.",
+        "preview": "669fc1754ebe9674fb9c3662"
+      }
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "sanitize-ppt-app"
+    }
+  ]
+}
