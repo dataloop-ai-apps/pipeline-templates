@@ -2,7 +2,7 @@
   "name": "rlhf-pipeline-template",
   "version": "1.0.114",
   "attributes": {
-    "Provider": "Dataloop",
+    "Provider": "DDOE",
     "Category": "Pipeline",
     "Pipeline Type": "MLOps",
     "Media Type": ["Text", "Image"]

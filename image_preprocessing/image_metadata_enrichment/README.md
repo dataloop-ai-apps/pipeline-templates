@@ -9,7 +9,7 @@ The Image Metadata Enrichment Pipeline Template automates the process of enrichi
 - **EXIF Extractor** – Extracts embedded EXIF metadata from images (e.g., camera model, GPS coordinates, exposure settings, timestamps).
 - **Quality Scores Generator** – Calculates image quality scores, including **Blurriness** and **Darkness** metrics.
 
-The extracted information is added to the item's metadata, making it available for filtering, querying, and downstream processing within the Dataloop platform.
+The extracted information is added to the item's metadata, making it available for filtering, querying, and downstream processing within the DDOE platform.
 
 ### Installation:
 

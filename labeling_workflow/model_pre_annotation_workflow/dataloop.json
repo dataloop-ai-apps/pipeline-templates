@@ -4,7 +4,7 @@
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "Labeling Workflow",
-    "Provider": "Dataloop",
+    "Provider": "DDOE",
     "Media Type": ["All Media Types"]
   },
   "displayName": "Model Pre-annotation Workflow",

@@ -4,7 +4,7 @@
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "MLOps",
-    "Provider": "Dataloop",
+    "Provider": "DDOE",
     "Media Type": ["Image", "Text", "Multi Modal"]
   },
   "displayName": "CLIP Fine-tuning Pipeline",

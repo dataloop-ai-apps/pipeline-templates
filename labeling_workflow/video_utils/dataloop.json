@@ -5,7 +5,7 @@
     "attributes": {
         "Category": "Pipeline",
         "Pipeline Type": "Labeling Workflow",
-        "Provider": "Dataloop",
+        "Provider": "DDOE",
         "Media Type": [
             "Video"
         ]

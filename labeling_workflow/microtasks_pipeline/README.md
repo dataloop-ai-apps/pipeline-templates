@@ -6,7 +6,7 @@ For example, a dataset of images from dashboard cameras can be assigned to a num
 
 Each annotator and QA tester needs to focus only on a specific aspect of the task, thus increasing efficiency and accuracy.
 
-Remember to take advantage of Dataloop’s powerful [pipeline nodes](https://dataloop.ai/docs/pipeline-nodes) to modify this template to best fit your needs.
+Remember to take advantage of DDOE’s powerful [pipeline nodes](https://dataloop.ai/docs/pipeline-nodes) to modify this template to best fit your needs.
 
 ## Installation
 

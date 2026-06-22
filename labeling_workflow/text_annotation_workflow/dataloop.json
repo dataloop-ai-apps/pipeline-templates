@@ -3,7 +3,7 @@
   "version": "1.0.114",
   "attributes": {
     "Category": "Pipeline",
-    "Provider": "Dataloop",
+    "Provider": "DDOE",
     "Pipeline Type": "Labeling Workflow",
     "Media Type": [
       "Text"

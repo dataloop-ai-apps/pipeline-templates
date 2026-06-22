@@ -6,7 +6,7 @@
 
 CLIP fine-tuning leverages the advantages of OpenAI's CLIP for your VLM needs, and fine-tunes the model on your custom
 dataset. This template sets up the fine-tuning pipeline with CLIP, and also provides the option to embed a dataset
-with the fine-tuned model. See the [CLIP model adapter](https://github.com/dataloop-ai-apps/clip-model-adapter/) for additional information on the model in the Dataloop platform.
+with the fine-tuned model. See the [CLIP model adapter](https://github.com/dataloop-ai-apps/clip-model-adapter/) for additional information on the model in the DDOE platform.
 
 ### Dataset Preparation
 
@@ -80,7 +80,7 @@ In addition to the Pipeline Variables, the Train node (named "OpenAI CLIP" in th
 
 ### Manual Pipeline Execution
 
-You can run the pipeline using the Dataloop SDK:
+You can run the pipeline using the DDOE SDK:
 
 ```python
 import dtlpy as dl
