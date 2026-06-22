@@ -5,7 +5,7 @@
   "attributes": {
     "Category": "Pipeline",
     "Pipeline Type": "MLOps",
-    "Provider": "Dataloop",
+    "Provider": "DDOE",
     "Media Type": ["Image"]
   },
   "displayName": "Smart Tiling",

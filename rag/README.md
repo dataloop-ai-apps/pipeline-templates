@@ -12,8 +12,8 @@ query processing and response generation.
 - **Retriever**: Supports retrieving relevant documents.
 - **Generative Model**: Generates detailed, context-based responses.
 
-You can install any embedding and generative models from the Dataloop Marketplace and configure 
-them within the relevant nodes of the pipeline [Dataloop Website](https://dataloop.ai/).
+You can install any embedding and generative models from the DDOE Marketplace and configure 
+them within the relevant nodes of the pipeline [DDOE Website](https://dataloop.ai/).
 
 ### Note:
 Source datasets must be pre-embedded during the preprocessing stage for optimal performance.
@@ -23,7 +23,7 @@ Source datasets must be pre-embedded during the preprocessing stage for optimal 
 
 ### 1. AI Playground
 
-Use Dataloop's **AI Playground** to communicate with the pipeline:
+Use DDOE's **AI Playground** to communicate with the pipeline:
 
 <img src="assets/dropdown.png" alt="Ai playground">
 

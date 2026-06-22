@@ -3,7 +3,7 @@
   "version": "1.0.114",
   "attributes": {
     "Category": ["Pipeline", "Blueprint"],
-    "Hub": ["Dataloop"],
+    "Hub": ["DDOE"],
     "Pipeline Type": "Document Processing",
     "Provider": "Microsoft",
     "Media Type": ["PDF"]

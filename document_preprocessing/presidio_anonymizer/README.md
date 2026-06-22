@@ -1,6 +1,6 @@
-# Presidio Anonymizer for Dataloop
+# Presidio Anonymizer for DDOE
 
-This repository provides a **Dataloop** service that integrates **Microsoft Presidio** to automatically detect and anonymize Personally Identifiable Information (PII) in text files. The service is designed to seamlessly integrate into Dataloop pipelines for processing sensitive data while maintaining privacy compliance.
+This repository provides a **DDOE** service that integrates **Microsoft Presidio** to automatically detect and anonymize Personally Identifiable Information (PII) in text files. The service is designed to seamlessly integrate into DDOE pipelines for processing sensitive data while maintaining privacy compliance.
 
 ## Features
 
@@ -8,7 +8,7 @@ This repository provides a **Dataloop** service that integrates **Microsoft Pres
 - **Text Anonymization**: Replaces detected PII with generic placeholders (e.g., `<PERSON>`, `<EMAIL_ADDRESS>`).
 - **Multi-format Support**: Works with any UTF-8 text file including `.txt`, `.json`, `.md`, `.csv`, and more.
 - **Flexible Output Options**: Choose to overwrite original files or save anonymized versions to a separate folder.
-- **Seamless Pipeline Integration**: Pre-built pipeline node for easy integration into your Dataloop workflows.
+- **Seamless Pipeline Integration**: Pre-built pipeline node for easy integration into your DDOE workflows.
 
 ## Configuration
 
@@ -65,4 +65,4 @@ This project makes use of the following technologies:
 
 - **[Microsoft Presidio](https://github.com/microsoft/presidio)**: An open-source PII detection and anonymization framework, distributed under the [MIT License](https://github.com/microsoft/presidio/blob/main/LICENSE).
 - **[spaCy](https://spacy.io/)**: Industrial-strength NLP library, distributed under the [MIT License](https://github.com/explosion/spaCy/blob/master/LICENSE).
-- **[Dataloop](https://dataloop.ai/)**: AI data management and MLOps platform.
+- **[DDOE](https://dataloop.ai/)**: AI data management and MLOps platform.

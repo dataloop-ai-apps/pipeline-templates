@@ -6,7 +6,7 @@
 
 This template application creates a pipeline flow that converts PDFs to images, where each page is a single image.
 The generated images serve as input to computer vision models:  `AWS Rekognition - Detect Text`,
-`Google Vision - Text Detection` and any other predictive model from Dataloop's Marketplace with images as an input.
+`Google Vision - Text Detection` and any other predictive model from DDOE's Marketplace with images as an input.
 
 ### Installation:
 

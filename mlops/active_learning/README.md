@@ -54,7 +54,7 @@ The pipeline uses variables that need to be configured:
 #### Manual Pipeline Execution
 By default, the pipeline start node is on the top pipeline and the bottom pipeline will execute according to the node trigger.
 
-You can manually run specific parts of the pipeline by moving the start node and using the Dataloop SDK:
+You can manually run specific parts of the pipeline by moving the start node and using the DDOE SDK:
 
 ```python
 pipeline = dl.pipelines.get(pipeline_id='your_pipeline_id')
@@ -92,7 +92,7 @@ The pipeline uses variables that need to be configured:
 #### Manual Pipeline Execution
 By default, the pipeline start node is on the top pipeline and the bottom pipeline will execute according to the node trigger.
 
-You can manually run specific parts of the pipeline by moving the start node and using the Dataloop SDK:
+You can manually run specific parts of the pipeline by moving the start node and using the DDOE SDK:
 
 ```python
 pipeline = dl.pipelines.get(pipeline_id='your_pipeline_id')
